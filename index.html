@@ -205,16 +205,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 .btn.dark{background:var(--ink);color:#F7F6F1;border-color:#000;box-shadow:6px 6px 0 var(--lime)}
 .btn.dark:hover{box-shadow:8px 8px 0 var(--lime)}
 .btn .shl{height:1.15em}
-.shcard{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;margin:0 auto;padding:22px 26px;background:#F7F6F1;color:#1A1A17;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--lime);text-decoration:none;transition:transform .15s,box-shadow .15s}
-.shcard:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 var(--lime)}
-.shcard .shbox{display:inline-flex;align-items:center;justify-content:center;background:#EFEDE6;border-radius:12px;padding:10px 14px;font:800 34px/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em;color:#1A1A17}
-.shcard .shbox i{display:inline-block;width:.26em;height:.26em;margin-left:.06em;border-radius:50%;background:#C6FF3D;box-shadow:0 0 0 .06em #1A1A17;align-self:flex-end;margin-bottom:.08em}
-.shcard b{display:block;font-family:var(--pixel);font-size:11px;margin-bottom:8px}
-.shcard span{font-size:15px;line-height:1.45}
-.shcard .go{font-family:var(--pixel);font-size:11px;white-space:nowrap}
-.shbanner{padding:28px 0 8px}
-@media(max-width:640px){.shcard{grid-template-columns:1fr;gap:12px}}
-
+@media(max-width:640px){
 .roll figure{position:relative}
 .roll figure:before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;transform:translateX(-50%) rotate(-4deg);background:rgba(255,246,200,.72);box-shadow:0 1px 3px rgba(0,0,0,.2);z-index:2}
 .roll figure:nth-child(even):before{transform:translateX(-50%) rotate(5deg);background:rgba(198,244,50,.6)}
@@ -237,7 +228,6 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <ul>
     <li><a href="#select">Projects</a></li>
     <li><a href="#sh">AI company</a></li>
-    <li><a href="https://shindustries.co">sh. industries ↗</a></li>
     <li><a href="#xp">Experience</a></li>
     <li><a href="#off">Off the clock</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -263,11 +253,6 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 </div></header>
 
 <div class="ticker" aria-hidden="true"><div class="track" id="t1"></div></div>
-
-<div class="shbanner"><div class="wrap"><a class="shcard" href="https://shindustries.co">
-  <span class="shbox" aria-hidden="true">sh<i></i></span>
-  <span><b>MY COMPANY · SH. INDUSTRIES</b><span>Done-for-you podcast clips, the scripts behind the studio, and setups for small businesses. Live at shindustries.co.</span></span>
-  <span class="go">VISIT →</span></a></div></div>
 
 <section class="select" id="select"><div class="wrap">
   <div class="eyebrow">SELECT A CARTRIDGE · NEWEST FIRST</div>
