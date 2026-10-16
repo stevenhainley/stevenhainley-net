@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steven Hainley · Cybersecurity student building AI systems</title>
+<meta name="description" content="Steven Hainley: cybersecurity student at WPI (Class of 2029). Projects in AI agent systems, hardware security, homelabs and more. Looking for cybersecurity internships.">
+<meta property="og:title" content="Steven Hainley · Cybersecurity + AI systems">
+<meta property="og:description" content="WPI cybersecurity student. I build AI agent systems, hardware security tools and homelab infrastructure.">
+<meta property="og:image" content="assets/hq-poster.jpg">
+<link rel="icon" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Steven Hainley","url":"https://stevenhainley.net","jobTitle":"Cybersecurity student","alumniOf":{"@type":"CollegeOrUniversity","name":"Worcester Polytechnic Institute"},"sameAs":["https://www.linkedin.com/in/steven-hainley-836262268/","https://github.com/stevenhainley"]}</script>
+<style>
+:root{
+  --blue:#2340ff; --blue-2:#1a2fd6; --ink:#0b0d17; --paper:#f4f2ea; --lime:#c6f432; --red:#ff3b30; --pink:#ff5fd2; --cyan:#22d3ee;
+  --term:#07090c; --term-2:#0f141a; --term-line:#1d2630; --mint:#3ddc84; --teal:#22b8c4;
+  --display:'Anton',Impact,sans-serif; --body:'Space Grotesk',system-ui,sans-serif; --pixel:'Press Start 2P',monospace; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--blue);color:#fff;font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.pixel{font-family:var(--pixel);font-size:11px;letter-spacing:.5px;line-height:1.8}
+.mono{font-family:var(--mono)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:3px solid var(--ink);background:var(--lime);color:var(--ink);font-family:var(--pixel);font-size:11px;text-decoration:none;box-shadow:6px 6px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.btn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+.btn.ghost{background:#fff}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:#fff;color:var(--ink);padding:8px}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:3px solid #000}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:24px;letter-spacing:1px}
+.logo img{width:28px;height:28px;image-rendering:pixelated}
+.logo b{color:var(--lime)}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{font-family:var(--pixel);font-size:10px;text-decoration:none;opacity:.85}
+nav ul a:hover{opacity:1;color:var(--lime)}
+@media(max-width:820px){nav ul{display:none}}
+
+/* TICKER */
+.ticker{background:var(--red);border-block:3px solid var(--ink);overflow:hidden;white-space:nowrap}
+.ticker .track{display:inline-block;padding:10px 0;animation:tick 28s linear infinite;font-family:var(--pixel);font-size:12px}
+.ticker span{margin-right:28px}
+.ticker.lime{background:var(--lime);color:var(--ink)}
+.ticker.rev .track{animation-direction:reverse}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* HERO */
+.hero{position:relative;padding:70px 0 90px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at 70% 40%,#000 30%,transparent 75%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.tag{display:inline-block;background:var(--ink);padding:8px 12px;margin-bottom:22px}
+.tag .dot{display:inline-block;width:8px;height:8px;background:var(--lime);margin-right:8px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(68px,13vw,168px);line-height:.86;text-transform:uppercase;letter-spacing:1px;text-shadow:6px 6px 0 var(--ink)}
+h1 .o{color:var(--lime)}
+.hero p.lead{font-size:20px;max-width:560px;margin:26px 0 30px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:16px}
+.cabinet{position:relative;justify-self:center;width:min(360px,90%);background:var(--ink);border:4px solid #000;padding:18px;box-shadow:12px 12px 0 rgba(0,0,0,.35)}
+.screen{position:relative;background:#101a7a;border:3px solid #000;aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+.screen:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 2px,transparent 2px 4px);pointer-events:none}
+.screen img{width:58%;image-rendering:pixelated;filter:invert(1) drop-shadow(0 0 12px rgba(198,244,50,.5));animation:bob 1.6s steps(2) infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.bubble{position:absolute;top:12px;left:12px;right:12px;background:#fff;color:var(--ink);padding:10px 12px;font-family:var(--pixel);font-size:9px;line-height:1.7;min-height:52px;border:3px solid #000}
+.cab-foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.joy{width:42px;height:42px;border-radius:50%;background:var(--red);border:3px solid #000;box-shadow:inset -6px -6px 0 rgba(0,0,0,.25)}
+.btns{display:flex;gap:10px}.btns i{width:26px;height:26px;border-radius:50%;border:3px solid #000;display:block;background:var(--lime)}.btns i:nth-child(2){background:var(--cyan)}
+
+/* SECTIONS */
+section{padding:90px 0}
+.eyebrow{font-family:var(--pixel);font-size:11px;color:var(--lime);margin-bottom:14px}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);line-height:.92;text-transform:uppercase;margin-bottom:18px}
+.sub{max-width:640px;font-size:18px;opacity:.92}
+
+/* CARTRIDGE SELECT */
+.select{background:var(--blue-2)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.cart{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:240px;padding:22px;background:var(--ink);border:4px solid var(--c,var(--lime));text-decoration:none;box-shadow:0 0 0 rgba(0,0,0,0);transition:transform .15s,box-shadow .15s}
+.cart:hover,.cart:focus-visible{transform:translateY(-6px);box-shadow:0 0 0 4px var(--ink),0 0 34px var(--c,var(--lime))}
+.cart .n{font-family:var(--pixel);font-size:10px;color:var(--c);display:flex;justify-content:space-between}
+.cart svg{width:64px;height:64px;margin:18px 0;image-rendering:pixelated}
+.cart h3{font-family:var(--display);font-weight:400;font-size:34px;line-height:1;text-transform:uppercase;color:var(--c)}
+.cart p{font-size:14px;opacity:.8;margin-top:6px}
+.cart .start{position:absolute;right:16px;bottom:16px;font-family:var(--pixel);font-size:9px;color:var(--c);opacity:0;transition:opacity .15s}
+.cart:hover .start{opacity:1;animation:blink 1s steps(2) infinite}
+
+/* SH CONTROL ROOM */
+.room{background:var(--term);color:#d9e2ea;position:relative;overflow:hidden}
+.room:before{content:"";position:absolute;inset:0;background:radial-gradient(800px 400px at 80% 0%,rgba(198,244,50,.08),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(34,184,196,.1),transparent 60%)}
+.room .wrap{position:relative}
+.room h2{color:#fff}.room h2 em{font-style:normal;color:var(--lime)}
+.room .eyebrow{color:var(--teal)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{border:1px solid var(--term-line);background:var(--term-2);padding:18px;border-radius:10px}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:52px;color:var(--lime);line-height:1}
+.stat span{font-family:var(--mono);font-size:12px;opacity:.75}
+.panel{border:1px solid var(--term-line);background:var(--term-2);border-radius:14px;padding:22px;margin-top:22px}
+.panel h3{font-family:var(--mono);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.panel h3:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint)}
+.two{display:grid;grid-template-columns:1.25fr 1fr;gap:22px}
+.two>*,.grid>*,.proj>*,.stats>*{min-width:0}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+#net{width:100%;height:auto}
+#net .node rect{fill:#121a22;stroke:#2a3946;stroke-width:1.5}
+#net .node.me rect{stroke:var(--lime)}#net .node.co rect{stroke:var(--teal)}
+#net text{font-family:var(--mono);font-size:12px;fill:#d9e2ea}
+#net .node text.k{font-size:9px;fill:#7f8c97;letter-spacing:1px}
+#net path.wire{fill:none;stroke:#26333f;stroke-width:1.5}
+#net circle.pk{fill:var(--lime);filter:drop-shadow(0 0 4px var(--lime))}
+#net circle.pk.t{fill:var(--teal);filter:drop-shadow(0 0 4px var(--teal))}
+.log{font-family:var(--mono);font-size:12.5px;line-height:1.75;height:300px;overflow:hidden;position:relative}
+.log:after{content:"";position:absolute;left:0;right:0;top:0;height:40px;background:linear-gradient(var(--term-2),transparent)}
+.log div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:in .35s ease-out}
+.log .t{color:#6b7a86}.log .ok{color:var(--mint)}.log .ap{color:var(--lime)}.log .wa{color:#ffbd2e}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.pipe{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:6px}
+@media(max-width:860px){.pipe{grid-template-columns:repeat(2,1fr)}}
+.step{position:relative;border:1px solid var(--term-line);border-radius:10px;padding:14px 12px;font-family:var(--mono);font-size:12px;background:#0b1015;transition:border-color .3s,box-shadow .3s}
+.step b{display:block;color:#fff;font-size:13px;margin-bottom:4px}
+.step.on{border-color:var(--lime);box-shadow:0 0 20px rgba(198,244,50,.25)}
+.step .i{font-size:10px;color:var(--teal)}
+.monitor{border:10px solid #1a2129;border-radius:14px;background:#000;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.phone{width:min(300px,100%);margin:0 auto;aspect-ratio:9/18;border:10px solid #1a2129;border-radius:38px;background:linear-gradient(160deg,#2b3a8f,#0e1336);position:relative;overflow:hidden}
+.phone .clock{text-align:center;margin-top:46px;font-family:var(--body);font-size:54px;font-weight:500;color:#fff}
+.phone .date{text-align:center;font-size:13px;opacity:.8}
+.note{position:absolute;left:10px;right:10px;background:rgba(245,247,250,.95);color:#111;border-radius:18px;padding:12px 14px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.4);transform:translateY(-20px);opacity:0;transition:all .45s cubic-bezier(.2,1.3,.4,1)}
+.note.show{transform:none;opacity:1}
+.note .h{display:flex;align-items:center;gap:8px;font-weight:700;font-size:12px;margin-bottom:4px}
+.note .h i{width:20px;height:20px;border-radius:6px;background:var(--lime);display:block}
+.note .h small{margin-left:auto;font-weight:400;color:#888}
+.note .acts{display:flex;gap:8px;margin-top:8px}.note .acts span{flex:1;text-align:center;padding:6px;border-radius:9px;background:#e6e8ec;font-weight:700;font-size:12px}.note .acts span:first-child{background:#111;color:var(--lime)}
+.learn{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+@media(max-width:860px){.learn{grid-template-columns:1fr}}
+.learn div{border-left:3px solid var(--lime);padding:6px 0 6px 16px}
+.learn b{display:block;color:#fff;margin-bottom:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{font-family:var(--mono);font-size:12px;border:1px solid #2a3946;border-radius:999px;padding:5px 12px}
+
+/* PROJECT CARDS (arcade) */
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:70px 0;border-top:3px dashed rgba(255,255,255,.25)}
+.proj:nth-child(even) .vis{order:2}
+@media(max-width:860px){.proj{grid-template-columns:1fr}.proj:nth-child(even) .vis{order:0}}
+.proj .meta{font-family:var(--pixel);font-size:10px;color:var(--lime);margin-bottom:12px}
+.proj h3{font-family:var(--display);font-weight:400;font-size:clamp(40px,5.5vw,66px);line-height:.95;text-transform:uppercase;margin-bottom:14px}
+.proj ul{list-style:none;margin:16px 0}.proj li{padding:6px 0 6px 26px;position:relative}.proj li:before{content:"▶";position:absolute;left:0;color:var(--lime);font-size:12px;top:9px}
+.frame{background:var(--ink);border:4px solid #000;box-shadow:10px 10px 0 rgba(0,0,0,.35);padding:12px;position:relative}
+.frame .bar{display:flex;gap:6px;margin-bottom:10px}.frame .bar i{width:10px;height:10px;background:#333;display:block}.frame .bar i:first-child{background:var(--red)}.frame .bar i:nth-child(2){background:#ffbd2e}.frame .bar i:nth-child(3){background:var(--mint)}
+.typed{font-family:var(--mono);font-size:13px;color:var(--mint);background:#000;padding:14px;min-height:150px;white-space:pre-wrap}
+.typed .cur{display:inline-block;width:8px;height:15px;background:var(--mint);vertical-align:-2px;animation:blink 1s steps(2) infinite}
+.flip{perspective:900px;cursor:pointer}
+.flip .in{position:relative;transition:transform .7s;transform-style:preserve-3d}
+.flip:hover .in,.flip.on .in{transform:rotateY(180deg)}
+.flip img{backface-visibility:hidden}
+.flip img.back{position:absolute;inset:0;transform:rotateY(180deg);height:100%;object-fit:cover}
+.hint{font-family:var(--pixel);font-size:9px;opacity:.7;margin-top:10px}
+.board{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+.svc{display:flex;align-items:center;justify-content:space-between;background:#0d0f1a;border:2px solid #222;padding:8px 10px;font-family:var(--mono);font-size:12px}
+.svc i{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.handheld{width:min(300px,100%);margin:0 auto;background:var(--lime);border:4px solid #000;border-radius:22px 22px 60px 22px;padding:22px;box-shadow:10px 10px 0 rgba(0,0,0,.35)}
+.lcd{background:#9bbc0f;border:4px solid #000;aspect-ratio:4/3;padding:12px;font-family:var(--pixel);font-size:10px;color:#0f380f;line-height:2.1}
+.lcd .sel{background:#0f380f;color:#9bbc0f}
+.hh-ctrl{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.dpad{width:70px;height:70px;position:relative}.dpad:before,.dpad:after{content:"";position:absolute;background:#111}.dpad:before{left:24px;top:0;width:22px;height:70px}.dpad:after{top:24px;left:0;width:70px;height:22px}
+.ab{display:flex;gap:12px}.ab i{width:30px;height:30px;border-radius:50%;background:var(--red);border:3px solid #000;display:block}
+
+/* XP + OFF CLOCK + CONTACT */
+.xp{background:var(--paper);color:var(--ink)}
+.xp .eyebrow{color:var(--blue)}
+.tl{margin-top:36px;border-left:4px solid var(--ink);padding-left:28px}
+.tl article{position:relative;padding-bottom:34px}
+.tl article:before{content:"";position:absolute;left:-40px;top:6px;width:18px;height:18px;background:var(--lime);border:3px solid var(--ink)}
+.tl .when{font-family:var(--pixel);font-size:10px;color:var(--blue)}
+.tl h3{font-family:var(--display);font-weight:400;font-size:34px;text-transform:uppercase;line-height:1.05;margin:6px 0}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+@media(max-width:860px){.skills{grid-template-columns:1fr 1fr}}
+.skills div{border:3px solid var(--ink);padding:14px;background:#fff;box-shadow:5px 5px 0 var(--ink)}
+.skills b{font-family:var(--pixel);font-size:9px;display:block;margin-bottom:8px;color:var(--blue)}
+.skills p{font-size:14px}
+.roll{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+@media(max-width:760px){.roll{grid-template-columns:1fr 1fr}}
+.roll figure{background:#fff;padding:10px 10px 30px;color:var(--ink);box-shadow:8px 8px 0 rgba(0,0,0,.3);transform:rotate(var(--r,-2deg));transition:transform .2s}
+.roll figure:hover{transform:rotate(0) scale(1.04)}
+.roll img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.roll figcaption{font-family:var(--pixel);font-size:9px;margin-top:10px;text-align:center}
+.contact{background:var(--ink);text-align:center}
+.contact h2{font-size:clamp(56px,10vw,140px)}
+.contact h2 span{color:var(--lime)}
+footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opacity:.75;text-align:center}
+.shl{display:inline-block;height:.82em;width:auto;aspect-ratio:1540/870;vertical-align:-.02em;color:#F7F6F1}
+.shl.ink{color:#1A1A17}
+.lcd .shl{color:inherit;height:.9em}
+.btn.dark{background:var(--ink);color:#F7F6F1;border-color:#000;box-shadow:6px 6px 0 var(--lime)}
+.btn.dark:hover{box-shadow:8px 8px 0 var(--lime)}
+.btn .shl{height:1.15em}
+.shcard{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;margin:0 auto;padding:22px 26px;background:#F7F6F1;color:#1A1A17;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--lime);text-decoration:none;transition:transform .15s,box-shadow .15s}
+.shcard:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 var(--lime)}
+.shcard .shbox{display:inline-flex;align-items:center;justify-content:center;background:#EFEDE6;border-radius:12px;padding:10px 14px;font:800 34px/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em;color:#1A1A17}
+.shcard .shbox i{display:inline-block;width:.26em;height:.26em;margin-left:.06em;border-radius:50%;background:#C6FF3D;box-shadow:0 0 0 .06em #1A1A17;align-self:flex-end;margin-bottom:.08em}
+.shcard b{display:block;font-family:var(--pixel);font-size:11px;margin-bottom:8px}
+.shcard span{font-size:15px;line-height:1.45}
+.shcard .go{font-family:var(--pixel);font-size:11px;white-space:nowrap}
+.shbanner{padding:28px 0 8px}
+@media(max-width:640px){.shcard{grid-template-columns:1fr;gap:12px}}
+
+.roll figure{position:relative}
+.roll figure:before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;transform:translateX(-50%) rotate(-4deg);background:rgba(255,246,200,.72);box-shadow:0 1px 3px rgba(0,0,0,.2);z-index:2}
+.roll figure:nth-child(even):before{transform:translateX(-50%) rotate(5deg);background:rgba(198,244,50,.6)}
+.roll figcaption.hand{font-family:'Permanent Marker',cursive;font-size:17px;letter-spacing:.5px}
+.stub{position:absolute;right:-16px;bottom:76px;z-index:3;background:#0076CE;color:#fff;transform:rotate(8deg);padding:9px 16px 9px 22px;font-family:var(--body);font-weight:700;line-height:1.1;box-shadow:3px 4px 0 rgba(0,0,0,.35);border-radius:4px;text-align:left}
+.stub:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;border-left:2px dashed rgba(255,255,255,.7)}
+.stub b{display:block;font-size:20px;letter-spacing:3px}
+.stub small{display:block;font-size:10px;letter-spacing:1.5px;opacity:.9}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="shl" viewBox="30 350 1540 870"><path fill="currentColor" d="M334 1212Q199 1212 121.5 1155.0Q44 1098 38 996H215Q223 1036 253.5 1055.0Q284 1074 342 1074Q432 1074 432 1027Q432 1008 418.5 996.5Q405 985 374 979L240 953Q56 917 56 781Q56 693 127.0 640.5Q198 588 323 588Q448 588 520.0 642.0Q592 696 598 794H421Q411 755 385.5 737.5Q360 720 311 720Q271 720 249.5 731.0Q228 742 228 764Q228 780 241.0 791.0Q254 802 280 807L418 834Q514 853 559.0 896.0Q604 939 604 1012Q604 1106 534.5 1159.0Q465 1212 334 1212Z"/><path fill="currentColor" d="M654.0 1200V360H838.0V682H842.0Q871.0 636 918.5 612.5Q966.0 589 1033.0 589Q1146.0 589 1212.0 658.0Q1278.0 727 1278.0 843V1200H1094.0V879Q1094.0 817 1061.5 785.0Q1029.0 753 966.0 753Q903.0 753 870.5 785.0Q838.0 817 838.0 879V1200Z"/><path fill="#C6FF3D" d="M1448.0 1212Q1403.0 1212 1371.5 1180.5Q1340.0 1149 1340.0 1104Q1340.0 1059 1371.5 1027.5Q1403.0 996 1448.0 996Q1493.0 996 1524.5 1027.5Q1556.0 1059 1556.0 1104Q1556.0 1149 1524.5 1180.5Q1493.0 1212 1448.0 1212Z"/></symbol></svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top"><img src="assets/operator-512.png" alt="">STEVEN HAINLEY</a>
+  <ul>
+    <li><a href="#select">Projects</a></li>
+    <li><a href="#sh">AI company</a></li>
+    <li><a href="https://shindustries.co">sh. industries ↗</a></li>
+    <li><a href="#xp">Experience</a></li>
+    <li><a href="#off">Off the clock</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="btn" href="assets/Steven-Hainley-Resume.pdf" style="padding:9px 14px;box-shadow:4px 4px 0 #000">RÉSUMÉ ↓</a>
+</div></nav>
+
+<main id="main">
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <div class="tag pixel"><span class="dot"></span>LOOKING FOR CYBERSECURITY INTERNSHIPS</div>
+    <h1>Steven<br>Hain<span class="o">l</span>ey.</h1>
+    <p class="lead">Cybersecurity student at WPI (Class of 2029, Law &amp; Technology minor). I learn by building: hardware security tools, a homelab, and a small company run by a team of AI agents on my laptop.</p>
+    <div class="ctas">
+      <a class="btn" href="#select">▶ PRESS START</a>
+      <a class="btn ghost" href="assets/Steven-Hainley-Resume.pdf">RÉSUMÉ (PDF)</a>
+    </div>
+  </div>
+  <div class="cabinet" aria-hidden="true">
+    <div class="screen"><div class="bubble" id="bubble">HI, I'M STEVEN'S OPERATOR.</div><img src="assets/operator-512.png" alt=""></div>
+    <div class="cab-foot"><span class="joy"></span><span class="pixel" style="font-size:9px">PLAYER 1</span><span class="btns"><i></i><i></i></span></div>
+  </div>
+</div></header>
+
+<div class="ticker" aria-hidden="true"><div class="track" id="t1"></div></div>
+
+<div class="shbanner"><div class="wrap"><a class="shcard" href="https://shindustries.co">
+  <span class="shbox" aria-hidden="true">sh<i></i></span>
+  <span><b>MY COMPANY · SH. INDUSTRIES</b><span>Done-for-you podcast clips, the scripts behind the studio, and setups for small businesses. Live at shindustries.co.</span></span>
+  <span class="go">VISIT →</span></a></div></div>
+
+<section class="select" id="select"><div class="wrap">
+  <div class="eyebrow">SELECT A CARTRIDGE · NEWEST FIRST</div>
+  <h2>Things I've<br>built.</h2>
+  <div class="grid">
+    <a class="cart" href="#sh" style="--c:var(--lime)"><div class="n"><span>01</span><span>OCT 2026 →</span></div>
+      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="7" y="0" width="2" height="2" fill="currentColor" style="color:var(--lime)"/><rect x="3" y="2" width="10" height="9" fill="#c6f432"/><rect x="5" y="5" width="2" height="2" fill="#0b0d17"/><rect x="9" y="5" width="2" height="2" fill="#0b0d17"/><rect x="6" y="8" width="4" height="1" fill="#0b0d17"/><rect x="4" y="11" width="2" height="3" fill="#c6f432"/><rect x="10" y="11" width="2" height="3" fill="#c6f432"/></svg>
+      <div><h3><svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> AI company</h3><p>A team of AI agents that runs real business work while I approve the big calls.</p></div><span class="start">PRESS START</span></a>
+    <a class="cart" href="#badusb" style="--c:var(--red)"><div class="n"><span>02</span><span>OCT 2026 →</span></div>
+      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="5" y="0" width="6" height="5" fill="#ff3b30"/><rect x="6" y="1" width="1" height="2" fill="#0b0d17"/><rect x="9" y="1" width="1" height="2" fill="#0b0d17"/><rect x="3" y="5" width="10" height="11" fill="#ff3b30"/><rect x="5" y="8" width="6" height="5" fill="#0b0d17"/><rect x="7" y="9" width="2" height="3" fill="#ff3b30"/></svg>
+      <div><h3>BadUSB</h3><p>A Pico W that types like a keyboard. Hardware security, hands-on.</p></div><span class="start">PRESS START</span></a>
+    <a class="cart" href="#paddy" style="--c:var(--cyan)"><div class="n"><span>03</span><span>IN PROGRESS</span></div>
+      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="0" width="10" height="16" fill="#22d3ee"/><rect x="4" y="1" width="8" height="6" fill="#0b0d17"/><rect x="5" y="2" width="4" height="1" fill="#22d3ee"/><rect x="5" y="4" width="6" height="1" fill="#22d3ee"/><rect x="5" y="9" width="3" height="1" fill="#0b0d17"/><rect x="6" y="8" width="1" height="3" fill="#0b0d17"/><rect x="10" y="9" width="2" height="2" fill="#0b0d17"/></svg>
+      <div><h3>Paddy handheld</h3><p>A pocket device and app platform to keep the focus on the round.</p></div><span class="start">PRESS START</span></a>
+    <a class="cart" href="#controller" style="--c:var(--pink)"><div class="n"><span>04</span><span>AUG 2026</span></div>
+      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="1" y="5" width="14" height="7" fill="#ff5fd2"/><rect x="0" y="8" width="3" height="6" fill="#ff5fd2"/><rect x="13" y="8" width="3" height="6" fill="#ff5fd2"/><rect x="3" y="7" width="3" height="1" fill="#0b0d17"/><rect x="4" y="6" width="1" height="3" fill="#0b0d17"/><rect x="11" y="6" width="1" height="1" fill="#0b0d17"/><rect x="12" y="8" width="1" height="1" fill="#0b0d17"/></svg>
+      <div><h3>PS5 controller</h3><p>Full teardown and rebuild with back paddles and an OLED display.</p></div><span class="start">PRESS START</span></a>
+    <a class="cart" href="#homelab" style="--c:var(--mint)"><div class="n"><span>05</span><span>MAY 2026 →</span></div>
+      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="2" y="1" width="12" height="4" fill="#3ddc84"/><rect x="2" y="6" width="12" height="4" fill="#3ddc84"/><rect x="2" y="11" width="12" height="4" fill="#3ddc84"/><rect x="4" y="2" width="2" height="2" fill="#0b0d17"/><rect x="4" y="7" width="2" height="2" fill="#0b0d17"/><rect x="4" y="12" width="2" height="2" fill="#0b0d17"/><rect x="8" y="3" width="4" height="1" fill="#0b0d17"/><rect x="8" y="8" width="4" height="1" fill="#0b0d17"/></svg>
+      <div><h3>Homelab</h3><p>Proxmox, Docker, Pi-hole and Tailscale. It's where I break things on purpose.</p></div><span class="start">PRESS START</span></a>
+    <a class="cart" href="#climate" style="--c:#ffbd2e"><div class="n"><span>06</span><span>2025</span></div>
+      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="2" y="1" width="12" height="14" fill="#ffbd2e"/><rect x="2" y="1" width="2" height="14" fill="#c98d00"/><rect x="6" y="4" width="6" height="1" fill="#0b0d17"/><rect x="6" y="6" width="5" height="1" fill="#0b0d17"/><rect x="6" y="8" width="6" height="1" fill="#0b0d17"/><rect x="8" y="11" width="3" height="2" fill="#0b0d17"/></svg>
+      <div><h3>Climate Lessons</h3><p>Co-wrote three chapters of a published book at WPI.</p></div><span class="start">PRESS START</span></a>
+  </div>
+</div></section>
+
+<!-- ============ sh. CONTROL ROOM ============ -->
+<section class="room" id="sh"><div class="wrap">
+  <div class="eyebrow">01 · OCTOBER 2026 → PRESENT · AI SYSTEMS</div>
+  <h2><svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> — a company run by<br><em>AI agents</em> on my laptop.</h2>
+  <p class="sub">I designed and run a one-person company where a team of AI agents does the work: finding leads, writing outreach, editing video, publishing, and briefing me every morning. I set the rules, give the standing approvals, and sign off on anything that spends money or goes public.</p>
+  <p style="margin-top:22px"><a class="btn dark" href="https://shindustries.co">VISIT <svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> INDUSTRIES →</a></p>
+
+  <div class="stats">
+    <div class="stat"><b data-n="17">0</b><span>agent roles across 4 departments</span></div>
+    <div class="stat"><b data-n="5">0</b><span>steps from episode to finished clip</span></div>
+    <div class="stat"><b>$0</b><span>for routine AI work: it runs on local models</span></div>
+    <div class="stat"><b data-n="1">0</b><span>human in the loop: me, signing off on money, posts and new rules</span></div>
+  </div>
+
+  <div class="two">
+    <div class="panel"><h3>How it's wired · live</h3>
+      <svg id="net" viewBox="0 0 640 400" role="img" aria-label="Diagram: Steven approves, a coordinator routes work to four departments, which use tools such as Gmail, Stripe, local models and the clip engine.">
+        <g id="wires"></g><g id="pkts"></g><g id="nodes"></g>
+      </svg>
+    </div>
+    <div class="panel"><h3>HQ activity log · sample</h3><div class="log" id="log" aria-live="off"></div></div>
+  </div>
+
+  <div class="panel"><h3>The clip engine · podcast episode → finished short</h3>
+    <div class="pipe" id="pipe">
+      <div class="step"><span class="i">01 · whisper.cpp</span><b>Transcribe</b>word-level timing</div>
+      <div class="step"><span class="i">02 · agent</span><b>Pick moments</b>hooks that stand alone</div>
+      <div class="step"><span class="i">03 · ffmpeg</span><b>Camera cuts</b>wide/close, on sentence ends</div>
+      <div class="step"><span class="i">04 · React</span><b>Motion graphics</b>charts, pop-ups, on the word</div>
+      <div class="step"><span class="i">05 · QA</span><b>Check + ship</b>frames, −14 LUFS, Drive</div>
+      <div class="step"><span class="i">✓</span><b>Delivered</b>client approves</div>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="panel"><h3>HQ showcase</h3>
+      <div class="monitor"><video src="assets/hq-loop.mp4" poster="assets/hq-poster.jpg" autoplay muted loop playsinline aria-label="Animated showcase of the sh. HQ dashboard"></video></div>
+    </div>
+    <div class="panel"><h3>Approvals hit my phone</h3>
+      <div class="phone" aria-hidden="true"><div class="clock" id="pclock">9:05</div><div class="date">Thursday</div><div id="notes"></div></div>
+    </div>
+  </div>
+
+  <div class="panel"><h3>What building it taught me</h3>
+    <div class="learn">
+      <div><b>Guardrails beat intelligence.</b>The hard part is approvals, cost caps and audit logs, not the model. Every outbound action has an owner and a record.</div>
+      <div><b>Right model, right job.</b>Local models handle routine work for free; larger models only plan and judge. That cut cost and kept data on my machine.</div>
+      <div><b>Failures are features.</b>Two agents once emailed the same person. Now every send checks the thread and a ledger first: idempotency, learned the real way.</div>
+    </div>
+    <div class="chips"><span>Python</span><span>SQLite</span><span>Node / React</span><span>Remotion</span><span>ffmpeg</span><span>whisper.cpp</span><span>Ollama</span><span>Claude Code + Agent SDK</span><span>MCP</span><span>Stripe / Gmail APIs</span><span>launchd</span></div>
+  </div>
+</div></section>
+
+<div class="ticker lime rev" aria-hidden="true"><div class="track" id="t2"></div></div>
+
+<section id="work" style="padding-top:20px"><div class="wrap">
+
+  <article class="proj reveal" id="badusb">
+    <div class="vis"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="typed" id="typed"></div></div><p class="hint">▲ A SIMULATION OF WHAT THE PICO TYPES</p></div>
+    <div>
+      <div class="meta">02 · HARDWARE SECURITY · OCT 2026 → PRESENT</div>
+      <h3>My BadUSB</h3>
+      <p>I programmed a Raspberry Pi Pico W to act like a keyboard. Plugged into a computer (with the owner's permission), it types the commands that open my LinkedIn profile or résumé.</p>
+      <ul>
+        <li>Separate Windows and macOS payloads, written in CircuitPython + Adafruit HID</li>
+        <li>A file-based lock keeps the payload off so I can edit the code safely</li>
+        <li>Seeing a computer trust a "keyboard" made device trust and physical access click</li>
+      </ul>
+      <a class="btn" href="https://github.com/stevenhainley/Steves-LinkedIn-BadUSB">CODE ON GITHUB →</a>
+    </div>
+  </article>
+
+  <article class="proj reveal" id="paddy">
+    <div class="vis"><div class="handheld" aria-hidden="true"><div class="lcd" id="lcd"></div><div class="hh-ctrl"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div></div></div>
+    <div>
+      <div class="meta">03 · EMBEDDED · IN PROGRESS</div>
+      <h3>Paddy:<br>less phone, more golf</h3>
+      <p>A pocket device built on a Pico W to keep the focus on the round. It's turning into a small app platform: apps get only the permissions they declare, and I test them in a simulator before they touch the hardware.</p>
+      <ul>
+        <li>First apps: golf scorecard, GPS, Wi-Fi list, battery, clock and alerts</li>
+        <li>Permission manifest per app; anything undeclared raises an error</li>
+        <li>Safe mode and a watchdog so a bad app can't brick the device</li>
+      </ul>
+      <p class="pixel" style="opacity:.8">STATUS: SOFTWARE IN SIMULATOR · HARDWARE BEING WIRED</p>
+    </div>
+  </article>
+
+  <article class="proj reveal" id="controller">
+    <div class="vis"><div class="frame flip" tabindex="0" id="flip"><div class="in"><img src="assets/controller-front.jpg" alt="Custom PS5 controller, front"><img class="back" src="assets/controller-back.jpg" alt="Custom PS5 controller, back with paddles"></div></div><p class="hint">▲ HOVER OR TAP TO FLIP</p></div>
+    <div>
+      <div class="meta">04 · HARDWARE · AUG 2026</div>
+      <h3>Custom PS5 controller</h3>
+      <p>I took my controller apart and installed an eXtremeRate SPARK kit: back paddles, an OLED display, clicky trigger stops and ergonomic grips, plus a custom-colored front plate and buttons.</p>
+      <ul><li>Full disassembly, kit installation and reassembly</li><li>Rubberized New Hope Gray &amp; Classic Gray</li></ul>
+    </div>
+  </article>
+
+  <article class="proj reveal" id="homelab">
+    <div class="vis"><div class="frame"><img src="assets/homelab-setup.webp" alt="My homelab setup with system monitoring on a portrait display">
+      <div class="board" aria-label="Services I run">
+        <div class="svc">Proxmox<i></i></div><div class="svc">Docker<i></i></div><div class="svc">Pi-hole<i></i></div><div class="svc">Tailscale<i></i></div><div class="svc">Homarr<i></i></div><div class="svc">Uptime Kuma<i></i></div>
+      </div></div></div>
+    <div>
+      <div class="meta">05 · INFRASTRUCTURE · MAY 2026 → PRESENT</div>
+      <h3>My homelab</h3>
+      <p>It's my place to learn Linux, networking and self-hosting. I run services on Proxmox and Docker, set them up myself, and figure out what went wrong when something breaks.</p>
+      <ul><li>Pi-hole for DNS filtering, Tailscale for remote access</li><li>Homarr dashboard and Uptime Kuma monitoring</li></ul>
+    </div>
+  </article>
+
+  <article class="proj reveal" id="climate">
+    <div class="vis"><div class="frame"><img src="assets/climate-book.webp" alt="Cover of Climate Lessons: Volume 2"></div><p class="hint">COVER ART: UNKNOWN STREET ARTIST, BERGEN, NORWAY. PHOTO: MAUREEN BELOW.</p></div>
+    <div>
+      <div class="meta">06 · RESEARCH &amp; PUBLICATION · AUG–DEC 2025</div>
+      <h3>Climate Lessons: Vol. 2</h3>
+      <p>In WPI's Great Problems Seminar, I co-wrote three chapters on atmospheric science, climate impacts in cities and public perception. I led our team's research into how people in the U.S. see climate policy, with expert interviews and a campus survey.</p>
+      <a class="btn" href="https://pressbooks.pub/climatelessonsvol2/">READ THE BOOK →</a>
+    </div>
+  </article>
+</div></section>
+
+<section class="xp" id="xp"><div class="wrap">
+  <div class="eyebrow">PLAYER STATS</div>
+  <h2>Education &amp;<br>experience.</h2>
+  <div class="tl">
+    <article><div class="when">EXPECTED MAY 2029</div><h3>Worcester Polytechnic Institute</h3><p>B.S. Cybersecurity, minor in Law and Technology · GPA 3.7 · Dean's List, Fall 2025 · WPI Presidential Scholarship. Club Golf, Green Team, Women in Cyber Security.</p></article>
+    <article><div class="when">OCT 2026 → PRESENT</div><h3>Founder, <svg class="shl ink" role="img" aria-label="sh."><use href="#shl"/></svg> industries</h3><p>Designs and operates an AI-agent system that handles lead research, outreach, video production and publishing, with my sign-off on spending and anything public.</p></article>
+    <article><div class="when">JUN 2023 – AUG 2026 · CANTON, MA</div><h3>HVAC Field Assistant, Hurley Mechanical</h3><p>Worked alongside a senior technician on residential and commercial systems: installation, maintenance and repairs, including rooftop units and attic ductwork.</p></article>
+    <article><div class="when">AUG 2024 – JUL 2026 · PLYMOUTH, MA</div><h3>Retail Sales Associate, Plimoth Patuxet Museums</h3><p>Helped visitors in the museum shops and handled checkout during busy shifts.</p></article>
+  </div>
+  <div class="skills">
+    <div><b>PROGRAMMING</b><p>Python / CircuitPython, C, Java, JavaScript, HTML/CSS, SQL</p></div>
+    <div><b>AI &amp; AUTOMATION</b><p>Agent systems, local LLMs (Ollama), Claude Code, MCP, Remotion, ffmpeg</p></div>
+    <div><b>SYSTEMS</b><p>Linux CLI, macOS, Windows, Proxmox, Docker, Pi-hole, Tailscale</p></div>
+    <div><b>SECURITY</b><p>HID injection, Flipper Zero, hardware teardown · CompTIA Security+ in progress (Dec 2026)</p></div>
+  </div>
+</div></section>
+
+<section id="off"><div class="wrap">
+  <div class="eyebrow">OFF THE CLOCK</div>
+  <h2>Golf &amp;<br>video games.</h2>
+  <p class="sub">Golf has been part of my life since high school, and I play Club Golf at WPI. Gaming is usually Call of Duty or Skate. I also like hiking, basketball, cars and Star Wars. And I'm a cat person.</p>
+  <div class="roll">
+    <figure style="--r:-3deg"><img src="assets/instagram-lakeside.jpg" alt="By the water" loading="lazy"><figcaption>BY THE WATER</figcaption></figure>
+    <figure style="--r:2deg"><img src="assets/golf-sunset.jpg" alt="Golf course at sunset" loading="lazy"><figcaption>AT SUNSET</figcaption></figure>
+    <figure style="--r:-1deg"><img src="assets/instagram-travel.jpg" alt="In Las Vegas for Dell World" loading="lazy"><span class="stub"><small>ADMIT ONE · LAS VEGAS</small><b>DELL WORLD</b></span><figcaption class="hand">Vegas for Dell World!</figcaption></figure>
+    <figure style="--r:3deg"><img src="assets/golf-fairway.jpg" alt="Down the fairway" loading="lazy"><figcaption>DOWN THE FAIRWAY</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div class="eyebrow">INSERT COIN</div>
+  <h2>Let's <span>talk.</span></h2>
+  <p class="sub" style="margin:0 auto 34px">I'm looking for a cybersecurity internship. If you have an opportunity, a question about a project, or just want to say hi, send me an email.</p>
+  <div class="ctas" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a class="btn" href="mailto:stevenhainley@gmail.com">EMAIL ME</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/steven-hainley-836262268/">LINKEDIN</a>
+    <a class="btn ghost" href="https://github.com/stevenhainley">GITHUB</a>
+    <a class="btn ghost" href="assets/Steven-Hainley-Resume.pdf">RÉSUMÉ</a>
+  </div>
+</div></section>
+</main>
+<footer>© 2026 Steven Hainley · Built with a little help from my agents · GAME OVER? NEVER.</footer>
+
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// tickers
+const fill=(id,words)=>{const s=words.map(w=>`<span>→ ${w}</span>`).join('');document.getElementById(id).innerHTML=s+s+s+s;};
+fill('t1',['VIEW WORKS','AI AGENTS','CYBERSECURITY','HARDWARE','HOMELAB','WPI 2029','INTERNSHIP READY']);
+fill('t2',['VIEW WORKS','BADUSB','PADDY','PS5 REBUILD','HOMELAB','PUBLISHED AUTHOR']);
+// operator speech
+const lines=["HI, I'M STEVEN'S OPERATOR.","I HELP RUN HIS AI COMPANY.","PICK A CARTRIDGE BELOW ↓","HE'S LOOKING FOR AN INTERNSHIP!"];
+let li=0;const bub=document.getElementById('bubble');
+if(!reduce)setInterval(()=>{li=(li+1)%lines.length;bub.textContent=lines[li];},2600);
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('vis');
+  e.target.querySelectorAll&&e.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(e.target);}),{threshold:.15});
+document.querySelectorAll('.reveal,.stats').forEach(el=>io.observe(el));
+function count(el){const n=+el.dataset.n,s=el.dataset.s||'';if(reduce){el.textContent=n+s;return;}let t0=null;
+  const f=t=>{t0=t0||t;const p=Math.min(1,(t-t0)/1200);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f);};requestAnimationFrame(f);}
+// network diagram
+const N={me:[320,40,'STEVEN','APPROVES'],co:[320,130,'COORDINATOR','ROUTES WORK'],
+  sales:[80,230,'SALES','LEADS · OUTREACH'],clips:[240,230,'CLIPS','EDIT · QA'],digital:[400,230,'PRODUCTS','KITS · STORE'],hq:[560,230,'HQ + BRAIN','HEALTH · MEMORY'],
+  t1:[80,345,'GMAIL',''],t2:[240,345,'CLIP ENGINE',''],t3:[400,345,'STRIPE · GUMROAD',''],t4:[560,345,'LOCAL MODELS','']};
+const E=[['me','co'],['co','sales'],['co','clips'],['co','digital'],['co','hq'],['sales','t1'],['clips','t2'],['digital','t3'],['hq','t4']];
+const ns='http://www.w3.org/2000/svg',W=document.getElementById('wires'),P=document.getElementById('pkts'),ND=document.getElementById('nodes');
+E.forEach(([a,b],i)=>{const[x1,y1]=N[a],[x2,y2]=N[b];const p=document.createElementNS(ns,'path');const my=(y1+y2)/2;
+  p.setAttribute('d',`M${x1},${y1+18} C${x1},${my} ${x2},${my} ${x2},${y2-18}`);p.setAttribute('class','wire');p.id='w'+i;W.appendChild(p);
+  if(!reduce){const c=document.createElementNS(ns,'circle');c.setAttribute('r',4);c.setAttribute('class','pk'+(i%2?' t':''));
+    const m=document.createElementNS(ns,'animateMotion');m.setAttribute('dur',(2.2+(i%3)*.6)+'s');m.setAttribute('repeatCount','indefinite');m.setAttribute('begin',(i*.35)+'s');
+    if(i===0)m.setAttribute('keyPoints','1;0'),m.setAttribute('keyTimes','0;1');
+    const mp=document.createElementNS(ns,'mpath');mp.setAttribute('href','#w'+i);m.appendChild(mp);c.appendChild(m);P.appendChild(c);}});
+Object.entries(N).forEach(([k,[x,y,l,s]])=>{const g=document.createElementNS(ns,'g');g.setAttribute('class','node '+(k==='me'?'me':k==='co'?'co':''));
+  const w=k.startsWith('t')?128:134,h=s?40:30;g.innerHTML=`<rect x="${x-w/2}" y="${y-h/2}" width="${w}" height="${h}" rx="8"/><text x="${x}" y="${y+(s?-2:4)}" text-anchor="middle">${l}</text>${s?`<text class="k" x="${x}" y="${y+13}" text-anchor="middle">${s}</text>`:''}`;ND.appendChild(g);});
+// activity log (illustrative of what HQ records)
+const L=[['09:05','ok','morning brief written · emailed + pushed to phone'],['09:06','','sales: 14 founder podcasts screened, 3 qualified'],['09:12','','clips: transcript ready · 2,141 words, word timings'],
+  ['09:13','','clips: 4 moments picked · hooks scored'],['09:15','ok','clips: render 1/4 done · −14.0 LUFS · 8.7 MB'],['09:16','ap','APPROVAL NEEDED · send sample pack to a podcast?'],['09:18','ok','approved by Steven · sent from Gmail · ledger #212'],
+  ['09:20','wa','duplicate check: thread already answered · send skipped'],['09:31','','products: listing copy passed copycheck'],['09:40','ok','health: 11/12 services up · swap high, flagged'],['09:41','','cost: local models $0.00 · cloud under the daily cap']];
+const log=document.getElementById('log');let k=0;
+const add=()=>{const[t,c,m]=L[k%L.length];const d=document.createElement('div');d.innerHTML=`<span class="t">${t}</span> <span class="${c}">${m}</span>`;log.appendChild(d);if(log.children.length>12)log.removeChild(log.firstChild);k++;};
+for(let i=0;i<6;i++)add();if(!reduce)setInterval(add,1700);
+// pipeline
+const steps=[...document.querySelectorAll('#pipe .step')];let s=0;
+const lit=()=>{steps.forEach((e,i)=>e.classList.toggle('on',i<=s));s=(s+1)%(steps.length+1);};lit();if(!reduce)setInterval(lit,900);
+// phone notifications
+const LOGO='<svg class="shl ink" role="img" aria-label="sh."><use href="#shl"/></svg>';const notes=[[LOGO+' HQ','Approval needed: send 3 sample clips to a founder podcast?',1],[LOGO+' HQ','Morning brief: 3 follow-ups due, 1 reply waiting, $0 spent on cloud AI today.',0],[LOGO+' HQ','Clip pack passed QA. Ready to deliver.',1]];
+const box=document.getElementById('notes');let q=0;
+function showNote(){const[a,b,act]=notes[q%notes.length];q++;box.innerHTML='';const d=document.createElement('div');d.className='note';d.style.top='150px';
+  d.innerHTML=`<div class="h"><i></i>${a}<small>now</small></div>${b}${act?'<div class="acts"><span>Approve</span><span>Deny</span></div>':''}`;box.appendChild(d);requestAnimationFrame(()=>requestAnimationFrame(()=>d.classList.add('show')));}
+showNote();if(!reduce)setInterval(showNote,4200);
+// BadUSB typing
+const script=['$ plug-in: Pico W detected as "USB Keyboard"','> ⌘ + SPACE','> "terminal" ⏎','> open ~/Steven-Hainley-Resume.pdf ⏎','✓ résumé opened · 3.1 s','','(payload lock: stays off until I enable it)'].join('\n');
+const ty=document.getElementById('typed');let c=0;
+const type=()=>{ty.innerHTML=script.slice(0,c).replace(/</g,'&lt;')+'<span class="cur"></span>';c++;if(c<=script.length)setTimeout(type,script[c-1]==='\n'?420:38);else setTimeout(()=>{c=0;type();},3000);};
+if(reduce){ty.textContent=script;}else{new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){type();o.disconnect();}}).observe(ty);}
+// Paddy LCD menu
+const apps=['GOLF SCORECARD','GPS','WI-FI LIST','BATTERY','CLOCK','<svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> ALERTS'];let a=0;const lcd=document.getElementById('lcd');
+const menu=()=>{lcd.innerHTML='PADDY OS 0.1<br>'+apps.map((x,i)=>i===a?`<span class="sel">▶ ${x}</span>`:`&nbsp; ${x}`).join('<br>');a=(a+1)%apps.length;};menu();if(!reduce)setInterval(menu,1100);
+// flip on tap/keyboard
+const fl=document.getElementById('flip');fl.addEventListener('click',()=>fl.classList.toggle('on'));fl.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fl.classList.toggle('on');}});
+})();
+</script>
+</body>
+</html>

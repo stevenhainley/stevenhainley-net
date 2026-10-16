@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="15 0 64 64">
+<g transform="translate(47 44) rotate(-45)">
+<path d="M-16 -5L-12 -30L13 -30L17 -5Z" fill="#8EAE84"/>
+<path d="M-23 -5Q0 -1 23 -5L23 1Q0 6 -23 1Z" fill="#8EAE84"/>
+<path d="M-14 -13L15 -13L16 -7L-15 -7Z" fill="#203D30"/>
+<path fill="#B5D5AE" fill-rule="evenodd" d="M-3-14H6V-6H-3ZM-1-12V-8H4V-12Z"/>
+</g>
+</svg>
