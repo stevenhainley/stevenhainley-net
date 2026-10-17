@@ -167,54 +167,58 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);lin
 .flip img{backface-visibility:hidden}
 .flip img.back{position:absolute;inset:0;transform:rotateY(180deg);height:100%;object-fit:cover}
 .hint{font-family:var(--pixel);font-size:9px;opacity:.7;margin-top:10px}
-/* BADUSB illustrated demo */
-.usb-demo{position:relative;overflow:hidden;padding:14px 0 30px}
-.lap{position:relative;width:100%;max-width:392px;margin:0 auto;transform:perspective(1250px) rotateX(5deg) rotateY(17deg);transform-style:preserve-3d;filter:drop-shadow(10px 20px 22px rgba(0,0,0,.5))}
-.lap .cam{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:#05070a;box-shadow:0 0 0 1px #2c343d;z-index:4}
-.lap .lid{position:relative;background:#232a33;border:5px solid #0e1217;border-radius:12px 12px 3px 3px;padding:9px 9px 11px;box-shadow:inset 0 0 0 1px #2d353f;z-index:2}
-.lap .scr{position:relative;aspect-ratio:16/10;background:#060a0f;border-radius:3px;overflow:hidden;font-family:var(--mono);color:#e7edf3}
-.lap .hinge{height:9px;margin:0 20px;background:linear-gradient(#2a323c,#0f141a);border-radius:0 0 5px 5px;box-shadow:inset 0 2px 3px rgba(0,0,0,.55);position:relative;z-index:1}
-.lap .deck{position:relative;height:72px;margin:0 -4px;background:linear-gradient(#2d353f,#171d25);border:5px solid #0e1217;border-top:none;border-radius:3px 3px 13px 13px;clip-path:polygon(4% 0,96% 0,100% 100%,0 100%);box-shadow:inset 0 3px 5px rgba(0,0,0,.4)}
-.lap .keys{position:absolute;top:9px;left:9%;right:9%;height:38px;display:grid;grid-template-columns:repeat(13,1fr);gap:2px}
-.lap .keys span{background:#0f141a;border-radius:1.5px;box-shadow:inset 0 -1px 0 rgba(255,255,255,.05),0 1px 0 rgba(0,0,0,.4)}
-.lap .pad{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:36%;height:15px;background:#0f141a;border-radius:2px;box-shadow:inset 0 0 0 1px #262e37}
-.lap .side-port{position:absolute;right:-6px;top:26px;width:6px;height:15px;background:#05070a;border:2px solid #0e1217;border-radius:2px;z-index:3}
-.stick{position:absolute;right:-104px;top:27px;display:flex;align-items:center;z-index:5;transition:transform 1.15s cubic-bezier(.45,0,.25,1)}
-.plug .stick,.search .stick,.term .stick,.done .stick{transform:translateX(-92px)}
-.stick .conn{width:13px;height:9px;background:#c8ccd3;border:2px solid #0b0e13;border-right:none;border-radius:2px 0 0 2px}
-.stick .body{width:42px;height:17px;background:linear-gradient(#303845,#171c24);border:2px solid #0b0e13;border-radius:2px;position:relative}
-.stick .led{position:absolute;right:5px;top:4.5px;width:5px;height:5px;border-radius:50%;background:#2a3b22}
-.plug .stick .led,.search .stick .led,.term .stick .led,.done .stick .led{background:var(--lime);box-shadow:0 0 7px 1px var(--lime);animation:usbblink 1s steps(2) infinite}
-@keyframes usbblink{50%{opacity:.3}}
-.stick .cable{width:40px;height:5px;margin-left:-1px;border-radius:0 3px 3px 0;background:repeating-linear-gradient(90deg,#2a3cff 0 5px,#e9edf4 5px 10px)}
-.scr .layer{position:absolute;inset:0;opacity:0;transition:opacity .3s}
+/* BADUSB illustrated demo (sleek MacBook, SVG + mapped screen) */
+.usb-demo{position:relative;overflow:hidden;padding:12px 0 20px}
+.mac{display:block;width:100%;max-width:432px;height:auto;margin:0 auto}
+.mac .mshadow{opacity:.85}
+/* mapped screen content */
+.scr{width:300px;height:190px;position:relative;background:#060a0f;overflow:hidden;font-family:var(--mono);color:#e7edf3;border-radius:2px}
+.scr .layer{position:absolute;inset:0;opacity:0;transition:opacity .35s}
 .plug .l-desk,.search .l-desk{opacity:1}
 .term .l-term{opacity:1}
 .done .l-resume{opacity:1}
-.l-desk{background:radial-gradient(130% 100% at 50% -10%,#1c2f8a,#0b1030)}
-.scr .mbar{position:absolute;top:0;left:0;right:0;height:14px;background:rgba(10,13,22,.6);display:flex;align-items:center;gap:7px;padding:0 8px;font-size:8px;color:#aeb7c4;letter-spacing:.4px}
-.scr .mbar b{color:#fff}
-.scr .mbar .r{margin-left:auto;opacity:.8}
-.spot{position:absolute;top:30%;left:50%;transform:translateX(-50%);width:72%;background:rgba(240,242,246,.97);color:#10141a;border-radius:8px;display:flex;align-items:center;gap:8px;padding:7px 10px;box-shadow:0 14px 30px rgba(0,0,0,.4);font-size:11px}
-.spot .mag{width:11px;height:11px;border:2px solid #70757c;border-radius:50%;position:relative;flex:none}
-.spot .mag:after{content:"";position:absolute;right:-3px;bottom:-3px;width:5px;height:2px;background:#70757c;transform:rotate(45deg)}
+.scr .glass{position:absolute;inset:0;background:linear-gradient(118deg,rgba(255,255,255,.08) 0 15%,rgba(255,255,255,0) 44%);pointer-events:none;z-index:6}
+/* desktop */
+.l-desk{background:radial-gradient(120% 95% at 28% 0%,#2a3cae,#141a52 55%,#0a0d30)}
+.l-desk .wall-top{position:absolute;inset:0;background:radial-gradient(60% 40% at 78% 110%,rgba(90,200,245,.22),transparent 70%)}
+.scr .mbar{position:absolute;top:0;left:0;right:0;height:17px;background:rgba(8,11,20,.55);backdrop-filter:blur(2px);display:flex;align-items:center;gap:9px;padding:0 10px;font-size:10px;color:#e7ecf2;z-index:2}
+.scr .mbar b{color:#fff}.scr .mbar .r{margin-left:auto;opacity:.85}
+.l-desk .clock{position:absolute;top:30px;left:0;right:0;text-align:center;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.l-desk .clock .t{font-family:var(--body);font-weight:500;font-size:40px;line-height:1}
+.l-desk .clock .dt{font-size:10px;opacity:.85;margin-top:2px}
+.l-desk .dock{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:flex;gap:7px;padding:5px 8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:11px}
+.l-desk .dock i{width:20px;height:20px;border-radius:5px;display:block;background:linear-gradient(#e9edf4,#aeb8c6)}
+.l-desk .dock i:nth-child(1){background:linear-gradient(#5ac8f5,#2a6cf0)}.l-desk .dock i:nth-child(2){background:linear-gradient(#c6ff3d,#7bb500)}.l-desk .dock i:nth-child(3){background:linear-gradient(#ff7a7a,#d32f2f)}.l-desk .dock i:nth-child(5){background:linear-gradient(#1b1f27,#000)}
+.spot{opacity:0;transition:opacity .3s}
+.search .spot{opacity:1}
+.spot{position:absolute;top:120px;left:50%;transform:translateX(-50%);width:76%;background:rgba(244,246,250,.97);color:#10141a;border-radius:9px;display:flex;align-items:center;gap:9px;padding:8px 11px;box-shadow:0 16px 34px rgba(0,0,0,.45);font-size:13px;z-index:3}
+.spot .mag{width:13px;height:13px;border:2px solid #70757c;border-radius:50%;position:relative;flex:none}
+.spot .mag:after{content:"";position:absolute;right:-3px;bottom:-3px;width:6px;height:2px;background:#70757c;transform:rotate(45deg)}
 .spot .q{flex:1;white-space:nowrap;overflow:hidden}
 .spot .cur,.cmd .cur{display:inline-block;width:1px;height:1em;background:currentColor;vertical-align:-2px;margin-left:1px;animation:blink 1s steps(2) infinite}
-.l-term{background:#0a0f14;padding:7px}
-.l-term .win{height:100%;background:#0c1118;border:1px solid #1d2630;border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
-.l-term .tb{display:flex;align-items:center;gap:5px;padding:5px 8px;background:#141b24;font-size:8px;color:#8b95a1}
-.l-term .tb i{width:7px;height:7px;border-radius:50%;background:#333;display:block}.l-term .tb i:first-child{background:var(--red)}.l-term .tb i:nth-child(2){background:#ffbd2e}.l-term .tb i:nth-child(3){background:var(--mint)}
-.l-term .tb span{margin-left:4px}
-.cmd{padding:9px;font-size:10px;line-height:1.55;color:#d9e2ea;white-space:pre-wrap;word-break:break-all;flex:1}
+/* terminal */
+.l-term{background:#0a0f14;padding:10px}
+.l-term .win{height:100%;background:#0c1118;border:1px solid #1d2630;border-radius:7px;overflow:hidden;display:flex;flex-direction:column}
+.l-term .tb{display:flex;align-items:center;gap:6px;padding:6px 9px;background:#141b24;font-size:10px;color:#8b95a1}
+.l-term .tb i{width:9px;height:9px;border-radius:50%;background:#333;display:block}.l-term .tb i:first-child{background:var(--red)}.l-term .tb i:nth-child(2){background:#ffbd2e}.l-term .tb i:nth-child(3){background:var(--mint)}
+.l-term .tb span{margin-left:5px}
+.cmd{padding:11px;font-size:11.5px;line-height:1.55;color:#d9e2ea;white-space:pre-wrap;word-break:break-all;flex:1}
 .cmd .p{color:var(--mint)}.cmd .c{color:#8fe3ff}
+/* resume */
 .l-resume{background:#f5f4ef;color:#1a1a17}
-.doc{height:100%;overflow:hidden;padding:9px 11px;font-family:var(--body);font-size:8.5px;line-height:1.35}
+.doc{height:100%;overflow:hidden;padding:10px 13px;font-family:var(--body);font-size:9.4px;line-height:1.26}
 .doc .dh{text-align:center;border-bottom:1.5px solid #1b2a52;padding-bottom:4px;margin-bottom:5px}
-.doc .dh b{font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:1px;color:#1b2a52;display:block}
-.doc .dh span{font-size:7.5px;color:#555}
-.doc .ds{font-family:var(--mono);font-size:7px;letter-spacing:1.5px;color:#1b2a52;border-bottom:1px solid #c9ccd2;margin:5px 0 2px}
+.doc .dh b{font-family:var(--display);font-weight:400;font-size:17px;letter-spacing:1px;color:#1b2a52;display:block}
+.doc .dh span{font-size:9px;color:#555}
+.doc .ds{font-family:var(--mono);font-size:7.5px;letter-spacing:1.3px;color:#1b2a52;border-bottom:1px solid #c9ccd2;margin:5px 0 2px}
 .doc p{margin:2px 0}.doc b{color:#111}
-.doc .dlink{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:8px;color:#1b2a52;border:1px solid #1b2a52;border-radius:4px;padding:3px 7px;text-decoration:none}
+.doc .dlink{display:inline-block;margin-top:5px;font-family:var(--mono);font-size:9px;color:#1b2a52;border:1px solid #1b2a52;border-radius:4px;padding:4px 8px;text-decoration:none}
+/* Pico plug-in + LED */
+#usbdemo .pico{transform:translate(56.3px,3.2px);transition:transform 1.15s cubic-bezier(.45,0,.25,1)}
+#usbdemo.plug .pico,#usbdemo.search .pico,#usbdemo.term .pico,#usbdemo.done .pico{transform:translate(0,0)}
+#usbdemo .pico .led{fill:#243619}
+#usbdemo.plug .pico .led,#usbdemo.search .pico .led,#usbdemo.term .pico .led,#usbdemo.done .pico .led{fill:#c6ff3d;filter:drop-shadow(0 0 5px #c6ff3d);animation:usbblink 1s steps(2) infinite}
+@keyframes usbblink{50%{opacity:.35}}
 /* scrapbook prints */
 .prints{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:34px}
 .print{position:relative;background:#fff;padding:9px 9px 30px;box-shadow:7px 9px 0 rgba(0,0,0,.32);color:#1a1a17;width:200px;transform:rotate(var(--r,-3deg));transition:transform .2s}
@@ -451,36 +455,69 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <article class="proj reveal" id="badusb">
     <div class="vis">
       <div class="usb-demo" id="usbdemo" role="img" aria-label="Animation: the BadUSB plugs into a laptop, opens Terminal, curls Steven's resume PDF from GitHub, and the resume renders on screen.">
-        <div class="lap">
-          <span class="cam"></span>
-          <div class="lid"><div class="scr">
-            <div class="layer l-desk">
-              <div class="mbar"><b></b><span>Finder</span><span class="r">Thu 9:05</span></div>
-              <div class="spot"><span class="mag"></span><span class="q" id="usb-spot"></span></div>
-            </div>
-            <div class="layer l-term"><div class="win">
-              <div class="tb"><i></i><i></i><i></i><span>terminal — bash</span></div>
-              <div class="cmd" id="usb-cmd"></div>
-            </div></div>
-            <div class="layer l-resume"><div class="doc">
-              <div class="dh"><b>STEVEN HAINLEY</b><span>East Taunton, MA · stevenhainley@gmail.com</span></div>
-              <div class="ds">EDUCATION</div>
-              <p><b>Worcester Polytechnic Institute</b> — B.S. Cybersecurity, minor in Law &amp; Technology · GPA 3.7 · Expected May 2029</p>
-              <div class="ds">SKILLS</div>
-              <p>Flipper Zero · Raspberry Pi Pico W · BadUSB / HID injection · hardware teardown · Linux CLI · Proxmox · Docker · Python / CircuitPython · CompTIA Security+ (in progress)</p>
-              <div class="ds">PROJECTS</div>
-              <p><b>LinkedIn BadUSB</b> — keystroke-injection tool on a Pico W.</p>
-              <p><b>Cybersecurity homelab</b> — self-hosted services behind a dashboard.</p>
-              <a class="dlink" href="assets/Steven-Hainley-Resume.pdf" target="_blank" rel="noopener noreferrer">View full résumé ↗</a>
-            </div></div>
-          </div></div>
-          <div class="hinge"></div>
-          <div class="deck"><div class="keys" id="usbkeys" aria-hidden="true"></div><div class="pad"></div>
-            <span class="side-port"></span>
-            <span class="stick"><span class="conn"></span><span class="body"><span class="led"></span></span><span class="cable"></span></span>
+        <svg class="mac" viewBox="0 0 488 280" role="img" aria-label="Animation: a Raspberry Pi Pico in a clear case plugs into a laptop's side port, Terminal opens and downloads Steven's resume from GitHub, and the resume renders on screen." xmlns="http://www.w3.org/2000/svg">
+         <defs>
+          <linearGradient id="mgLidEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b4049"/><stop offset="1" stop-color="#0e1116"/></linearGradient>
+          <linearGradient id="mgDeck" x1="0.15" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#565c66"/><stop offset="1" stop-color="#2a2f37"/></linearGradient>
+          <linearGradient id="mgSide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3039"/><stop offset="1" stop-color="#111419"/></linearGradient>
+          <linearGradient id="mgFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a404a"/><stop offset="1" stop-color="#14171c"/></linearGradient>
+          <linearGradient id="mgPad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f454f"/><stop offset="1" stop-color="#2f343c"/></linearGradient>
+          <linearGradient id="mgCase" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef3f6" stop-opacity=".5"/><stop offset="1" stop-color="#9fb0b8" stop-opacity=".32"/></linearGradient>
+          <linearGradient id="mgPcb" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#1f7a43"/><stop offset="1" stop-color="#0e5a2d"/></linearGradient>
+          <radialGradient id="mgShadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity=".48"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+         </defs>
+         <ellipse class="mshadow" cx="200.3" cy="244.2" rx="195.20000000000002" ry="15" fill="url(#mgShadow)"/>
+         <polygon points="97.3,28.0 355.8,42.5 358.5,40.3 100.0,25.8" fill="url(#mgLidEdge)"/>
+         <polygon points="355.8,42.5 344.6,214.3 347.3,212.1 358.5,40.3" fill="url(#mgLidEdge)"/>
+         <polygon points="97.3,28.0 355.8,42.5 344.6,214.3 86.1,199.8" fill="#07090c" stroke="#2c323a" stroke-width="2" stroke-linejoin="round"/>
+         <foreignObject x="0" y="0" width="300" height="190" transform="matrix(0.7603 0.0427 -0.0516 0.7921 111.8 38.7)">
+          <div class="scr" xmlns="http://www.w3.org/1999/xhtml">
+           <div class="layer l-desk">
+             <div class="wall-top"></div>
+             <div class="mbar"><b></b><span>Finder</span><span class="r">Thu 9:05</span></div>
+             <div class="clock"><div class="t">9:05</div><div class="dt">Thursday, October 16</div></div>
+             <div class="spot"><span class="mag"></span><span class="q" id="usb-spot"></span></div>
+             <div class="dock"><i></i><i></i><i></i><i></i><i></i></div>
+           </div>
+           <div class="layer l-term"><div class="win">
+             <div class="tb"><i></i><i></i><i></i><span>terminal &#8212; bash</span></div>
+             <div class="cmd" id="usb-cmd"></div>
+           </div></div>
+           <div class="layer l-resume"><div class="doc">
+             <div class="dh"><b>STEVEN HAINLEY</b><span>East Taunton, MA &#183; stevenhainley@gmail.com</span></div>
+             <div class="ds">EDUCATION</div>
+             <p><b>Worcester Polytechnic Institute</b> &#8212; B.S. Cybersecurity, minor in Law &amp; Technology. GPA 3.7. Expected May 2029.</p>
+             <div class="ds">SKILLS</div>
+             <p>Flipper Zero &#183; Raspberry Pi Pico W &#183; BadUSB / HID injection &#183; hardware teardown &#183; Linux CLI &#183; Proxmox &#183; Docker &#183; Python &#183; CompTIA Security+ (in progress)</p>
+             <div class="ds">PROJECTS</div>
+             <p><b>LinkedIn BadUSB</b> &#8212; keystroke-injection tool on a Pico W.</p>
+                     <a class="dlink" href="assets/Steven-Hainley-Resume.pdf" target="_blank" rel="noopener noreferrer">View full r&#233;sum&#233; &#8599;</a>
+           </div></div>
+           <div class="glass"></div>
           </div>
-        </div>
-      </div>
+         </foreignObject>
+         <circle class="mcam" cx="226.2" cy="40.1" r="1.7" fill="#11161c" stroke="#2c333b" stroke-width="0.6"/>
+         <polygon points="97.3,28.0 355.8,42.5 344.6,214.3 86.1,199.8" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="1.2" stroke-linejoin="round"/>
+         <polygon points="344.6,214.3 298.5,230.2 298.5,239.9 344.6,224.1" fill="url(#mgSide)"/>
+         <polygon points="345.5,215.4 322.8,223.2 322.8,230.2 345.5,222.4" fill="#05070a" stroke="#4a515b" stroke-width="1"/>
+         <polygon points="312.9,227.1 300.6,231.3 300.6,237.3 312.9,233.1" fill="#05070a" stroke="#3a414a" stroke-width="0.8"/>
+         <polygon points="40.0,215.7 298.5,230.2 298.5,239.9 40.0,225.4" fill="url(#mgFront)"/>
+         <polygon points="86.1,199.8 344.6,214.3 298.5,230.2 40.0,215.7" fill="url(#mgDeck)"/>
+         <polygon points="100.9,202.6 319.9,214.9 299.0,222.1 80.0,209.8" fill="#13161b"/>
+         <g class="mac-keys" fill="none" stroke="#3a414b" stroke-width="0.8" stroke-linecap="round"><polyline points="117.2,203.8 97.5,210.5"/><polyline points="134.0,204.7 114.3,211.5"/><polyline points="150.8,205.6 131.2,212.4"/><polyline points="167.7,206.6 148.0,213.4"/><polyline points="184.5,207.5 164.9,214.3"/><polyline points="201.4,208.5 181.7,215.3"/><polyline points="218.2,209.4 198.6,216.2"/><polyline points="235.1,210.4 215.4,217.2"/><polyline points="251.9,211.3 232.2,218.1"/><polyline points="268.7,212.3 249.1,219.1"/><polyline points="285.6,213.2 265.9,220.0"/><polyline points="302.4,214.2 282.8,220.9"/><polyline points="98.3,204.1 314.2,216.3"/><polyline points="94.1,205.6 310.0,217.7"/><polyline points="89.9,207.0 305.8,219.1"/><polyline points="85.7,208.4 301.7,220.6"/></g>
+         <polygon points="143.6,215.3 225.7,219.9 213.4,224.2 131.3,219.6" fill="url(#mgPad)" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+         <g class="pico">
+          <line x1="340.2" y1="221.5" x2="358.5" y2="222.5" stroke="#cfd6de" stroke-width="8" stroke-linecap="round"/>
+          <line x1="340.2" y1="221.5" x2="358.5" y2="222.5" stroke="#2a3cff" stroke-width="8" stroke-linecap="round" stroke-dasharray="5 5"/>
+          <polygon points="337.2,219.5 350.9,220.3 341.7,223.4 328.0,222.7" fill="#cfd4da" stroke="#0b0e13" stroke-width="1.5"/>
+          <polygon class="pcase" points="369.1,216.1 496.1,223.3 461.1,235.3 334.1,228.2" fill="url(#mgCase)" stroke="#e3ebee" stroke-width="1.2" stroke-opacity="0.75"/>
+          <polygon points="372.3,217.2 487.9,223.7 457.1,234.2 341.6,227.7" fill="url(#mgPcb)" stroke="#0c4a26" stroke-width="1.2"/>
+          <g fill="#e7b63a"><polygon points="378.4,217.1 383.3,217.4 381.7,217.9 376.9,217.7"/><polygon points="347.4,227.8 352.2,228.1 350.7,228.6 345.8,228.4"/><polygon points="386.8,217.6 391.6,217.9 390.1,218.4 385.2,218.1"/><polygon points="355.7,228.3 360.6,228.6 359.1,229.1 354.2,228.8"/><polygon points="395.1,218.1 400.0,218.4 398.4,218.9 393.6,218.6"/><polygon points="364.1,228.8 369.0,229.0 367.4,229.6 362.6,229.3"/><polygon points="403.5,218.5 408.3,218.8 406.8,219.4 401.9,219.1"/><polygon points="372.5,229.2 377.3,229.5 375.8,230.0 370.9,229.8"/><polygon points="411.8,219.0 416.7,219.3 415.2,219.8 410.3,219.5"/><polygon points="380.8,229.7 385.7,230.0 384.1,230.5 379.3,230.2"/><polygon points="420.2,219.5 425.1,219.8 423.5,220.3 418.7,220.0"/><polygon points="389.2,230.2 394.0,230.5 392.5,231.0 387.6,230.7"/><polygon points="428.6,220.0 433.4,220.2 431.9,220.8 427.0,220.5"/><polygon points="397.5,230.6 402.4,230.9 400.9,231.4 396.0,231.2"/><polygon points="436.9,220.4 441.8,220.7 440.3,221.2 435.4,221.0"/><polygon points="405.9,231.1 410.8,231.4 409.2,231.9 404.4,231.6"/><polygon points="445.3,220.9 450.2,221.2 448.6,221.7 443.8,221.4"/><polygon points="414.3,231.6 419.1,231.9 417.6,232.4 412.7,232.1"/><polygon points="453.7,221.4 458.5,221.6 457.0,222.2 452.1,221.9"/><polygon points="422.6,232.1 427.5,232.3 426.0,232.9 421.1,232.6"/><polygon points="462.0,221.8 466.9,222.1 465.4,222.6 460.5,222.4"/><polygon points="431.0,232.5 435.9,232.8 434.3,233.3 429.5,233.1"/><polygon points="470.4,222.3 475.3,222.6 473.7,223.1 468.8,222.8"/><polygon points="439.4,233.0 444.2,233.3 442.7,233.8 437.8,233.5"/><polygon points="478.7,222.8 483.6,223.1 482.1,223.6 477.2,223.3"/><polygon points="447.7,233.5 452.6,233.7 451.1,234.3 446.2,234.0"/></g>
+          <polygon points="353.9,220.4 364.6,221.0 355.4,224.2 344.7,223.6" fill="#b9bfc6" stroke="#6f767e" stroke-width="1"/>
+          <polygon points="412.4,221.0 477.8,224.7 455.1,232.5 389.7,228.9" fill="#cbd1d8" stroke="#878e96" stroke-width="1.2"/>
+          <circle class="led" cx="359.0" cy="226.0" r="4.6"/>
+         </g>
+        </svg>
       <p class="hint">▲ WHAT THE PICO TYPES WHEN I PLUG IT IN · DEMO ON MY OWN MACHINE</p>
       <div class="prints">
         <figure class="print" style="--r:-4deg"><span class="tape"></span><picture><source srcset="assets/badusb-photo-top.webp" type="image/webp"><img src="assets/badusb-photo-top.jpg" alt="The BadUSB I built: a Raspberry Pi Pico W in a clear case on a wooden table" loading="lazy" width="960" height="720"></picture><figcaption class="hand">the real thing</figcaption></figure>
@@ -641,17 +678,16 @@ function showNote(){const[a,b,act]=notes[q%notes.length];q++;box.innerHTML='';co
 showNote();if(!reduce)setInterval(showNote,4200);
 // BadUSB illustrated demo
 const demo=document.getElementById('usbdemo');
-(()=>{const kb=document.getElementById('usbkeys');if(kb){let h='';for(let i=0;i<39;i++)h+='<span></span>';kb.innerHTML=h;}})();
 const spot=document.getElementById('usb-spot'),cmd=document.getElementById('usb-cmd');
 const CURL='curl -sL -o /tmp/resume.pdf "https://raw.githubusercontent.com/stevenhainley/Steves-LinkedIn-BadUSB/main/Steven_Hainley_Resume.pdf" && open /tmp/resume.pdf';
 let uT=[];const uClear=()=>{uT.forEach(clearTimeout);uT=[];};const uAt=(ms,fn)=>uT.push(setTimeout(fn,ms));
 function uType(el,text,speed,done){let i=0;const step=()=>{el.innerHTML=(el===cmd?'<span class="p">$</span> <span class="c">'+text.slice(0,i).replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span>':text.slice(0,i))+'<span class="cur"></span>';i++;if(i<=text.length)uAt(speed,step);else{el.querySelector('.cur')&&el.querySelector('.cur').remove();done&&done();}};step();}
 function uRun(){uClear();demo.className='usb-demo';spot.textContent='';cmd.textContent='';
-  uAt(500,()=>demo.classList.add('plug'));
-  uAt(1700,()=>{demo.classList.add('search');uType(spot,'terminal',65);});
-  uAt(3150,()=>{demo.classList.remove('search');demo.classList.add('term');uType(cmd,CURL,20,()=>uAt(650,()=>{demo.classList.add('done');uAt(4000,uRun);}));});
+  uAt(500,()=>demo.className='usb-demo plug');
+  uAt(1700,()=>{demo.className='usb-demo search';uType(spot,'terminal',65);});
+  uAt(3150,()=>{demo.className='usb-demo term';uType(cmd,CURL,20,()=>uAt(650,()=>{demo.className='usb-demo done';uAt(4000,uRun);}));});
 }
-function uStatic(){uClear();demo.className='usb-demo plug done';spot.textContent='terminal';cmd.innerHTML='<span class="p">$</span> <span class="c">'+CURL.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span>';}
+function uStatic(){uClear();demo.className='usb-demo done';spot.textContent='terminal';cmd.innerHTML='<span class="p">$</span> <span class="c">'+CURL.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span>';}
 if(reduce){uStatic();}
 else{new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)uRun();else uClear();}),{threshold:.3}).observe(demo);}
 // Paddy LCD menu
