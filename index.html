@@ -206,13 +206,13 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);lin
 .cmd .p{color:var(--mint)}.cmd .c{color:#8fe3ff}
 /* resume */
 .l-resume{background:#f5f4ef;color:#1a1a17}
-.doc{height:100%;overflow:hidden;padding:10px 13px;font-family:var(--body);font-size:9.4px;line-height:1.26}
-.doc .dh{text-align:center;border-bottom:1.5px solid #1b2a52;padding-bottom:4px;margin-bottom:5px}
-.doc .dh b{font-family:var(--display);font-weight:400;font-size:17px;letter-spacing:1px;color:#1b2a52;display:block}
+.doc{height:100%;overflow:hidden;padding:7px 13px;font-family:var(--body);font-size:9px;line-height:1.22}
+.doc .dh{text-align:center;border-bottom:1.5px solid #1b2a52;padding-bottom:3px;margin-bottom:4px}
+.doc .dh b{font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:1px;color:#1b2a52;display:block}
 .doc .dh span{font-size:9px;color:#555}
-.doc .ds{font-family:var(--mono);font-size:7.5px;letter-spacing:1.3px;color:#1b2a52;border-bottom:1px solid #c9ccd2;margin:5px 0 2px}
+.doc .ds{font-family:var(--mono);font-size:7.5px;letter-spacing:1.3px;color:#1b2a52;border-bottom:1px solid #c9ccd2;margin:4px 0 2px}
 .doc p{margin:2px 0}.doc b{color:#111}
-.doc .dlink{display:inline-block;margin-top:5px;font-family:var(--mono);font-size:9px;color:#1b2a52;border:1px solid #1b2a52;border-radius:4px;padding:4px 8px;text-decoration:none}
+.doc .dlink{display:inline-block;margin-top:4px;font-family:var(--mono);font-size:9px;color:#1b2a52;border:1px solid #1b2a52;border-radius:4px;padding:4px 8px;text-decoration:none}
 /* Pico plug-in + LED */
 #usbdemo .pico{transform:translate(56.3px,3.2px);transition:transform 1.15s cubic-bezier(.45,0,.25,1)}
 #usbdemo.plug .pico,#usbdemo.search .pico,#usbdemo.term .pico,#usbdemo.done .pico{transform:translate(0,0)}
@@ -302,6 +302,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 .stub:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;border-left:2px dashed rgba(255,255,255,.7)}
 .stub b{display:block;font-size:20px;letter-spacing:3px}
 .stub small{display:block;font-size:10px;letter-spacing:1.5px;opacity:.9}
+}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .reveal.vis{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -434,7 +435,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
       </figure>
     </div>
     <div class="panel"><h3>Glim asks; I approve</h3>
-      <div class="phone" aria-hidden="true"><div class="clock" id="pclock">9:05</div><div class="date">Thursday</div><div id="notes"></div></div>
+      <div class="phone" aria-hidden="true"><div class="clock" id="pclock">9:05</div><div class="date">Friday</div><div id="notes"></div></div>
     </div>
   </div>
 
@@ -474,8 +475,8 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
           <div class="scr" xmlns="http://www.w3.org/1999/xhtml">
            <div class="layer l-desk">
              <div class="wall-top"></div>
-             <div class="mbar"><b></b><span>Finder</span><span class="r">Thu 9:05</span></div>
-             <div class="clock"><div class="t">9:05</div><div class="dt">Thursday, October 16</div></div>
+             <div class="mbar"><b></b><span>Finder</span><span class="r">Fri 9:05</span></div>
+             <div class="clock"><div class="t">9:05</div><div class="dt">Friday, October 16</div></div>
              <div class="spot"><span class="mag"></span><span class="q" id="usb-spot"></span></div>
              <div class="dock"><i></i><i></i><i></i><i></i><i></i></div>
            </div>
@@ -518,6 +519,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
           <circle class="led" cx="359.0" cy="226.0" r="4.6"/>
          </g>
         </svg>
+      </div>
       <p class="hint">▲ WHAT THE PICO TYPES WHEN I PLUG IT IN · DEMO ON MY OWN MACHINE</p>
       <div class="prints">
         <figure class="print" style="--r:-4deg"><span class="tape"></span><picture><source srcset="assets/badusb-photo-top.webp" type="image/webp"><img src="assets/badusb-photo-top.jpg" alt="The BadUSB I built: a Raspberry Pi Pico W in a clear case on a wooden table" loading="lazy" width="960" height="720"></picture><figcaption class="hand">the real thing</figcaption></figure>
