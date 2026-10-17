@@ -167,6 +167,61 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);lin
 .flip img{backface-visibility:hidden}
 .flip img.back{position:absolute;inset:0;transform:rotateY(180deg);height:100%;object-fit:cover}
 .hint{font-family:var(--pixel);font-size:9px;opacity:.7;margin-top:10px}
+/* BADUSB illustrated demo */
+.usb-demo{position:relative;overflow:hidden;padding:6px 0 28px}
+.lap{position:relative;width:100%;max-width:440px;margin:0 auto;filter:drop-shadow(0 16px 22px rgba(0,0,0,.45))}
+.lap .lid{background:#20262e;border:5px solid #0f1319;border-bottom:none;border-radius:12px 12px 0 0;padding:8px 8px 0}
+.lap .scr{position:relative;aspect-ratio:16/10;background:#060a0f;border-radius:4px;overflow:hidden;font-family:var(--mono);color:#e7edf3}
+.lap .base{position:relative;height:13px;background:linear-gradient(#333d48,#191f27);border:5px solid #0f1319;border-top:none;border-radius:0 0 11px 11px}
+.lap .base:after{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:72px;height:4px;background:#0f1319;border-radius:0 0 7px 7px}
+.port{position:absolute;right:-7px;top:-6px;width:9px;height:12px;background:#05070a;border:2px solid #0f1319;border-radius:2px;z-index:1}
+.stick{position:absolute;right:-150px;top:-6px;display:flex;align-items:center;z-index:2;transition:transform 1.15s cubic-bezier(.45,0,.25,1)}
+.plug .stick,.search .stick,.term .stick,.done .stick{transform:translateX(-150px)}
+.stick .conn{width:13px;height:9px;background:#c8ccd3;border:2px solid #0b0e13;border-right:none;border-radius:2px 0 0 2px}
+.stick .body{width:44px;height:16px;background:linear-gradient(#2c3441,#161b23);border:2px solid #0b0e13;border-radius:2px;position:relative}
+.stick .led{position:absolute;right:5px;top:4px;width:5px;height:5px;border-radius:50%;background:#2a3b22}
+.plug .stick .led,.search .stick .led,.term .stick .led,.done .stick .led{background:var(--lime);box-shadow:0 0 6px var(--lime);animation:usbblink 1s steps(2) infinite}
+@keyframes usbblink{50%{opacity:.25}}
+.stick .cable{width:40px;height:4px;margin-left:-1px;border-radius:0 3px 3px 0;background:repeating-linear-gradient(90deg,#2a3cff 0 5px,#e9edf4 5px 10px)}
+.scr .layer{position:absolute;inset:0;opacity:0;transition:opacity .3s}
+.plug .l-desk,.search .l-desk{opacity:1}
+.term .l-term{opacity:1}
+.done .l-resume{opacity:1}
+.l-desk{background:radial-gradient(130% 100% at 50% -10%,#1c2f8a,#0b1030)}
+.scr .mbar{position:absolute;top:0;left:0;right:0;height:14px;background:rgba(10,13,22,.6);display:flex;align-items:center;gap:7px;padding:0 8px;font-size:8px;color:#aeb7c4;letter-spacing:.4px}
+.scr .mbar b{color:#fff}
+.scr .mbar .r{margin-left:auto;opacity:.8}
+.spot{position:absolute;top:30%;left:50%;transform:translateX(-50%);width:72%;background:rgba(240,242,246,.97);color:#10141a;border-radius:8px;display:flex;align-items:center;gap:8px;padding:7px 10px;box-shadow:0 14px 30px rgba(0,0,0,.4);font-size:11px}
+.spot .mag{width:11px;height:11px;border:2px solid #70757c;border-radius:50%;position:relative;flex:none}
+.spot .mag:after{content:"";position:absolute;right:-3px;bottom:-3px;width:5px;height:2px;background:#70757c;transform:rotate(45deg)}
+.spot .q{flex:1;white-space:nowrap;overflow:hidden}
+.spot .cur,.cmd .cur{display:inline-block;width:1px;height:1em;background:currentColor;vertical-align:-2px;margin-left:1px;animation:blink 1s steps(2) infinite}
+.l-term{background:#0a0f14;padding:7px}
+.l-term .win{height:100%;background:#0c1118;border:1px solid #1d2630;border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.l-term .tb{display:flex;align-items:center;gap:5px;padding:5px 8px;background:#141b24;font-size:8px;color:#8b95a1}
+.l-term .tb i{width:7px;height:7px;border-radius:50%;background:#333;display:block}.l-term .tb i:first-child{background:var(--red)}.l-term .tb i:nth-child(2){background:#ffbd2e}.l-term .tb i:nth-child(3){background:var(--mint)}
+.l-term .tb span{margin-left:4px}
+.cmd{padding:9px;font-size:10px;line-height:1.55;color:#d9e2ea;white-space:pre-wrap;word-break:break-all;flex:1}
+.cmd .p{color:var(--mint)}.cmd .c{color:#8fe3ff}
+.l-resume{background:#f5f4ef;color:#1a1a17}
+.doc{height:100%;overflow:hidden;padding:9px 11px;font-family:var(--body);font-size:8.5px;line-height:1.35}
+.doc .dh{text-align:center;border-bottom:1.5px solid #1b2a52;padding-bottom:4px;margin-bottom:5px}
+.doc .dh b{font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:1px;color:#1b2a52;display:block}
+.doc .dh span{font-size:7.5px;color:#555}
+.doc .ds{font-family:var(--mono);font-size:7px;letter-spacing:1.5px;color:#1b2a52;border-bottom:1px solid #c9ccd2;margin:5px 0 2px}
+.doc p{margin:2px 0}.doc b{color:#111}
+.doc .dlink{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:8px;color:#1b2a52;border:1px solid #1b2a52;border-radius:4px;padding:3px 7px;text-decoration:none}
+/* scrapbook prints */
+.prints{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:34px}
+.print{position:relative;background:#fff;padding:9px 9px 30px;box-shadow:7px 9px 0 rgba(0,0,0,.32);color:#1a1a17;width:200px;transform:rotate(var(--r,-3deg));transition:transform .2s}
+.print:hover{transform:rotate(0) scale(1.03)}
+.print picture{display:block;line-height:0}
+.print img{display:block;width:100%;height:150px;object-fit:cover}
+.print .tape{position:absolute;top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg);width:84px;height:22px;background:rgba(198,244,50,.5);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.print:nth-child(2) .tape{transform:translateX(-50%) rotate(4deg);background:rgba(255,246,200,.72)}
+.print figcaption{font-family:'Permanent Marker',cursive;font-size:15px;text-align:center;margin-top:9px;color:#1a1a17}
+@media(max-width:860px){.prints{gap:18px}.print{width:46%;max-width:210px}.print figcaption{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.stick{transition:none}.scr .layer{transition:none}}
 .board{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
 .svc{display:flex;align-items:center;justify-content:space-between;background:#0d0f1a;border:2px solid #222;padding:8px 10px;font-family:var(--mono);font-size:12px}
 .svc i{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint);animation:pulse 2s infinite}
@@ -390,7 +445,39 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 <section id="work" style="padding-top:20px"><div class="wrap">
 
   <article class="proj reveal" id="badusb">
-    <div class="vis"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="typed" id="typed"></div></div><p class="hint">▲ A SIMULATION OF WHAT THE PICO TYPES</p></div>
+    <div class="vis">
+      <div class="usb-demo" id="usbdemo" role="img" aria-label="Animation: the BadUSB plugs into a laptop, opens Terminal, curls Steven's resume PDF from GitHub, and the resume renders on screen.">
+        <div class="lap">
+          <div class="lid"><div class="scr">
+            <div class="layer l-desk">
+              <div class="mbar"><b></b><span>Finder</span><span class="r">Thu 9:05</span></div>
+              <div class="spot"><span class="mag"></span><span class="q" id="usb-spot"></span></div>
+            </div>
+            <div class="layer l-term"><div class="win">
+              <div class="tb"><i></i><i></i><i></i><span>terminal — bash</span></div>
+              <div class="cmd" id="usb-cmd"></div>
+            </div></div>
+            <div class="layer l-resume"><div class="doc">
+              <div class="dh"><b>STEVEN HAINLEY</b><span>East Taunton, MA · stevenhainley@gmail.com</span></div>
+              <div class="ds">EDUCATION</div>
+              <p><b>Worcester Polytechnic Institute</b> — B.S. Cybersecurity, minor in Law &amp; Technology · GPA 3.7 · Expected May 2029</p>
+              <div class="ds">SKILLS</div>
+              <p>Flipper Zero · Raspberry Pi Pico W · BadUSB / HID injection · hardware teardown · Linux CLI · Proxmox · Docker · Python / CircuitPython · CompTIA Security+ (in progress)</p>
+              <div class="ds">PROJECTS</div>
+              <p><b>LinkedIn BadUSB</b> — keystroke-injection tool on a Pico W.</p>
+              <p><b>Cybersecurity homelab</b> — self-hosted services behind a dashboard.</p>
+              <a class="dlink" href="assets/Steven-Hainley-Resume.pdf" target="_blank" rel="noopener noreferrer">View full résumé ↗</a>
+            </div></div>
+          </div></div>
+          <div class="base"><span class="port"></span><span class="stick"><span class="conn"></span><span class="body"><span class="led"></span></span><span class="cable"></span></span></div>
+        </div>
+      </div>
+      <p class="hint">▲ WHAT THE PICO TYPES WHEN I PLUG IT IN · DEMO ON MY OWN MACHINE</p>
+      <div class="prints">
+        <figure class="print" style="--r:-4deg"><span class="tape"></span><picture><source srcset="assets/badusb-photo-top.webp" type="image/webp"><img src="assets/badusb-photo-top.jpg" alt="The BadUSB I built: a Raspberry Pi Pico W in a clear case on a wooden table" loading="lazy" width="960" height="720"></picture><figcaption class="hand">the real thing</figcaption></figure>
+        <figure class="print" style="--r:3deg"><span class="tape"></span><picture><source srcset="assets/badusb-photo-side.webp" type="image/webp"><img src="assets/badusb-photo-side.jpg" alt="My BadUSB from the side with its braided USB cable" loading="lazy" width="960" height="540"></picture><figcaption class="hand">cased up</figcaption></figure>
+      </div>
+    </div>
     <div>
       <div class="meta">05 · HARDWARE SECURITY · OCT 2026 → PRESENT</div>
       <h3>My BadUSB</h3>
@@ -543,11 +630,20 @@ const box=document.getElementById('notes');let q=0;
 function showNote(){const[a,b,act]=notes[q%notes.length];q++;box.innerHTML='';const d=document.createElement('div');d.className='note';d.style.top='150px';
   d.innerHTML=`<div class="h"><img src="assets/glim-16.png" alt="">${a}<small>now</small></div>${b}${act?'<div class="acts"><span>Approve</span><span>Deny</span></div>':''}`;box.appendChild(d);requestAnimationFrame(()=>requestAnimationFrame(()=>d.classList.add('show')));}
 showNote();if(!reduce)setInterval(showNote,4200);
-// BadUSB typing
-const script=['$ plug-in: Pico W detected as "USB Keyboard"','> ⌘ + SPACE','> "terminal" ⏎','> open ~/Steven-Hainley-Resume.pdf ⏎','✓ résumé opened · 3.1 s','','(payload lock: stays off until I enable it)'].join('\n');
-const ty=document.getElementById('typed');let c=0;
-const type=()=>{ty.innerHTML=script.slice(0,c).replace(/</g,'&lt;')+'<span class="cur"></span>';c++;if(c<=script.length)setTimeout(type,script[c-1]==='\n'?420:38);else setTimeout(()=>{c=0;type();},3000);};
-if(reduce){ty.textContent=script;}else{new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){type();o.disconnect();}}).observe(ty);}
+// BadUSB illustrated demo
+const demo=document.getElementById('usbdemo');
+const spot=document.getElementById('usb-spot'),cmd=document.getElementById('usb-cmd');
+const CURL='curl -sL -o /tmp/resume.pdf "https://raw.githubusercontent.com/stevenhainley/Steves-LinkedIn-BadUSB/main/Steven_Hainley_Resume.pdf" && open /tmp/resume.pdf';
+let uT=[];const uClear=()=>{uT.forEach(clearTimeout);uT=[];};const uAt=(ms,fn)=>uT.push(setTimeout(fn,ms));
+function uType(el,text,speed,done){let i=0;const step=()=>{el.innerHTML=(el===cmd?'<span class="p">$</span> <span class="c">'+text.slice(0,i).replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span>':text.slice(0,i))+'<span class="cur"></span>';i++;if(i<=text.length)uAt(speed,step);else{el.querySelector('.cur')&&el.querySelector('.cur').remove();done&&done();}};step();}
+function uRun(){uClear();demo.className='usb-demo';spot.textContent='';cmd.textContent='';
+  uAt(500,()=>demo.classList.add('plug'));
+  uAt(1700,()=>{demo.classList.add('search');uType(spot,'terminal',65);});
+  uAt(3150,()=>{demo.classList.remove('search');demo.classList.add('term');uType(cmd,CURL,20,()=>uAt(650,()=>{demo.classList.add('done');uAt(4000,uRun);}));});
+}
+function uStatic(){uClear();demo.className='usb-demo plug done';spot.textContent='terminal';cmd.innerHTML='<span class="p">$</span> <span class="c">'+CURL.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span>';}
+if(reduce){uStatic();}
+else{new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)uRun();else uClear();}),{threshold:.3}).observe(demo);}
 // Paddy LCD menu
 const apps=['GOLF SCORECARD','GPS','WI-FI LIST','BATTERY','CLOCK','<svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> ALERTS'];let a=0;const lcd=document.getElementById('lcd');
 const menu=()=>{lcd.innerHTML='PADDY OS 0.1<br>'+apps.map((x,i)=>i===a?`<span class="sel">▶ ${x}</span>`:`&nbsp; ${x}`).join('<br>');a=(a+1)%apps.length;};menu();if(!reduce)setInterval(menu,1100);
