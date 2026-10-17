@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Steven Hainley · Cybersecurity student building AI systems</title>
-<meta name="description" content="Steven Hainley: cybersecurity student at WPI (Class of 2029). Projects in AI agent systems, hardware security, homelabs and more. Looking for cybersecurity internships.">
-<meta property="og:title" content="Steven Hainley · Cybersecurity + AI systems">
-<meta property="og:description" content="WPI cybersecurity student. I build AI agent systems, hardware security tools and homelab infrastructure.">
-<meta property="og:image" content="assets/hq-poster.jpg">
-<link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="assets/favicon-32.png">
+<title>Steven Hainley · Cybersecurity student at WPI, founder of sh. industries</title>
+<meta name="description" content="Steven Hainley: Cybersecurity (BS) student at WPI, Class of 2029, and founder &amp; CEO of sh. industries. Projects: Glim, the Glim Mac app, a podcast clip engine, hardware security and a homelab. Looking for cybersecurity internships.">
+<meta property="og:title" content="Steven Hainley · Cybersecurity student, founder of sh. industries">
+<meta property="og:description" content="Cybersecurity student at WPI (Class of 2029) and founder &amp; CEO of sh. industries. I build Glim, a second brain for businesses, plus hardware security tools and a homelab.">
+<meta property="og:image" content="https://stevenhainley.net/assets/glim-lab-poster.jpg">
+<link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Steven Hainley","url":"https://stevenhainley.net","jobTitle":"Cybersecurity student","alumniOf":{"@type":"CollegeOrUniversity","name":"Worcester Polytechnic Institute"},"sameAs":["https://www.linkedin.com/in/steven-hainley-836262268/","https://github.com/stevenhainley"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Steven Hainley","url":"https://stevenhainley.net","jobTitle":"Founder & CEO, sh. industries","worksFor":{"@type":"Organization","name":"sh. industries","url":"https://shindustries.co"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Worcester Polytechnic Institute"},"sameAs":["https://www.linkedin.com/in/steven-hainley-836262268/","https://github.com/stevenhainley"]}</script>
 <style>
 :root{
   --blue:#2340ff; --blue-2:#1a2fd6; --ink:#0b0d17; --paper:#f4f2ea; --lime:#c6f432; --red:#ff3b30; --pink:#ff5fd2; --cyan:#22d3ee;
@@ -38,7 +38,7 @@ a{color:inherit}
 nav{position:sticky;top:0;z-index:50;background:var(--ink);border-bottom:3px solid #000}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:24px;letter-spacing:1px}
-.logo img{width:28px;height:28px;image-rendering:pixelated}
+.logo img{width:30px;height:30px;border-radius:7px;image-rendering:pixelated}
 .logo b{color:var(--lime)}
 nav ul{display:flex;gap:22px;list-style:none}
 nav ul a{font-family:var(--pixel);font-size:10px;text-decoration:none;opacity:.85}
@@ -66,9 +66,9 @@ h1 .o{color:var(--lime)}
 .hero p.lead{font-size:20px;max-width:560px;margin:26px 0 30px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:16px}
 .cabinet{position:relative;justify-self:center;width:min(360px,90%);background:var(--ink);border:4px solid #000;padding:18px;box-shadow:12px 12px 0 rgba(0,0,0,.35)}
-.screen{position:relative;background:#101a7a;border:3px solid #000;aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
-.screen:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 2px,transparent 2px 4px);pointer-events:none}
-.screen img{width:58%;image-rendering:pixelated;filter:invert(1) drop-shadow(0 0 12px rgba(198,244,50,.5));animation:bob 1.6s steps(2) infinite}
+.screen{position:relative;background:#F7F6F1;border:3px solid #000;aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+.screen:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.06) 0 2px,transparent 2px 4px);pointer-events:none}
+.screen img{width:58%;margin-top:40px;image-rendering:pixelated;animation:bob 1.6s steps(2) infinite}
 @keyframes bob{50%{transform:translateY(-8px)}}
 .bubble{position:absolute;top:12px;left:12px;right:12px;background:#fff;color:var(--ink);padding:10px 12px;font-family:var(--pixel);font-size:9px;line-height:1.7;min-height:52px;border:3px solid #000}
 .cab-foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
@@ -89,7 +89,9 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);lin
 .cart{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:240px;padding:22px;background:var(--ink);border:4px solid var(--c,var(--lime));text-decoration:none;box-shadow:0 0 0 rgba(0,0,0,0);transition:transform .15s,box-shadow .15s}
 .cart:hover,.cart:focus-visible{transform:translateY(-6px);box-shadow:0 0 0 4px var(--ink),0 0 34px var(--c,var(--lime))}
 .cart .n{font-family:var(--pixel);font-size:10px;color:var(--c);display:flex;justify-content:space-between}
-.cart svg{width:64px;height:64px;margin:18px 0;image-rendering:pixelated}
+.cart svg,.cart .ico{width:64px;height:64px;margin:18px 0;image-rendering:pixelated}
+.cart .ico.app{border-radius:14px}
+.cart .ico.chip,.prod h3 img.chip{background:#F7F6F1;border-radius:14px;padding:6px}.prod h3 img.chip{border-radius:8px;padding:3px}
 .cart h3{font-family:var(--display);font-weight:400;font-size:34px;line-height:1;text-transform:uppercase;color:var(--c)}
 .cart p{font-size:14px;opacity:.8;margin-top:6px}
 .cart .start{position:absolute;right:16px;bottom:16px;font-family:var(--pixel);font-size:9px;color:var(--c);opacity:0;transition:opacity .15s}
@@ -176,6 +178,29 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);lin
 .dpad{width:70px;height:70px;position:relative}.dpad:before,.dpad:after{content:"";position:absolute;background:#111}.dpad:before{left:24px;top:0;width:22px;height:70px}.dpad:after{top:24px;left:0;width:70px;height:22px}
 .ab{display:flex;gap:12px}.ab i{width:30px;height:30px;border-radius:50%;background:var(--red);border:3px solid #000;display:block}
 
+/* GLIM WINDOW: an OS-style window that looks through the page into Glim's lab */
+.glimwin{max-width:380px;margin:0 auto;background:var(--ink);border:4px solid #000;box-shadow:10px 10px 0 rgba(0,0,0,.45)}
+.glimwin .tb{display:flex;align-items:center;gap:6px;padding:8px 10px;background:#11131d;border-bottom:3px solid #000}
+.glimwin .tb i{width:10px;height:10px;display:block;background:#333}.glimwin .tb i:first-child{background:var(--red)}.glimwin .tb i:nth-child(2){background:#ffbd2e}.glimwin .tb i:nth-child(3){background:var(--mint)}
+.glimwin .tb span{flex:1;text-align:center;font-family:var(--pixel);font-size:9px;color:#d9e2ea;margin-right:34px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.glimwin .pane{position:relative;aspect-ratio:4/5;background:#0b0d17 url(assets/glim-lab-poster.jpg) center/cover;overflow:hidden}
+.glimwin .pane video,.glimwin .pane img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.glimwin .pane:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 18px 30px -18px rgba(0,0,0,.6);pointer-events:none}
+.glimwin .sb{display:flex;justify-content:space-between;gap:8px;padding:7px 10px;font-family:var(--mono);font-size:11px;color:#7f8c97;border-top:1px solid var(--term-line)}
+.glimwin .sb b{color:var(--lime);font-weight:400}
+@media(prefers-reduced-motion:reduce){.glimwin video{display:none}}
+.prods{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:22px}
+@media(max-width:860px){.prods{grid-template-columns:1fr}}
+.prods>*{min-width:0}
+.prod{border:1px solid var(--term-line);background:var(--term-2);border-radius:14px;padding:22px;scroll-margin-top:80px}
+.prod .k{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--teal)}
+.prod h3{font-family:var(--display);font-weight:400;font-size:34px;line-height:1;text-transform:uppercase;color:#fff;margin:8px 0 10px;display:flex;align-items:center;gap:12px}
+.prod h3 img{width:36px;height:36px;image-rendering:pixelated;flex:none}
+.prod p{font-size:15px}
+.prod ul{list-style:none;margin:12px 0 0}.prod li{font-size:14px;padding:4px 0 4px 20px;position:relative;opacity:.9}.prod li:before{content:"▶";position:absolute;left:0;color:var(--lime);font-size:10px;top:8px}
+.prod a{color:var(--lime)}
+.note .h img{width:20px;height:20px;border-radius:6px;background:#F7F6F1;image-rendering:pixelated;display:block}
+
 /* XP + OFF CLOCK + CONTACT */
 .xp{background:var(--paper);color:var(--ink)}
 .xp .eyebrow{color:var(--blue)}
@@ -224,10 +249,10 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 <a class="skip" href="#main">Skip to content</a>
 
 <nav><div class="wrap">
-  <a class="logo" href="#top"><img src="assets/operator-512.png" alt="">STEVEN HAINLEY</a>
+  <a class="logo" href="#top"><img src="assets/glim-app-icon-512.png" alt="">STEVEN HAINLEY</a>
   <ul>
     <li><a href="#select">Projects</a></li>
-    <li><a href="#sh">AI company</a></li>
+    <li><a href="#sh">sh. industries</a></li>
     <li><a href="#xp">Experience</a></li>
     <li><a href="#off">Off the clock</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -240,14 +265,14 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <div>
     <div class="tag pixel"><span class="dot"></span>LOOKING FOR CYBERSECURITY INTERNSHIPS</div>
     <h1>Steven<br>Hain<span class="o">l</span>ey.</h1>
-    <p class="lead">Cybersecurity student at WPI (Class of 2029, Law &amp; Technology minor). I learn by building: hardware security tools, a homelab, and a small company run by a team of AI agents on my laptop.</p>
+    <p class="lead">Cybersecurity (BS) student at WPI, Class of 2029, with a Law &amp; Technology minor. I'm also the founder and CEO of sh. industries, where I build Glim, a second brain for businesses. Outside that: hardware security tools and a homelab.</p>
     <div class="ctas">
       <a class="btn" href="#select">▶ PRESS START</a>
       <a class="btn ghost" href="assets/Steven-Hainley-Resume.pdf">RÉSUMÉ (PDF)</a>
     </div>
   </div>
   <div class="cabinet" aria-hidden="true">
-    <div class="screen"><div class="bubble" id="bubble">HI, I'M STEVEN'S OPERATOR.</div><img src="assets/operator-512.png" alt=""></div>
+    <div class="screen"><div class="bubble" id="bubble">HI, I'M GLIM.</div><img src="assets/operator-512.png" alt=""></div>
     <div class="cab-foot"><span class="joy"></span><span class="pixel" style="font-size:9px">PLAYER 1</span><span class="btns"><i></i><i></i></span></div>
   </div>
 </div></header>
@@ -258,22 +283,31 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <div class="eyebrow">SELECT A CARTRIDGE · NEWEST FIRST</div>
   <h2>Things I've<br>built.</h2>
   <div class="grid">
-    <a class="cart" href="#sh" style="--c:var(--lime)"><div class="n"><span>01</span><span>OCT 2026 →</span></div>
-      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="7" y="0" width="2" height="2" fill="currentColor" style="color:var(--lime)"/><rect x="3" y="2" width="10" height="9" fill="#c6f432"/><rect x="5" y="5" width="2" height="2" fill="#0b0d17"/><rect x="9" y="5" width="2" height="2" fill="#0b0d17"/><rect x="6" y="8" width="4" height="1" fill="#0b0d17"/><rect x="4" y="11" width="2" height="3" fill="#c6f432"/><rect x="10" y="11" width="2" height="3" fill="#c6f432"/></svg>
-      <div><h3><svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> AI company</h3><p>A team of AI agents that runs real business work while I approve the big calls.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#badusb" style="--c:var(--red)"><div class="n"><span>02</span><span>OCT 2026 →</span></div>
+    <a class="cart" href="#glim" style="--c:var(--lime)"><div class="n"><span>01</span><span>OCT 2026 →</span></div>
+      <img class="ico chip" src="assets/operator-512.png" alt="" width="64" height="64">
+      <div><h3>Glim</h3><p>The second brain for a business. I set it up on-site and run it with the client.</p></div><span class="start">PRESS START</span></a>
+    <a class="cart" href="#glim-app" style="--c:var(--lime)"><div class="n"><span>02</span><span>OCT 2026 →</span></div>
+      <img class="ico app" src="assets/glim-app-icon-512.png" alt="" width="64" height="64">
+      <div><h3>Glim for Mac</h3><p>sh. desk: the Glim bar, the pet and a built-in browser, in one native app.</p></div><span class="start">PRESS START</span></a>
+    <a class="cart" href="#clip-engine" style="--c:var(--pink)"><div class="n"><span>03</span><span>OCT 2026 →</span></div>
+      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="1" y="3" width="14" height="10" fill="#ff5fd2"/><rect x="2" y="4" width="1" height="1" fill="#0b0d17"/><rect x="2" y="7" width="1" height="2" fill="#0b0d17"/><rect x="2" y="11" width="1" height="1" fill="#0b0d17"/><rect x="13" y="4" width="1" height="1" fill="#0b0d17"/><rect x="13" y="7" width="1" height="2" fill="#0b0d17"/><rect x="13" y="11" width="1" height="1" fill="#0b0d17"/><rect x="4" y="4" width="8" height="8" fill="#0b0d17"/><rect x="7" y="6" width="1" height="4" fill="#ff5fd2"/><rect x="8" y="7" width="1" height="2" fill="#ff5fd2"/></svg>
+      <div><h3>Clip engine</h3><p>Podcast episode in, finished shorts out, and a loop that learns from how they do.</p></div><span class="start">PRESS START</span></a>
+    <a class="cart" href="#site" style="--c:var(--cyan)"><div class="n"><span>04</span><span>OCT 2026 →</span></div>
+      <img class="ico app" src="assets/favicon-512.png" alt="" width="64" height="64">
+      <div><h3>shindustries.co</h3><p>The company website. I designed and built it with Glim.</p></div><span class="start">PRESS START</span></a>
+    <a class="cart" href="#badusb" style="--c:var(--red)"><div class="n"><span>05</span><span>OCT 2026 →</span></div>
       <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="5" y="0" width="6" height="5" fill="#ff3b30"/><rect x="6" y="1" width="1" height="2" fill="#0b0d17"/><rect x="9" y="1" width="1" height="2" fill="#0b0d17"/><rect x="3" y="5" width="10" height="11" fill="#ff3b30"/><rect x="5" y="8" width="6" height="5" fill="#0b0d17"/><rect x="7" y="9" width="2" height="3" fill="#ff3b30"/></svg>
       <div><h3>BadUSB</h3><p>A Pico W that types like a keyboard. Hardware security, hands-on.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#paddy" style="--c:var(--cyan)"><div class="n"><span>03</span><span>IN PROGRESS</span></div>
+    <a class="cart" href="#paddy" style="--c:var(--cyan)"><div class="n"><span>06</span><span>IN PROGRESS</span></div>
       <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="0" width="10" height="16" fill="#22d3ee"/><rect x="4" y="1" width="8" height="6" fill="#0b0d17"/><rect x="5" y="2" width="4" height="1" fill="#22d3ee"/><rect x="5" y="4" width="6" height="1" fill="#22d3ee"/><rect x="5" y="9" width="3" height="1" fill="#0b0d17"/><rect x="6" y="8" width="1" height="3" fill="#0b0d17"/><rect x="10" y="9" width="2" height="2" fill="#0b0d17"/></svg>
       <div><h3>Paddy handheld</h3><p>A pocket device and app platform to keep the focus on the round.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#controller" style="--c:var(--pink)"><div class="n"><span>04</span><span>AUG 2026</span></div>
+    <a class="cart" href="#controller" style="--c:#ff9f43"><div class="n"><span>07</span><span>AUG 2026</span></div>
       <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="1" y="5" width="14" height="7" fill="#ff5fd2"/><rect x="0" y="8" width="3" height="6" fill="#ff5fd2"/><rect x="13" y="8" width="3" height="6" fill="#ff5fd2"/><rect x="3" y="7" width="3" height="1" fill="#0b0d17"/><rect x="4" y="6" width="1" height="3" fill="#0b0d17"/><rect x="11" y="6" width="1" height="1" fill="#0b0d17"/><rect x="12" y="8" width="1" height="1" fill="#0b0d17"/></svg>
       <div><h3>PS5 controller</h3><p>Full teardown and rebuild with back paddles and an OLED display.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#homelab" style="--c:var(--mint)"><div class="n"><span>05</span><span>MAY 2026 →</span></div>
+    <a class="cart" href="#homelab" style="--c:var(--mint)"><div class="n"><span>08</span><span>MAY 2026 →</span></div>
       <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="2" y="1" width="12" height="4" fill="#3ddc84"/><rect x="2" y="6" width="12" height="4" fill="#3ddc84"/><rect x="2" y="11" width="12" height="4" fill="#3ddc84"/><rect x="4" y="2" width="2" height="2" fill="#0b0d17"/><rect x="4" y="7" width="2" height="2" fill="#0b0d17"/><rect x="4" y="12" width="2" height="2" fill="#0b0d17"/><rect x="8" y="3" width="4" height="1" fill="#0b0d17"/><rect x="8" y="8" width="4" height="1" fill="#0b0d17"/></svg>
       <div><h3>Homelab</h3><p>Proxmox, Docker, Pi-hole and Tailscale. It's where I break things on purpose.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#climate" style="--c:#ffbd2e"><div class="n"><span>06</span><span>2025</span></div>
+    <a class="cart" href="#climate" style="--c:#ffbd2e"><div class="n"><span>09</span><span>2025</span></div>
       <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="2" y="1" width="12" height="14" fill="#ffbd2e"/><rect x="2" y="1" width="2" height="14" fill="#c98d00"/><rect x="6" y="4" width="6" height="1" fill="#0b0d17"/><rect x="6" y="6" width="5" height="1" fill="#0b0d17"/><rect x="6" y="8" width="6" height="1" fill="#0b0d17"/><rect x="8" y="11" width="3" height="2" fill="#0b0d17"/></svg>
       <div><h3>Climate Lessons</h3><p>Co-wrote three chapters of a published book at WPI.</p></div><span class="start">PRESS START</span></a>
   </div>
@@ -281,43 +315,62 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 
 <!-- ============ sh. CONTROL ROOM ============ -->
 <section class="room" id="sh"><div class="wrap">
-  <div class="eyebrow">01 · OCTOBER 2026 → PRESENT · AI SYSTEMS</div>
-  <h2><svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> — a company run by<br><em>AI agents</em> on my laptop.</h2>
-  <p class="sub">I designed and run a one-person company where a team of AI agents does the work: finding leads, writing outreach, editing video, publishing, and briefing me every morning. I set the rules, give the standing approvals, and sign off on anything that spends money or goes public.</p>
+  <div class="eyebrow">01–04 · OCTOBER 2026 → PRESENT · FOUNDER &amp; CEO</div>
+  <h2><svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> industries:<br>give every business a <em>second brain.</em></h2>
+  <p class="sub">I founded sh. industries and run it as CEO. The mission is to give every business a second brain. We make two things: <b>Glim</b>, the second brain for your business, which I set up on-site and run with the client; and <b>sh. Studio</b>, done-for-you podcast clips. It's early and we don't have paying customers yet, so everything here is what I've built, not results.</p>
   <p style="margin-top:22px"><a class="btn dark" href="https://shindustries.co">VISIT <svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> INDUSTRIES →</a></p>
 
   <div class="stats">
-    <div class="stat"><b data-n="17">0</b><span>agent roles across 4 departments</span></div>
-    <div class="stat"><b data-n="5">0</b><span>steps from episode to finished clip</span></div>
+    <div class="stat"><b data-n="2">0</b><span>products: Glim and sh. Studio</span></div>
+    <div class="stat"><b data-n="1">0</b><span>founder: me, making the calls on money, posts and new rules</span></div>
+    <div class="stat"><b>16×16</b><span>pixels: all of Glim</span></div>
     <div class="stat"><b>$0</b><span>for routine AI work: it runs on local models</span></div>
-    <div class="stat"><b data-n="1">0</b><span>human in the loop: me, signing off on money, posts and new rules</span></div>
+  </div>
+
+  <div class="prods">
+    <article class="prod" id="glim"><div class="k">01 · Product</div><h3><img class="chip" src="assets/operator-512.png" alt="">Glim</h3>
+      <p>Glim is the second brain for your business. It connects the tools you already use, your people and the best AI models (local ones when it can) and keeps the work moving. I set it up on-site and run it with you. It doesn't replace your team; it gives them their time back.</p>
+      <ul><li>Set up on the client's own Mac, so the data stays there</li><li>Moves between models: local for routine work, larger ones when the job needs it</li><li>Anything that spends money or goes public waits for a person to approve it</li></ul></article>
+    <article class="prod" id="glim-app"><div class="k">02 · Mac app</div><h3><img src="assets/glim-app-icon-512.png" alt="" style="border-radius:8px">Glim for Mac</h3>
+      <p>sh. desk is the native Mac app I run the company from, and the app Glim clients will use. It's a native Swift app.</p>
+      <ul><li><b>The bar:</b> talk or type to Glim from anywhere, with speech-to-text running locally</li><li><b>The pet:</b> a tiny Glim that floats on the screen and shows what it's working on</li><li><b>A built-in browser</b> with tabs, which Glim can drive only when I allow it</li><li>Touch ID lock, onboarding, settings and an off switch for everything</li></ul></article>
+    <article class="prod" id="clip-engine"><div class="k">03 · sh. Studio</div><h3>Clip engine</h3>
+      <p>The system behind sh. Studio. It turns a podcast episode into finished shorts, and I review every clip before a client sees it.</p>
+      <ul><li>Clips end on a finished thought, not just the end of a sentence</li><li>Active-speaker framing, and an editing style matched to the show from a database of how top podcasts cut their clips</li><li>Every clip gets a score with its top three reasons</li><li><b>Learning loop:</b> each night it compares how shipped clips actually did with what it predicted, and retunes the scorer in small, logged steps</li></ul></article>
+    <article class="prod" id="site"><div class="k">04 · Website</div><h3><img src="assets/favicon-512.png" alt="" style="border-radius:8px">shindustries.co</h3>
+      <p>I designed and built the company site with Glim: product pages, legal pages, a Simple mode and a 404 page where Glim lives. Every price on it comes from one config file, so the site can't drift from checkout.</p>
+      <p style="margin-top:12px"><a href="https://shindustries.co">shindustries.co →</a></p></article>
   </div>
 
   <div class="two">
     <div class="panel"><h3>How it's wired · live</h3>
-      <svg id="net" viewBox="0 0 640 400" role="img" aria-label="Diagram: Steven approves, a coordinator routes work to four departments, which use tools such as Gmail, Stripe, local models and the clip engine.">
+      <svg id="net" viewBox="0 0 640 400" role="img" aria-label="Diagram: Steven makes the calls, Glim routes the work to sales, sh. Studio, the Mac app and memory, which use tools such as Gmail, the clip engine, Stripe and local models.">
         <g id="wires"></g><g id="pkts"></g><g id="nodes"></g>
       </svg>
     </div>
-    <div class="panel"><h3>HQ activity log · sample</h3><div class="log" id="log" aria-live="off"></div></div>
+    <div class="panel"><h3>Glim's activity log · sample</h3><div class="log" id="log" aria-live="off"></div></div>
   </div>
 
-  <div class="panel"><h3>The clip engine · podcast episode → finished short</h3>
+  <div class="panel"><h3>The clip engine · episode → finished short → it learns</h3>
     <div class="pipe" id="pipe">
       <div class="step"><span class="i">01 · whisper.cpp</span><b>Transcribe</b>word-level timing</div>
-      <div class="step"><span class="i">02 · agent</span><b>Pick moments</b>hooks that stand alone</div>
-      <div class="step"><span class="i">03 · ffmpeg</span><b>Camera cuts</b>wide/close, on sentence ends</div>
-      <div class="step"><span class="i">04 · React</span><b>Motion graphics</b>charts, pop-ups, on the word</div>
-      <div class="step"><span class="i">05 · QA</span><b>Check + ship</b>frames, −14 LUFS, Drive</div>
-      <div class="step"><span class="i">✓</span><b>Delivered</b>client approves</div>
+      <div class="step"><span class="i">02 · agent</span><b>Pick moments</b>end on a finished thought</div>
+      <div class="step"><span class="i">03 · ffmpeg</span><b>Frame + style</b>active speaker, the show's style</div>
+      <div class="step"><span class="i">04 · scorer</span><b>Score</b>top 3 reasons per clip</div>
+      <div class="step"><span class="i">05 · me</span><b>Review</b>I check every clip</div>
+      <div class="step"><span class="i">↺ · nightly</span><b>Learn</b>real results retune the scorer</div>
     </div>
   </div>
 
   <div class="two">
-    <div class="panel"><h3>HQ showcase</h3>
-      <div class="monitor"><video src="assets/hq-loop.mp4" poster="assets/hq-poster.jpg" autoplay muted loop playsinline aria-label="Animated showcase of the sh. HQ dashboard"></video></div>
+    <div class="panel"><h3>A window into Glim's world</h3>
+      <figure class="glimwin">
+        <div class="tb" aria-hidden="true"><i></i><i></i><i></i><span>glim — lab</span></div>
+        <div class="pane" id="glimpane"><video id="glimvid" autoplay muted loop playsinline preload="metadata" poster="assets/glim-lab-poster.jpg" aria-label="Animation: Glim, the pixel mascot, chilling at a lab console while screens show clips being cut, captioned, scored and shipped"><source src="assets/glim-lab-loop.webm" type="video/webm"><source src="assets/glim-lab-loop.mp4" type="video/mp4"></video></div>
+        <figcaption class="sb"><span>glim@lab:~</span><b>● on break</b></figcaption>
+      </figure>
     </div>
-    <div class="panel"><h3>Approvals hit my phone</h3>
+    <div class="panel"><h3>Glim asks; I approve</h3>
       <div class="phone" aria-hidden="true"><div class="clock" id="pclock">9:05</div><div class="date">Thursday</div><div id="notes"></div></div>
     </div>
   </div>
@@ -339,7 +392,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <article class="proj reveal" id="badusb">
     <div class="vis"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="typed" id="typed"></div></div><p class="hint">▲ A SIMULATION OF WHAT THE PICO TYPES</p></div>
     <div>
-      <div class="meta">02 · HARDWARE SECURITY · OCT 2026 → PRESENT</div>
+      <div class="meta">05 · HARDWARE SECURITY · OCT 2026 → PRESENT</div>
       <h3>My BadUSB</h3>
       <p>I programmed a Raspberry Pi Pico W to act like a keyboard. Plugged into a computer (with the owner's permission), it types the commands that open my LinkedIn profile or résumé.</p>
       <ul>
@@ -354,7 +407,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <article class="proj reveal" id="paddy">
     <div class="vis"><div class="handheld" aria-hidden="true"><div class="lcd" id="lcd"></div><div class="hh-ctrl"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div></div></div>
     <div>
-      <div class="meta">03 · EMBEDDED · IN PROGRESS</div>
+      <div class="meta">06 · EMBEDDED · IN PROGRESS</div>
       <h3>Paddy:<br>less phone, more golf</h3>
       <p>A pocket device built on a Pico W to keep the focus on the round. It's turning into a small app platform: apps get only the permissions they declare, and I test them in a simulator before they touch the hardware.</p>
       <ul>
@@ -369,7 +422,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <article class="proj reveal" id="controller">
     <div class="vis"><div class="frame flip" tabindex="0" id="flip"><div class="in"><img src="assets/controller-front.jpg" alt="Custom PS5 controller, front"><img class="back" src="assets/controller-back.jpg" alt="Custom PS5 controller, back with paddles"></div></div><p class="hint">▲ HOVER OR TAP TO FLIP</p></div>
     <div>
-      <div class="meta">04 · HARDWARE · AUG 2026</div>
+      <div class="meta">07 · HARDWARE · AUG 2026</div>
       <h3>Custom PS5 controller</h3>
       <p>I took my controller apart and installed an eXtremeRate SPARK kit: back paddles, an OLED display, clicky trigger stops and ergonomic grips, plus a custom-colored front plate and buttons.</p>
       <ul><li>Full disassembly, kit installation and reassembly</li><li>Rubberized New Hope Gray &amp; Classic Gray</li></ul>
@@ -382,7 +435,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
         <div class="svc">Proxmox<i></i></div><div class="svc">Docker<i></i></div><div class="svc">Pi-hole<i></i></div><div class="svc">Tailscale<i></i></div><div class="svc">Homarr<i></i></div><div class="svc">Uptime Kuma<i></i></div>
       </div></div></div>
     <div>
-      <div class="meta">05 · INFRASTRUCTURE · MAY 2026 → PRESENT</div>
+      <div class="meta">08 · INFRASTRUCTURE · MAY 2026 → PRESENT</div>
       <h3>My homelab</h3>
       <p>It's my place to learn Linux, networking and self-hosting. I run services on Proxmox and Docker, set them up myself, and figure out what went wrong when something breaks.</p>
       <ul><li>Pi-hole for DNS filtering, Tailscale for remote access</li><li>Homarr dashboard and Uptime Kuma monitoring</li></ul>
@@ -392,7 +445,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <article class="proj reveal" id="climate">
     <div class="vis"><div class="frame"><img src="assets/climate-book.webp" alt="Cover of Climate Lessons: Volume 2"></div><p class="hint">COVER ART: UNKNOWN STREET ARTIST, BERGEN, NORWAY. PHOTO: MAUREEN BELOW.</p></div>
     <div>
-      <div class="meta">06 · RESEARCH &amp; PUBLICATION · AUG–DEC 2025</div>
+      <div class="meta">09 · RESEARCH &amp; PUBLICATION · AUG–DEC 2025</div>
       <h3>Climate Lessons: Vol. 2</h3>
       <p>In WPI's Great Problems Seminar, I co-wrote three chapters on atmospheric science, climate impacts in cities and public perception. I led our team's research into how people in the U.S. see climate policy, with expert interviews and a campus survey.</p>
       <a class="btn" href="https://pressbooks.pub/climatelessonsvol2/">READ THE BOOK →</a>
@@ -405,13 +458,13 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <h2>Education &amp;<br>experience.</h2>
   <div class="tl">
     <article><div class="when">EXPECTED MAY 2029</div><h3>Worcester Polytechnic Institute</h3><p>B.S. Cybersecurity, minor in Law and Technology · GPA 3.7 · Dean's List, Fall 2025 · WPI Presidential Scholarship. Club Golf, Green Team, Women in Cyber Security.</p></article>
-    <article><div class="when">OCT 2026 → PRESENT</div><h3>Founder, <svg class="shl ink" role="img" aria-label="sh."><use href="#shl"/></svg> industries</h3><p>Designs and operates an AI-agent system that handles lead research, outreach, video production and publishing, with my sign-off on spending and anything public.</p></article>
+    <article><div class="when">OCT 2026 → PRESENT</div><h3>Founder &amp; CEO, <svg class="shl ink" role="img" aria-label="sh."><use href="#shl"/></svg> industries</h3><p>Mission: give every business a second brain. I build Glim, the second brain for your business (set up on-site and run with the client), and run sh. Studio, done-for-you podcast clips. I built the systems behind both: the Glim Mac app, the clip engine and the company site.</p></article>
     <article><div class="when">JUN 2023 – AUG 2026 · CANTON, MA</div><h3>HVAC Field Assistant, Hurley Mechanical</h3><p>Worked alongside a senior technician on residential and commercial systems: installation, maintenance and repairs, including rooftop units and attic ductwork.</p></article>
     <article><div class="when">AUG 2024 – JUL 2026 · PLYMOUTH, MA</div><h3>Retail Sales Associate, Plimoth Patuxet Museums</h3><p>Helped visitors in the museum shops and handled checkout during busy shifts.</p></article>
   </div>
   <div class="skills">
     <div><b>PROGRAMMING</b><p>Python / CircuitPython, C, Java, JavaScript, HTML/CSS, SQL</p></div>
-    <div><b>AI &amp; AUTOMATION</b><p>Agent systems, local LLMs (Ollama), Claude Code, MCP, Remotion, ffmpeg</p></div>
+    <div><b>AI &amp; AUTOMATION</b><p>Agent systems, local LLMs (Ollama), Claude Code, MCP, whisper.cpp, Remotion, ffmpeg</p></div>
     <div><b>SYSTEMS</b><p>Linux CLI, macOS, Windows, Proxmox, Docker, Pi-hole, Tailscale</p></div>
     <div><b>SECURITY</b><p>HID injection, Flipper Zero, hardware teardown · CompTIA Security+ in progress (Dec 2026)</p></div>
   </div>
@@ -441,17 +494,17 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   </div>
 </div></section>
 </main>
-<footer>© 2026 Steven Hainley · Built with a little help from my agents · GAME OVER? NEVER.</footer>
+<footer>© 2026 Steven Hainley · Built with a little help from Glim · GAME OVER? NEVER.</footer>
 
 <script>
 (()=>{
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 // tickers
 const fill=(id,words)=>{const s=words.map(w=>`<span>→ ${w}</span>`).join('');document.getElementById(id).innerHTML=s+s+s+s;};
-fill('t1',['VIEW WORKS','AI AGENTS','CYBERSECURITY','HARDWARE','HOMELAB','WPI 2029','INTERNSHIP READY']);
-fill('t2',['VIEW WORKS','BADUSB','PADDY','PS5 REBUILD','HOMELAB','PUBLISHED AUTHOR']);
-// operator speech
-const lines=["HI, I'M STEVEN'S OPERATOR.","I HELP RUN HIS AI COMPANY.","PICK A CARTRIDGE BELOW ↓","HE'S LOOKING FOR AN INTERNSHIP!"];
+fill('t1',['VIEW WORKS','CYBERSECURITY','WPI 2029','SH. INDUSTRIES','GLIM','HARDWARE','HOMELAB','INTERNSHIP READY']);
+fill('t2',['VIEW WORKS','GLIM','SH. STUDIO','BADUSB','PADDY','PS5 REBUILD','HOMELAB','PUBLISHED AUTHOR']);
+// Glim speech
+const lines=["HI, I'M GLIM.","STEVEN BUILT ME.","I'M A SECOND BRAIN FOR BUSINESSES.","PICK A CARTRIDGE BELOW ↓","HE'S LOOKING FOR AN INTERNSHIP!"];
 let li=0;const bub=document.getElementById('bubble');
 if(!reduce)setInterval(()=>{li=(li+1)%lines.length;bub.textContent=lines[li];},2600);
 // reveal + counters
@@ -461,9 +514,9 @@ document.querySelectorAll('.reveal,.stats').forEach(el=>io.observe(el));
 function count(el){const n=+el.dataset.n,s=el.dataset.s||'';if(reduce){el.textContent=n+s;return;}let t0=null;
   const f=t=>{t0=t0||t;const p=Math.min(1,(t-t0)/1200);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f);};requestAnimationFrame(f);}
 // network diagram
-const N={me:[320,40,'STEVEN','APPROVES'],co:[320,130,'COORDINATOR','ROUTES WORK'],
-  sales:[80,230,'SALES','LEADS · OUTREACH'],clips:[240,230,'CLIPS','EDIT · QA'],digital:[400,230,'PRODUCTS','KITS · STORE'],hq:[560,230,'HQ + BRAIN','HEALTH · MEMORY'],
-  t1:[80,345,'GMAIL',''],t2:[240,345,'CLIP ENGINE',''],t3:[400,345,'STRIPE · GUMROAD',''],t4:[560,345,'LOCAL MODELS','']};
+const N={me:[320,40,'STEVEN','CEO · DECIDES'],co:[320,130,'GLIM','ROUTES THE WORK'],
+  sales:[80,230,'SALES','LEADS · OUTREACH'],clips:[240,230,'SH. STUDIO','CUT · SCORE'],digital:[400,230,'GLIM APP','BAR · BROWSER'],hq:[560,230,'MEMORY','BRAIN · HEALTH'],
+  t1:[80,345,'GMAIL',''],t2:[240,345,'CLIP ENGINE',''],t3:[400,345,'macOS · SWIFT',''],t4:[560,345,'LOCAL MODELS','']};
 const E=[['me','co'],['co','sales'],['co','clips'],['co','digital'],['co','hq'],['sales','t1'],['clips','t2'],['digital','t3'],['hq','t4']];
 const ns='http://www.w3.org/2000/svg',W=document.getElementById('wires'),P=document.getElementById('pkts'),ND=document.getElementById('nodes');
 E.forEach(([a,b],i)=>{const[x1,y1]=N[a],[x2,y2]=N[b];const p=document.createElementNS(ns,'path');const my=(y1+y2)/2;
@@ -474,10 +527,10 @@ E.forEach(([a,b],i)=>{const[x1,y1]=N[a],[x2,y2]=N[b];const p=document.createElem
     const mp=document.createElementNS(ns,'mpath');mp.setAttribute('href','#w'+i);m.appendChild(mp);c.appendChild(m);P.appendChild(c);}});
 Object.entries(N).forEach(([k,[x,y,l,s]])=>{const g=document.createElementNS(ns,'g');g.setAttribute('class','node '+(k==='me'?'me':k==='co'?'co':''));
   const w=k.startsWith('t')?128:134,h=s?40:30;g.innerHTML=`<rect x="${x-w/2}" y="${y-h/2}" width="${w}" height="${h}" rx="8"/><text x="${x}" y="${y+(s?-2:4)}" text-anchor="middle">${l}</text>${s?`<text class="k" x="${x}" y="${y+13}" text-anchor="middle">${s}</text>`:''}`;ND.appendChild(g);});
-// activity log (illustrative of what HQ records)
+// activity log (illustrative sample of what Glim records)
 const L=[['09:05','ok','morning brief written · emailed + pushed to phone'],['09:06','','sales: 14 founder podcasts screened, 3 qualified'],['09:12','','clips: transcript ready · 2,141 words, word timings'],
   ['09:13','','clips: 4 moments picked · hooks scored'],['09:15','ok','clips: render 1/4 done · −14.0 LUFS · 8.7 MB'],['09:16','ap','APPROVAL NEEDED · send sample pack to a podcast?'],['09:18','ok','approved by Steven · sent from Gmail · ledger #212'],
-  ['09:20','wa','duplicate check: thread already answered · send skipped'],['09:31','','products: listing copy passed copycheck'],['09:40','ok','health: 11/12 services up · swap high, flagged'],['09:41','','cost: local models $0.00 · cloud under the daily cap']];
+  ['09:20','wa','duplicate check: thread already answered · send skipped'],['09:31','','glim: notes from the call filed to memory'],['09:40','ok','health: 11/12 services up · swap high, flagged'],['09:41','','cost: local models $0.00 · cloud under the daily cap']];
 const log=document.getElementById('log');let k=0;
 const add=()=>{const[t,c,m]=L[k%L.length];const d=document.createElement('div');d.innerHTML=`<span class="t">${t}</span> <span class="${c}">${m}</span>`;log.appendChild(d);if(log.children.length>12)log.removeChild(log.firstChild);k++;};
 for(let i=0;i<6;i++)add();if(!reduce)setInterval(add,1700);
@@ -485,10 +538,10 @@ for(let i=0;i<6;i++)add();if(!reduce)setInterval(add,1700);
 const steps=[...document.querySelectorAll('#pipe .step')];let s=0;
 const lit=()=>{steps.forEach((e,i)=>e.classList.toggle('on',i<=s));s=(s+1)%(steps.length+1);};lit();if(!reduce)setInterval(lit,900);
 // phone notifications
-const LOGO='<svg class="shl ink" role="img" aria-label="sh."><use href="#shl"/></svg>';const notes=[[LOGO+' HQ','Approval needed: send 3 sample clips to a founder podcast?',1],[LOGO+' HQ','Morning brief: 3 follow-ups due, 1 reply waiting, $0 spent on cloud AI today.',0],[LOGO+' HQ','Clip pack passed QA. Ready to deliver.',1]];
+const LOGO='Glim';const notes=[[LOGO,'Approval needed: send 3 sample clips to a founder podcast?',1],[LOGO,'Morning brief: 3 follow-ups due, 1 reply waiting, $0 spent on cloud AI today.',0],[LOGO,'Clip pack passed QA. Ready for your review.',1]];
 const box=document.getElementById('notes');let q=0;
 function showNote(){const[a,b,act]=notes[q%notes.length];q++;box.innerHTML='';const d=document.createElement('div');d.className='note';d.style.top='150px';
-  d.innerHTML=`<div class="h"><i></i>${a}<small>now</small></div>${b}${act?'<div class="acts"><span>Approve</span><span>Deny</span></div>':''}`;box.appendChild(d);requestAnimationFrame(()=>requestAnimationFrame(()=>d.classList.add('show')));}
+  d.innerHTML=`<div class="h"><img src="assets/glim-16.png" alt="">${a}<small>now</small></div>${b}${act?'<div class="acts"><span>Approve</span><span>Deny</span></div>':''}`;box.appendChild(d);requestAnimationFrame(()=>requestAnimationFrame(()=>d.classList.add('show')));}
 showNote();if(!reduce)setInterval(showNote,4200);
 // BadUSB typing
 const script=['$ plug-in: Pico W detected as "USB Keyboard"','> ⌘ + SPACE','> "terminal" ⏎','> open ~/Steven-Hainley-Resume.pdf ⏎','✓ résumé opened · 3.1 s','','(payload lock: stays off until I enable it)'].join('\n');
@@ -498,6 +551,8 @@ if(reduce){ty.textContent=script;}else{new IntersectionObserver((es,o)=>{if(es[0
 // Paddy LCD menu
 const apps=['GOLF SCORECARD','GPS','WI-FI LIST','BATTERY','CLOCK','<svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> ALERTS'];let a=0;const lcd=document.getElementById('lcd');
 const menu=()=>{lcd.innerHTML='PADDY OS 0.1<br>'+apps.map((x,i)=>i===a?`<span class="sel">▶ ${x}</span>`:`&nbsp; ${x}`).join('<br>');a=(a+1)%apps.length;};menu();if(!reduce)setInterval(menu,1100);
+// Glim window: poster only when motion is reduced
+const gv=document.getElementById('glimvid');if(gv){const rm=matchMedia('(prefers-reduced-motion: reduce)');const apply=()=>{if(rm.matches){gv.pause();gv.removeAttribute('autoplay');}else{gv.play&&gv.play().catch(()=>{});}};apply();rm.addEventListener&&rm.addEventListener('change',apply);}
 // flip on tap/keyboard
 const fl=document.getElementById('flip');fl.addEventListener('click',()=>fl.classList.toggle('on'));fl.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fl.classList.toggle('on');}});
 })();
