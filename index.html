@@ -379,7 +379,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
     <div class="stat"><b data-n="2">0</b><span>products: Glim and sh. Studio</span></div>
     <div class="stat"><b data-n="1">0</b><span>founder: me, making the calls on money, posts and new rules</span></div>
     <div class="stat"><b>16×16</b><span>pixels: all of Glim</span></div>
-    <div class="stat"><b>$0</b><span>for routine AI work: it runs on local models</span></div>
+    <div class="stat"><b>Claude + Codex</b><span>plus local models, each on the job it fits</span></div>
   </div>
 
   <div class="prods">
@@ -433,7 +433,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <div class="panel"><h3>What building it taught me</h3>
     <div class="learn">
       <div><b>Guardrails beat intelligence.</b>The hard part is approvals, cost caps and audit logs, not the model. Every outbound action has an owner and a record.</div>
-      <div><b>Right model, right job.</b>Local models handle routine work for free; larger models only plan and judge. That cut cost and kept data on my machine.</div>
+      <div><b>Right model, right job.</b>Claude and Codex plan, build and judge; local models take the routine and private work. Every job goes to the model that fits it, and private data stays on my machine.</div>
       <div><b>Failures are features.</b>Two agents once emailed the same person. Now every send checks the thread and a ledger first: idempotency, learned the real way.</div>
     </div>
     <div class="chips"><span>Python</span><span>SQLite</span><span>Node / React</span><span>Remotion</span><span>ffmpeg</span><span>whisper.cpp</span><span>Ollama</span><span>Claude Code + Agent SDK</span><span>MCP</span><span>Stripe / Gmail APIs</span><span>launchd</span></div>
@@ -617,7 +617,7 @@ Object.entries(N).forEach(([k,[x,y,l,s]])=>{const g=document.createElementNS(ns,
 // activity log (illustrative sample of what Glim records)
 const L=[['09:05','ok','morning brief written · emailed + pushed to phone'],['09:06','','sales: 14 founder podcasts screened, 3 qualified'],['09:12','','clips: transcript ready · 2,141 words, word timings'],
   ['09:13','','clips: 4 moments picked · hooks scored'],['09:15','ok','clips: render 1/4 done · −14.0 LUFS · 8.7 MB'],['09:16','ap','APPROVAL NEEDED · send sample pack to a podcast?'],['09:18','ok','approved by Steven · sent from Gmail · ledger #212'],
-  ['09:20','wa','duplicate check: thread already answered · send skipped'],['09:31','','glim: notes from the call filed to memory'],['09:40','ok','health: 11/12 services up · swap high, flagged'],['09:41','','cost: local models $0.00 · cloud under the daily cap']];
+  ['09:20','wa','duplicate check: thread already answered · send skipped'],['09:31','','glim: notes from the call filed to memory'],['09:40','ok','health: 11/12 services up · swap high, flagged'],['09:41','','router: private jobs local · builds to Claude and Codex']];
 const log=document.getElementById('log');let k=0;
 const add=()=>{const[t,c,m]=L[k%L.length];const d=document.createElement('div');d.innerHTML=`<span class="t">${t}</span> <span class="${c}">${m}</span>`;log.appendChild(d);if(log.children.length>12)log.removeChild(log.firstChild);k++;};
 for(let i=0;i<6;i++)add();if(!reduce)setInterval(add,1700);
@@ -625,7 +625,7 @@ for(let i=0;i<6;i++)add();if(!reduce)setInterval(add,1700);
 const steps=[...document.querySelectorAll('#pipe .step')];let s=0;
 const lit=()=>{steps.forEach((e,i)=>e.classList.toggle('on',i<=s));s=(s+1)%(steps.length+1);};lit();if(!reduce)setInterval(lit,900);
 // phone notifications
-const LOGO='Glim';const notes=[[LOGO,'Approval needed: send 3 sample clips to a founder podcast?',1],[LOGO,'Morning brief: 3 follow-ups due, 1 reply waiting, $0 spent on cloud AI today.',0],[LOGO,'Clip pack passed QA. Ready for your review.',1]];
+const LOGO='Glim';const notes=[[LOGO,'Approval needed: send 3 sample clips to a founder podcast?',1],[LOGO,'Morning brief: 3 follow-ups due, 1 reply waiting, 2 clips ready to review.',0],[LOGO,'Clip pack passed QA. Ready for your review.',1]];
 const box=document.getElementById('notes');let q=0;
 function showNote(){const[a,b,act]=notes[q%notes.length];q++;box.innerHTML='';const d=document.createElement('div');d.className='note';d.style.top='150px';
   d.innerHTML=`<div class="h"><img src="assets/glim-16.png" alt="">${a}<small>now</small></div>${b}${act?'<div class="acts"><span>Approve</span><span>Deny</span></div>':''}`;box.appendChild(d);requestAnimationFrame(()=>requestAnimationFrame(()=>d.classList.add('show')));}
