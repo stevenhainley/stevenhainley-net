@@ -306,6 +306,24 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .reveal.vis{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* caution tape: Paddy is in progress */
+.wip{--cy:#ffd400;display:inline-flex;align-items:center;vertical-align:middle;position:relative;padding:5px 14px;margin-left:2px;background:repeating-linear-gradient(-45deg,var(--ink) 0 7px,var(--cy) 7px 14px);background-size:20px 20px;transform:rotate(-2deg);box-shadow:3px 3px 0 var(--ink);animation:wipslide 1.2s linear infinite}
+.wip-t{background:var(--cy);color:var(--ink);padding:4px 8px;font-family:var(--pixel);font-size:9px;letter-spacing:.06em;line-height:1;border:2px solid var(--ink)}
+.wip-sm{padding:3px 8px;box-shadow:2px 2px 0 var(--ink)}.wip-sm .wip-t{font-size:7px;padding:3px 5px}
+@keyframes wipslide{to{background-position:20px 0}}
+.vis.has-tape{position:relative}
+.ctape{position:absolute;z-index:3;left:-6%;right:-6%;top:12%;transform:rotate(-8deg);background:#ffd400;border-block:3px solid var(--ink);box-shadow:0 6px 0 rgba(11,13,23,.35);overflow:hidden;pointer-events:none;
+  background-image:linear-gradient(#ffd400,#ffd400),repeating-linear-gradient(-45deg,var(--ink) 0 8px,#ffd400 8px 16px);background-size:100% calc(100% - 10px),auto;background-position:center;background-repeat:no-repeat,repeat}
+.ctape-run{display:flex;width:max-content;animation:tapemove 18s linear infinite}
+.ctape-run span{font-family:var(--pixel);font-size:11px;color:var(--ink);white-space:nowrap;padding:12px 0;letter-spacing:.08em}
+@keyframes tapemove{to{transform:translateX(-50%)}}
+.wip-status{display:flex;align-items:center;gap:10px}
+.wip-dot{width:9px;height:9px;flex:none;background:#ffd400;box-shadow:0 0 0 2px var(--ink),0 0 10px #ffd400;animation:wipblink 1s steps(2,end) infinite}
+@keyframes wipblink{50%{opacity:.25}}
+@media(max-width:860px){.vis.has-tape{overflow-x:clip;overflow-y:visible}.ctape{left:-4%;right:-4%}}
+@media(max-width:560px){.ctape-run span{font-size:9px;padding:9px 0}.wip-t{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.wip,.ctape-run,.wip-dot{animation:none}}
 </style>
 </head>
 <body>
@@ -362,7 +380,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
     <a class="cart" href="#badusb" style="--c:var(--red)"><div class="n"><span>05</span><span>OCT 2026 →</span></div>
       <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="5" y="0" width="6" height="5" fill="#ff3b30"/><rect x="6" y="1" width="1" height="2" fill="#0b0d17"/><rect x="9" y="1" width="1" height="2" fill="#0b0d17"/><rect x="3" y="5" width="10" height="11" fill="#ff3b30"/><rect x="5" y="8" width="6" height="5" fill="#0b0d17"/><rect x="7" y="9" width="2" height="3" fill="#ff3b30"/></svg>
       <div><h3>BadUSB</h3><p>A Pico W that types like a keyboard. Hardware security, hands-on.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#paddy" style="--c:var(--cyan)"><div class="n"><span>06</span><span>IN PROGRESS</span></div>
+    <a class="cart" href="#paddy" style="--c:var(--cyan)"><div class="n"><span>06</span><span class="wip wip-sm"><span class="wip-t">IN PROGRESS</span></span></div>
       <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="0" width="10" height="16" fill="#22d3ee"/><rect x="4" y="1" width="8" height="6" fill="#0b0d17"/><rect x="5" y="2" width="4" height="1" fill="#22d3ee"/><rect x="5" y="4" width="6" height="1" fill="#22d3ee"/><rect x="5" y="9" width="3" height="1" fill="#0b0d17"/><rect x="6" y="8" width="1" height="3" fill="#0b0d17"/><rect x="10" y="9" width="2" height="2" fill="#0b0d17"/></svg>
       <div><h3>Paddy handheld</h3><p>A pocket device and app platform to keep the focus on the round.</p></div><span class="start">PRESS START</span></a>
     <a class="cart" href="#controller" style="--c:#ff9f43"><div class="n"><span>07</span><span>AUG 2026</span></div>
@@ -540,9 +558,9 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   </article>
 
   <article class="proj reveal" id="paddy">
-    <div class="vis"><div class="handheld" aria-hidden="true"><div class="lcd" id="lcd"></div><div class="hh-ctrl"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div></div></div>
+    <div class="vis has-tape"><div class="ctape" aria-hidden="true"><div class="ctape-run"><span>CAUTION · WORK IN PROGRESS · DO NOT CROSS · </span><span>CAUTION · WORK IN PROGRESS · DO NOT CROSS · </span></div></div><div class="handheld" aria-hidden="true"><div class="lcd" id="lcd"></div><div class="hh-ctrl"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div></div></div>
     <div>
-      <div class="meta">06 · EMBEDDED · IN PROGRESS</div>
+      <div class="meta">06 · EMBEDDED · <span class="wip"><span class="wip-t">IN PROGRESS</span></span></div>
       <h3>Paddy:<br>less phone, more golf</h3>
       <p>A pocket device built on a Pico W to keep the focus on the round. It's turning into a small app platform: apps get only the permissions they declare, and I test them in a simulator before they touch the hardware.</p>
       <ul>
@@ -550,7 +568,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
         <li>Permission manifest per app; anything undeclared raises an error</li>
         <li>Safe mode and a watchdog so a bad app can't brick the device</li>
       </ul>
-      <p class="pixel" style="opacity:.8">STATUS: SOFTWARE IN SIMULATOR · HARDWARE BEING WIRED</p>
+      <p class="pixel wip-status" style="opacity:.9"><i class="wip-dot" aria-hidden="true"></i>STATUS: SOFTWARE IN SIMULATOR · HARDWARE BEING WIRED</p>
     </div>
   </article>
 
