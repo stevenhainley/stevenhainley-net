@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Steven Hainley · Cybersecurity student at WPI, founder of sh. industries</title>
-<meta name="description" content="Steven Hainley: Cybersecurity (BS) student at WPI, Class of 2029, and founder &amp; CEO of sh. industries. Projects: Glim, the Glim Mac app, a podcast clip engine, hardware security and a homelab. Looking for cybersecurity internships.">
-<meta property="og:title" content="Steven Hainley · Cybersecurity student, founder of sh. industries">
-<meta property="og:description" content="Cybersecurity student at WPI (Class of 2029) and founder &amp; CEO of sh. industries. I build Glim, a second brain for businesses, plus hardware security tools and a homelab.">
+<title>Steven Hainley · Cybersecurity student at WPI</title>
+<meta name="description" content="Steven Hainley: Cybersecurity (BS) student at WPI, Class of 2029. Hardware projects, a homelab, a handheld in progress, and a published book chapter. Looking for cybersecurity internships.">
+<meta property="og:title" content="Steven Hainley · Cybersecurity student at WPI">
+<meta property="og:description" content="Cybersecurity student at WPI (Class of 2029). Hardware projects, a homelab, and a handheld in progress.">
 <meta property="og:image" content="https://stevenhainley.net/assets/glim-lab-poster.jpg">
 <link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Steven Hainley","url":"https://stevenhainley.net","jobTitle":"Founder & CEO, sh. industries","worksFor":{"@type":"Organization","name":"sh. industries","url":"https://shindustries.co"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Worcester Polytechnic Institute"},"sameAs":["https://www.linkedin.com/in/steven-hainley-836262268/","https://github.com/stevenhainley"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Steven Hainley","url":"https://stevenhainley.net","jobTitle":"Cybersecurity student, WPI","alumniOf":{"@type":"CollegeOrUniversity","name":"Worcester Polytechnic Institute"},"sameAs":["https://www.linkedin.com/in/steven-hainley-836262268/","https://github.com/stevenhainley"]}</script>
 <style>
 :root{
   --blue:#2340ff; --blue-2:#1a2fd6; --ink:#0b0d17; --paper:#f4f2ea; --lime:#c6f432; --red:#ff3b30; --pink:#ff5fd2; --cyan:#22d3ee;
@@ -81,21 +81,117 @@ section{padding:90px 0}
 h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);line-height:.92;text-transform:uppercase;margin-bottom:18px}
 .sub{max-width:640px;font-size:18px;opacity:.92}
 
-/* CARTRIDGE SELECT */
-.select{background:var(--blue-2)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.grid{grid-template-columns:1fr}}
-.cart{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:240px;padding:22px;background:var(--ink);border:4px solid var(--c,var(--lime));text-decoration:none;box-shadow:0 0 0 rgba(0,0,0,0);transition:transform .15s,box-shadow .15s}
-.cart:hover,.cart:focus-visible{transform:translateY(-6px);box-shadow:0 0 0 4px var(--ink),0 0 34px var(--c,var(--lime))}
-.cart .n{font-family:var(--pixel);font-size:10px;color:var(--c);display:flex;justify-content:space-between}
-.cart svg,.cart .ico{width:64px;height:64px;margin:18px 0;image-rendering:pixelated}
-.cart .ico.app{border-radius:14px}
-.cart .ico.chip,.prod h3 img.chip{background:#F7F6F1;border-radius:14px;padding:6px}.prod h3 img.chip{border-radius:8px;padding:3px}
-.cart h3{font-family:var(--display);font-weight:400;font-size:34px;line-height:1;text-transform:uppercase;color:var(--c)}
-.cart p{font-size:14px;opacity:.8;margin-top:6px}
-.cart .start{position:absolute;right:16px;bottom:16px;font-family:var(--pixel);font-size:9px;color:var(--c);opacity:0;transition:opacity .15s}
-.cart:hover .start{opacity:1;animation:blink 1s steps(2) infinite}
+/* CARTRIDGE CONSOLE (approved mockup) */
+.cc-stage{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:start;margin-top:34px}
+@media (max-width:900px){.cc-stage{grid-template-columns:minmax(0,1fr);gap:26px}}
+/* ---------- console ---------- */
+.cc-console{position:relative;min-width:0}
+.cc-crt{background:#1b1e29;border:4px solid #000;border-radius:18px 18px 10px 10px;padding:16px 16px 12px;box-shadow:10px 10px 0 rgba(0,0,0,.45)}
+.cc-screen{position:relative;aspect-ratio:4/3;background:var(--term);border:3px solid #000;border-radius:12px;overflow:hidden;max-width:100%}
+.cc-screen::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.45));z-index:5}
+.cc-crt-foot{display:flex;align-items:center;gap:10px;margin-top:10px;font-family:var(--pixel);font-size:8px;color:#9aa0b4}
+.cc-crt-foot .cc-led{width:8px;height:8px;border-radius:50%;background:#33384a;box-shadow:inset 0 0 0 1px #000}
+.cc-on .cc-crt-foot .cc-led{background:var(--lime);box-shadow:0 0 8px var(--lime)}
+.cc-crt-foot .cc-spacer{flex:1}
+.cc-eject{font:inherit;font-size:8px;color:#fff;background:#2b3042;border:2px solid #000;padding:6px 9px;cursor:pointer;box-shadow:2px 2px 0 #000}
+.cc-eject:disabled{opacity:.35;cursor:default}
+.cc-eject:focus-visible,.cc-cart:focus-visible,.cc-pbtn:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.cc-deck{position:relative;margin:-2px 22px 0;height:58px;background:linear-gradient(#cfd2dc,#a9adbb);border:4px solid #000;border-top:none;border-radius:0 0 14px 14px;box-shadow:10px 10px 0 rgba(0,0,0,.45)}
+.cc-slot{position:absolute;left:50%;top:10px;transform:translateX(-50%);width:42%;height:14px;background:#0b0d17;border-radius:3px;box-shadow:inset 0 3px 0 #000,0 2px 0 rgba(255,255,255,.5)}
+.cc-deck .cc-badge{position:absolute;left:14px;bottom:8px;font-family:var(--pixel);font-size:8px;color:#3b3f4f}
+.cc-deck .cc-pwr{position:absolute;right:16px;bottom:10px;width:30px;height:14px;background:var(--red);border:2px solid #000;border-radius:3px}
+.cc-shake{animation:cc-shake .18s linear}
+@keyframes cc-shake{25%{transform:translate(2px,1px)}50%{transform:translate(-2px,-1px)}75%{transform:translate(1px,-1px)}}
+
+/* screen layers */
+.cc-layer{position:absolute;inset:0;padding:22px;overflow:auto;opacity:0;visibility:hidden;transition:opacity .2s}
+.cc-layer.cc-show{opacity:1;visibility:visible}
+.cc-attract{display:grid;place-content:center;justify-items:center;text-align:center;gap:14px;font-family:var(--pixel);color:var(--lime)}
+.cc-attract small{font-size:8px;color:#8b93a8}
+.cc-attract .cc-blink{font-size:10px;animation:blink 1s steps(2) infinite}
+.cc-glimspr{width:64px;height:auto;image-rendering:pixelated;animation:cc-bob 1.6s ease-in-out infinite}
+@keyframes cc-bob{50%{transform:translateY(-4px)}}
+.cc-boot{display:grid;place-content:center;gap:14px;font-family:var(--pixel);font-size:10px;color:var(--lime);text-align:center}
+.cc-bar{width:min(260px,70vw);height:12px;border:2px solid var(--lime);padding:2px}
+.cc-bar i{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left;background:var(--lime)}
+.cc-boot .cc-rom{font-size:8px;color:#8b93a8}
+
+/* game screens: one theme per project */
+.cc-game{font-family:var(--body);font-size:14px;line-height:1.5}
+.cc-hud{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-family:var(--pixel);font-size:8px;margin-bottom:12px}
+.cc-hud .cc-lvl{padding:4px 6px;border:2px solid currentColor}
+.cc-game h3{font-family:var(--display);font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1;text-transform:uppercase;margin-bottom:10px}
+.cc-game p{max-width:56ch;margin-bottom:10px}
+.cc-quests{list-style:none;display:grid;gap:6px;margin:10px 0 14px}
+.cc-quests li{padding-left:22px;position:relative}
+.cc-quests li::before{content:"★";position:absolute;left:0;top:0}
+.cc-pbtn{display:inline-flex;align-items:center;gap:8px;font-family:var(--pixel);font-size:9px;text-decoration:none;padding:10px 12px;border:2px solid #000;box-shadow:3px 3px 0 #000}
+.cc-t-bad{color:#b9ffcf;background:#05110a}
+.cc-t-bad .cc-hud,.cc-t-bad .cc-quests li::before{color:var(--mint)} .cc-t-bad h3{color:var(--mint)} .cc-t-bad .cc-pbtn{background:var(--mint);color:var(--ink)}
+.cc-t-bad .cc-prompt{font-family:var(--mono);font-size:12px;color:var(--mint);margin-bottom:10px;white-space:pre-wrap;word-break:break-word}
+.cc-t-pad{color:#1d2b14;background:#9bbc0f;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 2px,transparent 2px 4px)}
+.cc-t-pad h3{color:#0f380f} .cc-t-pad .cc-hud{color:#0f380f} .cc-t-pad .cc-pbtn{background:#0f380f;color:#9bbc0f}
+.cc-tape{display:inline-block;font-family:var(--pixel);font-size:8px;color:var(--ink);padding:5px 10px;background:repeating-linear-gradient(-45deg,var(--ink) 0 7px,#ffd400 7px 14px);margin-bottom:10px}
+.cc-tape span{background:#ffd400;padding:3px 6px;border:2px solid var(--ink)}
+.cc-t-ctl{color:#d8ecff;background:#0d2a5c;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:18px 18px}
+.cc-t-ctl h3{color:#fff} .cc-t-ctl .cc-hud,.cc-t-ctl .cc-quests li::before{color:var(--orange)} .cc-t-ctl .cc-pbtn{background:var(--orange);color:var(--ink)}
+.cc-t-lab{color:#c9f7dc;background:#0a1410}
+.cc-t-lab h3{color:var(--mint)} .cc-t-lab .cc-hud{color:var(--mint)}
+.cc-rack{display:grid;gap:6px;margin:10px 0 14px}
+.cc-rack div{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;background:#111c17;border:2px solid #000;padding:6px 8px}
+.cc-rack i{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 6px var(--mint);animation:blink 1.4s steps(2) infinite}
+.cc-rack div:nth-child(2n) i{animation-delay:.5s}
+.cc-t-cli{color:#2b2112;background:#f3ead2}
+.cc-t-cli h3{color:#6b3a10} .cc-t-cli .cc-hud{color:#9a5a12} .cc-t-cli .cc-quests li::before{color:#9a5a12} .cc-t-cli .cc-pbtn{background:var(--amber);color:var(--ink)}
+.cc-t-sh{color:#e8ecda;background:#0e0e0d}
+.cc-t-sh h3{color:#fff} .cc-t-sh .cc-hud,.cc-t-sh .cc-quests li::before{color:var(--lime)} .cc-t-sh .cc-pbtn{background:var(--lime);color:var(--ink)}
+.cc-t-sh .cc-act{display:inline-flex;align-items:center;gap:6px;color:var(--ink);background:var(--lime);padding:4px 7px;font-family:var(--pixel);font-size:8px}
+.cc-t-sh .cc-act::before{content:"";width:6px;height:6px;background:var(--ink);animation:blink 1s steps(2) infinite}
+.cc-gamegrid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:start}
+@media (max-width:520px){.cc-gamegrid{grid-template-columns:minmax(0,1fr)}.cc-layer{padding:16px}.cc-game{font-size:13px}}
+
+/* ---------- shelf ---------- */
+.cc-shelfwrap{min-width:0}
+.cc-shelf-label{font-family:var(--pixel);font-size:9px;color:#fff;opacity:.85;margin-bottom:12px}
+.cc-shelf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 16px;padding:14px;background:rgba(11,13,23,.35);border:3px solid var(--ink);box-shadow:inset 0 -10px 0 rgba(0,0,0,.25)}
+@media (max-width:900px){.cc-shelf{display:flex;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:22px 14px 18px}}
+.cc-cart{all:unset;cursor:pointer;position:relative;display:block;aspect-ratio:5/6;max-width:100%;transition:transform .18s cubic-bezier(.2,.8,.2,1),filter .18s;will-change:transform}
+.cc-cart:hover{transform:translateY(-6px) rotate(-1.5deg)}
+.cc-cart.cc-loaded{visibility:hidden}
+.cc-cart .cc-body{position:absolute;inset:0;background:var(--c);border:3px solid #000;clip-path:polygon(0 8%,8% 0,92% 0,100% 8%,100% 100%,0 100%);box-shadow:inset -8px -8px 0 rgba(0,0,0,.18)}
+.cc-cart .cc-ridges{position:absolute;left:8%;right:8%;top:5%;height:10%;background:repeating-linear-gradient(90deg,rgba(0,0,0,.28) 0 3px,transparent 3px 8px)}
+.cc-cart .cc-label{position:absolute;left:9%;right:9%;top:20%;bottom:16%;background:var(--paper);border:3px solid #000;display:grid;grid-template-rows:1fr auto;overflow:hidden}
+.cc-cart .cc-art{display:grid;place-items:center;background:var(--a,#111);border-bottom:3px solid #000;min-height:0}
+.cc-cart .cc-art svg{width:52%;height:auto;max-height:80%;image-rendering:pixelated}
+.cc-cart .cc-name{font-family:var(--display);color:var(--ink);font-size:clamp(14px,1.6vw,19px);line-height:1;text-transform:uppercase;padding:6px 7px 3px}
+.cc-cart .cc-sub{display:block;font-family:var(--pixel);font-size:6px;color:#555;padding:0 7px 7px;letter-spacing:.04em}
+.cc-cart .cc-pins{position:absolute;left:18%;right:18%;bottom:3%;height:7%;background:repeating-linear-gradient(90deg,#d8b14a 0 4px,#6e5617 4px 7px);border:2px solid #000}
+.cc-cart .cc-flag{position:absolute;top:-10px;right:-8px;z-index:2;font-family:var(--pixel);font-size:7px;color:var(--ink);background:var(--lime);border:2px solid #000;padding:4px 6px;box-shadow:2px 2px 0 #000;display:flex;gap:5px;align-items:center}
+.cc-cart .cc-flag::before{content:"";width:6px;height:6px;background:var(--ink);animation:blink 1s steps(2) infinite}
+.cc-cart .cc-wip{position:absolute;left:-6px;right:-6px;top:30%;height:14px;background:repeating-linear-gradient(-45deg,var(--ink) 0 6px,#ffd400 6px 12px);border-block:2px solid #000;transform:rotate(-8deg);z-index:2}
+.cc-cart .cc-date{display:block;font-family:var(--pixel);font-size:6px;color:var(--ink);background:var(--c);border-top:2px solid #000;padding:4px 7px;letter-spacing:.04em}
+.cc-cart .cc-ftag{position:absolute;top:-10px;left:-8px;z-index:2;font-family:var(--pixel);font-size:7px;color:var(--lime);background:var(--ink);border:2px solid #000;padding:4px 6px;box-shadow:2px 2px 0 #000}
+.cc-t-sh .cc-founder{display:inline-flex;font-family:var(--pixel);font-size:8px;color:var(--lime);border:2px solid var(--lime);padding:2px 6px;margin-left:6px}
+.cc-cart .cc-sub{padding-bottom:5px}
+.cc-flyer{position:fixed;left:0;top:0;z-index:50;pointer-events:none;margin:0}
+.cc-hint{font-family:var(--mono);font-size:12px;opacity:.85;margin-top:12px}
+@media (max-width:900px){.cc-shelf .cc-cart{flex:0 0 138px;width:138px;height:166px;aspect-ratio:auto;scroll-snap-align:start}}
+@media (prefers-reduced-motion:reduce){#select *,#select *::before,#select *::after{animation:none!important;transition:none!important}}
+
+/* rich media inside the game screens (lazy, mounted on boot) */
+.cc-gm{margin:12px 0 14px;display:grid;gap:14px;justify-items:center}
+.cc-gm:empty{display:none}
+.cc-gm .usb-demo{width:100%;padding:0}
+.cc-gm .mac{width:100%;max-width:440px}
+.cc-gm .prints{margin-top:0}
+.cc-gm .frame{max-width:300px;width:100%}
+.cc-gm .frame img{display:block;max-height:240px;width:auto;max-width:100%;margin:0 auto}
+.cc-gm .flip .in img{max-height:none}
+.cc-gm .glimwin{max-width:240px;width:100%}
+.cc-gm .hint{margin-top:6px;text-align:center}
+.cc-gm .vis{width:100%}
+.cc-game a.cc-pbtn{color:var(--ink)}
+.cc-t-pad a.cc-pbtn{color:#9bbc0f}
 
 /* SH CONTROL ROOM */
 .room{background:var(--term);color:#d9e2ea;position:relative;overflow:hidden}
@@ -157,6 +253,7 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);lin
 .proj .meta{font-family:var(--pixel);font-size:10px;color:var(--lime);margin-bottom:12px}
 .proj h3{font-family:var(--display);font-weight:400;font-size:clamp(40px,5.5vw,66px);line-height:.95;text-transform:uppercase;margin-bottom:14px}
 .proj ul{list-style:none;margin:16px 0}.proj li{padding:6px 0 6px 26px;position:relative}.proj li:before{content:"▶";position:absolute;left:0;color:var(--lime);font-size:12px;top:9px}
+
 .frame{background:var(--ink);border:4px solid #000;box-shadow:10px 10px 0 rgba(0,0,0,.35);padding:12px;position:relative}
 .frame .bar{display:flex;gap:6px;margin-bottom:10px}.frame .bar i{width:10px;height:10px;background:#333;display:block}.frame .bar i:first-child{background:var(--red)}.frame .bar i:nth-child(2){background:#ffbd2e}.frame .bar i:nth-child(3){background:var(--mint)}
 .typed{font-family:var(--mono);font-size:13px;color:var(--mint);background:#000;padding:14px;min-height:150px;white-space:pre-wrap}
@@ -334,7 +431,6 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <a class="logo" href="#top"><img src="assets/glim-app-icon-512.png" alt="">STEVEN HAINLEY</a>
   <ul>
     <li><a href="#select">Projects</a></li>
-    <li><a href="#sh">sh. industries</a></li>
     <li><a href="#xp">Experience</a></li>
     <li><a href="#off">Off the clock</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -347,7 +443,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <div>
     <div class="tag pixel"><span class="dot"></span>LOOKING FOR CYBERSECURITY INTERNSHIPS</div>
     <h1>Steven<br>Hain<span class="o">l</span>ey.</h1>
-    <p class="lead">Cybersecurity (BS) student at WPI, Class of 2029, with a Law &amp; Technology minor. I'm also the founder and CEO of sh. industries, where I build Glim, a second brain for businesses. Outside that: hardware security tools and a homelab.</p>
+    <p class="lead">Cybersecurity (BS) student at WPI, Class of 2029, with a Law &amp; Technology minor. I build hardware security tools and run a homelab.</p>
     <div class="ctas">
       <a class="btn" href="#select">▶ PRESS START</a>
       <a class="btn ghost" href="assets/Steven-Hainley-Resume.pdf">RÉSUMÉ (PDF)</a>
@@ -362,119 +458,32 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 <div class="ticker" aria-hidden="true"><div class="track" id="t1"></div></div>
 
 <section class="select" id="select"><div class="wrap">
-  <div class="eyebrow">SELECT A CARTRIDGE · NEWEST FIRST</div>
+  <div class="eyebrow">SELECT A CARTRIDGE · LOAD IT INTO THE MACHINE</div>
   <h2>Things I've<br>built.</h2>
-  <div class="grid">
-    <a class="cart" href="#glim" style="--c:var(--lime)"><div class="n"><span>01</span><span>OCT 2026 →</span></div>
-      <img class="ico chip" src="assets/operator-512.png" alt="" width="64" height="64">
-      <div><h3>Glim</h3><p>The second brain for a business. I set it up on-site and run it with the client.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#glim-app" style="--c:var(--lime)"><div class="n"><span>02</span><span>OCT 2026 →</span></div>
-      <img class="ico app" src="assets/glim-app-icon-512.png" alt="" width="64" height="64">
-      <div><h3>Glim for Mac</h3><p>sh. desk: the Glim bar, the pet and a built-in browser, in one native app.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#clip-engine" style="--c:var(--pink)"><div class="n"><span>03</span><span>OCT 2026 →</span></div>
-      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="1" y="3" width="14" height="10" fill="#ff5fd2"/><rect x="2" y="4" width="1" height="1" fill="#0b0d17"/><rect x="2" y="7" width="1" height="2" fill="#0b0d17"/><rect x="2" y="11" width="1" height="1" fill="#0b0d17"/><rect x="13" y="4" width="1" height="1" fill="#0b0d17"/><rect x="13" y="7" width="1" height="2" fill="#0b0d17"/><rect x="13" y="11" width="1" height="1" fill="#0b0d17"/><rect x="4" y="4" width="8" height="8" fill="#0b0d17"/><rect x="7" y="6" width="1" height="4" fill="#ff5fd2"/><rect x="8" y="7" width="1" height="2" fill="#ff5fd2"/></svg>
-      <div><h3>Clip engine</h3><p>Podcast episode in, finished shorts out, and a loop that learns from how they do.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#site" style="--c:var(--cyan)"><div class="n"><span>04</span><span>OCT 2026 →</span></div>
-      <img class="ico app" src="assets/favicon-512.png" alt="" width="64" height="64">
-      <div><h3>shindustries.co</h3><p>The company website. I designed and built it with Glim.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#badusb" style="--c:var(--red)"><div class="n"><span>05</span><span>OCT 2026 →</span></div>
-      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="5" y="0" width="6" height="5" fill="#ff3b30"/><rect x="6" y="1" width="1" height="2" fill="#0b0d17"/><rect x="9" y="1" width="1" height="2" fill="#0b0d17"/><rect x="3" y="5" width="10" height="11" fill="#ff3b30"/><rect x="5" y="8" width="6" height="5" fill="#0b0d17"/><rect x="7" y="9" width="2" height="3" fill="#ff3b30"/></svg>
-      <div><h3>BadUSB</h3><p>A Pico W that types like a keyboard. Hardware security, hands-on.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#paddy" style="--c:var(--cyan)"><div class="n"><span>06</span><span class="wip wip-sm"><span class="wip-t">IN PROGRESS</span></span></div>
-      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="0" width="10" height="16" fill="#22d3ee"/><rect x="4" y="1" width="8" height="6" fill="#0b0d17"/><rect x="5" y="2" width="4" height="1" fill="#22d3ee"/><rect x="5" y="4" width="6" height="1" fill="#22d3ee"/><rect x="5" y="9" width="3" height="1" fill="#0b0d17"/><rect x="6" y="8" width="1" height="3" fill="#0b0d17"/><rect x="10" y="9" width="2" height="2" fill="#0b0d17"/></svg>
-      <div><h3>Paddy handheld</h3><p>A pocket device and app platform to keep the focus on the round.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#controller" style="--c:#ff9f43"><div class="n"><span>07</span><span>AUG 2026</span></div>
-      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="1" y="5" width="14" height="7" fill="#ff5fd2"/><rect x="0" y="8" width="3" height="6" fill="#ff5fd2"/><rect x="13" y="8" width="3" height="6" fill="#ff5fd2"/><rect x="3" y="7" width="3" height="1" fill="#0b0d17"/><rect x="4" y="6" width="1" height="3" fill="#0b0d17"/><rect x="11" y="6" width="1" height="1" fill="#0b0d17"/><rect x="12" y="8" width="1" height="1" fill="#0b0d17"/></svg>
-      <div><h3>PS5 controller</h3><p>Full teardown and rebuild with back paddles and an OLED display.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#homelab" style="--c:var(--mint)"><div class="n"><span>08</span><span>MAY 2026 →</span></div>
-      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="2" y="1" width="12" height="4" fill="#3ddc84"/><rect x="2" y="6" width="12" height="4" fill="#3ddc84"/><rect x="2" y="11" width="12" height="4" fill="#3ddc84"/><rect x="4" y="2" width="2" height="2" fill="#0b0d17"/><rect x="4" y="7" width="2" height="2" fill="#0b0d17"/><rect x="4" y="12" width="2" height="2" fill="#0b0d17"/><rect x="8" y="3" width="4" height="1" fill="#0b0d17"/><rect x="8" y="8" width="4" height="1" fill="#0b0d17"/></svg>
-      <div><h3>Homelab</h3><p>Proxmox, Docker, Pi-hole and Tailscale. It's where I break things on purpose.</p></div><span class="start">PRESS START</span></a>
-    <a class="cart" href="#climate" style="--c:#ffbd2e"><div class="n"><span>09</span><span>2025</span></div>
-      <svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="2" y="1" width="12" height="14" fill="#ffbd2e"/><rect x="2" y="1" width="2" height="14" fill="#c98d00"/><rect x="6" y="4" width="6" height="1" fill="#0b0d17"/><rect x="6" y="6" width="5" height="1" fill="#0b0d17"/><rect x="6" y="8" width="6" height="1" fill="#0b0d17"/><rect x="8" y="11" width="3" height="2" fill="#0b0d17"/></svg>
-      <div><h3>Climate Lessons</h3><p>Co-wrote three chapters of a published book at WPI.</p></div><span class="start">PRESS START</span></a>
-  </div>
-</div></section>
-
-<!-- ============ sh. CONTROL ROOM ============ -->
-<section class="room" id="sh"><div class="wrap">
-  <div class="eyebrow">01–04 · OCTOBER 2026 → PRESENT · FOUNDER &amp; CEO</div>
-  <h2><svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> industries:<br>give every business a <em>second brain.</em></h2>
-  <p class="sub">I founded sh. industries and run it as CEO. The mission is to give every business a second brain. We make two things: <b>Glim</b>, the second brain for your business, which I set up on-site and run with the client; and <b>sh. Studio</b>, done-for-you podcast clips. It's early and we don't have paying customers yet, so everything here is what I've built, not results.</p>
-  <p style="margin-top:22px"><a class="btn dark" href="https://shindustries.co">VISIT <svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> INDUSTRIES →</a></p>
-
-  <div class="stats">
-    <div class="stat"><b data-n="2">0</b><span>products: Glim and sh. Studio</span></div>
-    <div class="stat"><b data-n="1">0</b><span>founder: me, making the calls on money, posts and new rules</span></div>
-    <div class="stat"><b>16×16</b><span>pixels: all of Glim</span></div>
-    <div class="stat"><b>Claude + Codex</b><span>plus local models, each on the job it fits</span></div>
-  </div>
-
-  <div class="prods">
-    <article class="prod" id="glim"><div class="k">01 · Product</div><h3><img class="chip" src="assets/operator-512.png" alt="">Glim</h3>
-      <p>Glim is the second brain for your business. It connects the tools you already use, your people and the best AI models (local ones when it can) and keeps the work moving. I set it up on-site and run it with you. It doesn't replace your team; it gives them their time back.</p>
-      <ul><li>Set up on the client's own Mac, so the data stays there</li><li>Moves between models: local for routine work, larger ones when the job needs it</li><li>Anything that spends money or goes public waits for a person to approve it</li></ul></article>
-    <article class="prod" id="glim-app"><div class="k">02 · Mac app</div><h3><img src="assets/glim-app-icon-512.png" alt="" style="border-radius:8px">Glim for Mac</h3>
-      <p>sh. desk is the native Mac app I run the company from, and the app Glim clients will use. It's a native Swift app.</p>
-      <ul><li><b>The bar:</b> talk or type to Glim from anywhere, with speech-to-text running locally</li><li><b>The pet:</b> a tiny Glim that floats on the screen and shows what it's working on</li><li><b>A built-in browser</b> with tabs, which Glim can drive only when I allow it</li><li>Touch ID lock, onboarding, settings and an off switch for everything</li></ul></article>
-    <article class="prod" id="clip-engine"><div class="k">03 · sh. Studio</div><h3>Clip engine</h3>
-      <p>The system behind sh. Studio. It turns a podcast episode into finished shorts, and I review every clip before a client sees it.</p>
-      <ul><li>Clips end on a finished thought, not just the end of a sentence</li><li>Active-speaker framing, and an editing style matched to the show from a database of how top podcasts cut their clips</li><li>Every clip gets a score with its top three reasons</li><li><b>Learning loop:</b> each night it compares how shipped clips actually did with what it predicted, and retunes the scorer in small, logged steps</li></ul></article>
-    <article class="prod" id="site"><div class="k">04 · Website</div><h3><img src="assets/favicon-512.png" alt="" style="border-radius:8px">shindustries.co</h3>
-      <p>I designed and built the company site with Glim: product pages, legal pages, a Simple mode and a 404 page where Glim lives. Every price on it comes from one config file, so the site can't drift from checkout.</p>
-      <p style="margin-top:12px"><a href="https://shindustries.co">shindustries.co →</a></p></article>
-  </div>
-
-  <div class="two">
-    <div class="panel"><h3>How it's wired · live</h3>
-      <svg id="net" viewBox="0 0 640 400" role="img" aria-label="Diagram: Steven makes the calls, Glim routes the work to sales, sh. Studio, the Mac app and memory, which use tools such as Gmail, the clip engine, Stripe and local models.">
-        <g id="wires"></g><g id="pkts"></g><g id="nodes"></g>
-      </svg>
+  <div class="cc-stage">
+    <div class="cc-console" id="cc-console">
+      <div class="cc-crt">
+        <div class="cc-screen" id="cc-screen" aria-live="polite">
+          <div class="cc-layer cc-attract cc-show" id="cc-attract">
+            <svg class="cc-glimspr" viewBox="0 0 12 14" shape-rendering="crispEdges" aria-hidden="true"><g id="cc-glimg"></g></svg>
+            <div>STEVEN'S CONSOLE</div>
+            <div class="cc-blink">▶ PICK A CARTRIDGE</div>
+            <small>6 GAMES · NEWEST FIRST</small>
+          </div>
+          <div class="cc-layer cc-boot" id="cc-boot"><div id="cc-bootTitle">LOADING…</div><div class="cc-bar"><i id="cc-bootBar"></i></div><div class="cc-rom" id="cc-bootRom"></div></div>
+          <div class="cc-layer cc-game" id="cc-game" tabindex="-1"></div>
+        </div>
+        <div class="cc-crt-foot"><span class="cc-led"></span><span id="cc-status">NO CARTRIDGE</span><span class="cc-spacer"></span><button class="cc-eject" id="cc-eject" type="button" disabled>⏏ EJECT</button></div>
+      </div>
+      <div class="cc-deck"><div class="cc-slot" id="cc-slot"></div><span class="cc-badge">SH-64</span><span class="cc-pwr"></span></div>
     </div>
-    <div class="panel"><h3>Glim's activity log · sample</h3><div class="log" id="log" aria-live="off"></div></div>
-  </div>
-
-  <div class="panel"><h3>The clip engine · episode → finished short → it learns</h3>
-    <div class="pipe" id="pipe">
-      <div class="step"><span class="i">01 · whisper.cpp</span><b>Transcribe</b>word-level timing</div>
-      <div class="step"><span class="i">02 · agent</span><b>Pick moments</b>end on a finished thought</div>
-      <div class="step"><span class="i">03 · ffmpeg</span><b>Frame + style</b>active speaker, the show's style</div>
-      <div class="step"><span class="i">04 · scorer</span><b>Score</b>top 3 reasons per clip</div>
-      <div class="step"><span class="i">05 · me</span><b>Review</b>I check every clip</div>
-      <div class="step"><span class="i">↺ · nightly</span><b>Learn</b>real results retune the scorer</div>
+    <div class="cc-shelfwrap">
+      <div class="cc-shelf-label">THE SHELF · NEWEST → OLDEST</div>
+      <div class="cc-shelf" id="cc-shelf" role="group" aria-label="Project cartridges"></div>
+      <p class="cc-hint">Click a cartridge to load it. Esc or Eject takes it out.</p>
     </div>
   </div>
-
-  <div class="two">
-    <div class="panel"><h3>A window into Glim's world</h3>
-      <figure class="glimwin">
-        <div class="tb" aria-hidden="true"><i></i><i></i><i></i><span>glim — lab</span></div>
-        <div class="pane" id="glimpane"><video id="glimvid" autoplay muted loop playsinline preload="metadata" poster="assets/glim-lab-poster.jpg" aria-label="Animation: Glim, the pixel mascot, chilling at a lab console while screens show clips being cut, captioned, scored and shipped"><source src="assets/glim-lab-loop.webm" type="video/webm"><source src="assets/glim-lab-loop.mp4" type="video/mp4"></video></div>
-        <figcaption class="sb"><span>glim@lab:~</span><b>● on break</b></figcaption>
-      </figure>
-    </div>
-    <div class="panel"><h3>Glim asks; I approve</h3>
-      <div class="phone" aria-hidden="true"><div class="clock" id="pclock">9:05</div><div class="date">Friday</div><div id="notes"></div></div>
-    </div>
-  </div>
-
-  <div class="panel"><h3>What building it taught me</h3>
-    <div class="learn">
-      <div><b>Guardrails beat intelligence.</b>The hard part is approvals, cost caps and audit logs, not the model. Every outbound action has an owner and a record.</div>
-      <div><b>Right model, right job.</b>Claude and Codex plan, build and judge; local models take the routine and private work. Every job goes to the model that fits it, and private data stays on my machine.</div>
-      <div><b>Failures are features.</b>Two agents once emailed the same person. Now every send checks the thread and a ledger first: idempotency, learned the real way.</div>
-    </div>
-    <div class="chips"><span>Python</span><span>SQLite</span><span>Node / React</span><span>Remotion</span><span>ffmpeg</span><span>whisper.cpp</span><span>Ollama</span><span>Claude Code + Agent SDK</span><span>MCP</span><span>Stripe / Gmail APIs</span><span>launchd</span></div>
-  </div>
-</div></section>
-
-<div class="ticker lime rev" aria-hidden="true"><div class="track" id="t2"></div></div>
-
-<section id="work" style="padding-top:20px"><div class="wrap">
-
-  <article class="proj reveal" id="badusb">
-    <div class="vis">
-      <div class="usb-demo" id="usbdemo" role="img" aria-label="Animation: the BadUSB plugs into a laptop, opens Terminal, curls Steven's resume PDF from GitHub, and the resume renders on screen.">
-        <svg class="mac" viewBox="0 0 488 280" role="img" aria-label="Animation: a Raspberry Pi Pico in a clear case plugs into a laptop's side port, Terminal opens and downloads Steven's resume from GitHub, and the resume renders on screen." xmlns="http://www.w3.org/2000/svg">
+  <div id="cc-media" hidden><div class="cc-m" data-for="badusb"><div class="usb-demo" id="usbdemo" role="img" aria-label="Animation: a cased Raspberry Pi Pico plugs into a laptop's side port, Terminal opens and downloads Steven's resume from GitHub, and the resume renders on screen."><svg class="mac" viewBox="0 0 488 280" role="img" aria-label="Animation: a Raspberry Pi Pico in a clear case plugs into a laptop's side port, Terminal opens and downloads Steven's resume from GitHub, and the resume renders on screen." xmlns="http://www.w3.org/2000/svg">
          <defs>
           <linearGradient id="mgLidEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b4049"/><stop offset="1" stop-color="#0e1116"/></linearGradient>
           <linearGradient id="mgDeck" x1="0.15" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#565c66"/><stop offset="1" stop-color="#2a2f37"/></linearGradient>
@@ -484,7 +493,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
           <linearGradient id="mgCase" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef3f6" stop-opacity=".5"/><stop offset="1" stop-color="#9fb0b8" stop-opacity=".32"/></linearGradient>
           <linearGradient id="mgPcb" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#1f7a43"/><stop offset="1" stop-color="#0e5a2d"/></linearGradient>
           <radialGradient id="mgShadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity=".48"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
-         </defs>
+         <linearGradient id="acF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7e6ee" stop-opacity=".42"/><stop offset="1" stop-color="#a6bcc6" stop-opacity=".3"/></linearGradient><linearGradient id="acT" x1="0" y1="0" x2="1" y2="0.6"><stop offset="0" stop-color="#f3f9fc" stop-opacity=".55"/><stop offset="0.5" stop-color="#cfe0e8" stop-opacity=".3"/><stop offset="1" stop-color="#b9ccd4" stop-opacity=".4"/></linearGradient><linearGradient id="acS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bdd0d8" stop-opacity=".4"/><stop offset="1" stop-color="#8aa0aa" stop-opacity=".32"/></linearGradient></defs>
          <ellipse class="mshadow" cx="200.3" cy="244.2" rx="195.20000000000002" ry="15" fill="url(#mgShadow)"/>
          <polygon points="97.3,28.0 355.8,42.5 358.5,40.3 100.0,25.8" fill="url(#mgLidEdge)"/>
          <polygon points="355.8,42.5 344.6,214.3 347.3,212.1 358.5,40.3" fill="url(#mgLidEdge)"/>
@@ -525,85 +534,12 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
          <polygon points="100.9,202.6 319.9,214.9 299.0,222.1 80.0,209.8" fill="#13161b"/>
          <g class="mac-keys" fill="none" stroke="#3a414b" stroke-width="0.8" stroke-linecap="round"><polyline points="117.2,203.8 97.5,210.5"/><polyline points="134.0,204.7 114.3,211.5"/><polyline points="150.8,205.6 131.2,212.4"/><polyline points="167.7,206.6 148.0,213.4"/><polyline points="184.5,207.5 164.9,214.3"/><polyline points="201.4,208.5 181.7,215.3"/><polyline points="218.2,209.4 198.6,216.2"/><polyline points="235.1,210.4 215.4,217.2"/><polyline points="251.9,211.3 232.2,218.1"/><polyline points="268.7,212.3 249.1,219.1"/><polyline points="285.6,213.2 265.9,220.0"/><polyline points="302.4,214.2 282.8,220.9"/><polyline points="98.3,204.1 314.2,216.3"/><polyline points="94.1,205.6 310.0,217.7"/><polyline points="89.9,207.0 305.8,219.1"/><polyline points="85.7,208.4 301.7,220.6"/></g>
          <polygon points="143.6,215.3 225.7,219.9 213.4,224.2 131.3,219.6" fill="url(#mgPad)" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-         <g class="pico">
-          <line x1="340.2" y1="221.5" x2="358.5" y2="222.5" stroke="#cfd6de" stroke-width="8" stroke-linecap="round"/>
-          <line x1="340.2" y1="221.5" x2="358.5" y2="222.5" stroke="#2a3cff" stroke-width="8" stroke-linecap="round" stroke-dasharray="5 5"/>
-          <polygon points="337.2,219.5 350.9,220.3 341.7,223.4 328.0,222.7" fill="#cfd4da" stroke="#0b0e13" stroke-width="1.5"/>
-          <polygon class="pcase" points="369.1,216.1 496.1,223.3 461.1,235.3 334.1,228.2" fill="url(#mgCase)" stroke="#e3ebee" stroke-width="1.2" stroke-opacity="0.75"/>
-          <polygon points="372.3,217.2 487.9,223.7 457.1,234.2 341.6,227.7" fill="url(#mgPcb)" stroke="#0c4a26" stroke-width="1.2"/>
-          <g fill="#e7b63a"><polygon points="378.4,217.1 383.3,217.4 381.7,217.9 376.9,217.7"/><polygon points="347.4,227.8 352.2,228.1 350.7,228.6 345.8,228.4"/><polygon points="386.8,217.6 391.6,217.9 390.1,218.4 385.2,218.1"/><polygon points="355.7,228.3 360.6,228.6 359.1,229.1 354.2,228.8"/><polygon points="395.1,218.1 400.0,218.4 398.4,218.9 393.6,218.6"/><polygon points="364.1,228.8 369.0,229.0 367.4,229.6 362.6,229.3"/><polygon points="403.5,218.5 408.3,218.8 406.8,219.4 401.9,219.1"/><polygon points="372.5,229.2 377.3,229.5 375.8,230.0 370.9,229.8"/><polygon points="411.8,219.0 416.7,219.3 415.2,219.8 410.3,219.5"/><polygon points="380.8,229.7 385.7,230.0 384.1,230.5 379.3,230.2"/><polygon points="420.2,219.5 425.1,219.8 423.5,220.3 418.7,220.0"/><polygon points="389.2,230.2 394.0,230.5 392.5,231.0 387.6,230.7"/><polygon points="428.6,220.0 433.4,220.2 431.9,220.8 427.0,220.5"/><polygon points="397.5,230.6 402.4,230.9 400.9,231.4 396.0,231.2"/><polygon points="436.9,220.4 441.8,220.7 440.3,221.2 435.4,221.0"/><polygon points="405.9,231.1 410.8,231.4 409.2,231.9 404.4,231.6"/><polygon points="445.3,220.9 450.2,221.2 448.6,221.7 443.8,221.4"/><polygon points="414.3,231.6 419.1,231.9 417.6,232.4 412.7,232.1"/><polygon points="453.7,221.4 458.5,221.6 457.0,222.2 452.1,221.9"/><polygon points="422.6,232.1 427.5,232.3 426.0,232.9 421.1,232.6"/><polygon points="462.0,221.8 466.9,222.1 465.4,222.6 460.5,222.4"/><polygon points="431.0,232.5 435.9,232.8 434.3,233.3 429.5,233.1"/><polygon points="470.4,222.3 475.3,222.6 473.7,223.1 468.8,222.8"/><polygon points="439.4,233.0 444.2,233.3 442.7,233.8 437.8,233.5"/><polygon points="478.7,222.8 483.6,223.1 482.1,223.6 477.2,223.3"/><polygon points="447.7,233.5 452.6,233.7 451.1,234.3 446.2,234.0"/></g>
-          <polygon points="353.9,220.4 364.6,221.0 355.4,224.2 344.7,223.6" fill="#b9bfc6" stroke="#6f767e" stroke-width="1"/>
-          <polygon points="412.4,221.0 477.8,224.7 455.1,232.5 389.7,228.9" fill="#cbd1d8" stroke="#878e96" stroke-width="1.2"/>
-          <circle class="led" cx="359.0" cy="226.0" r="4.6"/>
-         </g>
-        </svg>
-      </div>
-      <p class="hint">▲ WHAT THE PICO TYPES WHEN I PLUG IT IN · DEMO ON MY OWN MACHINE</p>
-      <div class="prints">
-        <figure class="print" style="--r:-4deg"><span class="tape"></span><picture><source srcset="assets/badusb-photo-top.webp" type="image/webp"><img src="assets/badusb-photo-top.jpg" alt="The BadUSB I built: a Raspberry Pi Pico W in a clear case on a wooden table" loading="lazy" width="960" height="720"></picture><figcaption class="hand">the real thing</figcaption></figure>
-        <figure class="print" style="--r:3deg"><span class="tape"></span><picture><source srcset="assets/badusb-photo-side.webp" type="image/webp"><img src="assets/badusb-photo-side.jpg" alt="My BadUSB from the side with its braided USB cable" loading="lazy" width="960" height="540"></picture><figcaption class="hand">cased up</figcaption></figure>
-      </div>
-    </div>
-    <div>
-      <div class="meta">05 · HARDWARE SECURITY · OCT 2026 → PRESENT</div>
-      <h3>My BadUSB</h3>
-      <p>I programmed a Raspberry Pi Pico W to act like a keyboard. Plugged into a computer (with the owner's permission), it types the commands that open my LinkedIn profile or résumé.</p>
-      <ul>
-        <li>Separate Windows and macOS payloads, written in CircuitPython + Adafruit HID</li>
-        <li>A file-based lock keeps the payload off so I can edit the code safely</li>
-        <li>Seeing a computer trust a "keyboard" made device trust and physical access click</li>
-      </ul>
-      <a class="btn" href="https://github.com/stevenhainley/Steves-LinkedIn-BadUSB">CODE ON GITHUB →</a>
-    </div>
-  </article>
-
-  <article class="proj reveal" id="paddy">
-    <div class="vis has-tape"><div class="ctape" aria-hidden="true"><div class="ctape-run"><span>CAUTION · WORK IN PROGRESS · DO NOT CROSS · </span><span>CAUTION · WORK IN PROGRESS · DO NOT CROSS · </span></div></div><div class="handheld" aria-hidden="true"><div class="lcd" id="lcd"></div><div class="hh-ctrl"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div></div></div>
-    <div>
-      <div class="meta">06 · EMBEDDED · <span class="wip"><span class="wip-t">IN PROGRESS</span></span></div>
-      <h3>Paddy:<br>less phone, more golf</h3>
-      <p>A pocket device built on a Pico W to keep the focus on the round. It's turning into a small app platform: apps get only the permissions they declare, and I test them in a simulator before they touch the hardware.</p>
-      <ul>
-        <li>First apps: golf scorecard, GPS, Wi-Fi list, battery, clock and alerts</li>
-        <li>Permission manifest per app; anything undeclared raises an error</li>
-        <li>Safe mode and a watchdog so a bad app can't brick the device</li>
-      </ul>
-      <p class="pixel wip-status" style="opacity:.9"><i class="wip-dot" aria-hidden="true"></i>STATUS: SOFTWARE IN SIMULATOR · HARDWARE BEING WIRED</p>
-    </div>
-  </article>
-
-  <article class="proj reveal" id="controller">
-    <div class="vis"><div class="frame flip" tabindex="0" id="flip"><div class="in"><img src="assets/controller-front.jpg" alt="Custom PS5 controller, front"><img class="back" src="assets/controller-back.jpg" alt="Custom PS5 controller, back with paddles"></div></div><p class="hint">▲ HOVER OR TAP TO FLIP</p></div>
-    <div>
-      <div class="meta">07 · HARDWARE · AUG 2026</div>
-      <h3>Custom PS5 controller</h3>
-      <p>I took my controller apart and installed an eXtremeRate SPARK kit: back paddles, an OLED display, clicky trigger stops and ergonomic grips, plus a custom-colored front plate and buttons.</p>
-      <ul><li>Full disassembly, kit installation and reassembly</li><li>Rubberized New Hope Gray &amp; Classic Gray</li></ul>
-    </div>
-  </article>
-
-  <article class="proj reveal" id="homelab">
-    <div class="vis"><div class="frame"><img src="assets/homelab-setup.webp" alt="My homelab setup with system monitoring on a portrait display">
-      <div class="board" aria-label="Services I run">
-        <div class="svc">Proxmox<i></i></div><div class="svc">Docker<i></i></div><div class="svc">Pi-hole<i></i></div><div class="svc">Tailscale<i></i></div><div class="svc">Homarr<i></i></div><div class="svc">Uptime Kuma<i></i></div>
-      </div></div></div>
-    <div>
-      <div class="meta">08 · INFRASTRUCTURE · MAY 2026 → PRESENT</div>
-      <h3>My homelab</h3>
-      <p>It's my place to learn Linux, networking and self-hosting. I run services on Proxmox and Docker, set them up myself, and figure out what went wrong when something breaks.</p>
-      <ul><li>Pi-hole for DNS filtering, Tailscale for remote access</li><li>Homarr dashboard and Uptime Kuma monitoring</li></ul>
-    </div>
-  </article>
-
-  <article class="proj reveal" id="climate">
-    <div class="vis"><div class="frame"><img src="assets/climate-book.webp" alt="Cover of Climate Lessons: Volume 2"></div><p class="hint">COVER ART: UNKNOWN STREET ARTIST, BERGEN, NORWAY. PHOTO: MAUREEN BELOW.</p></div>
-    <div>
-      <div class="meta">09 · RESEARCH &amp; PUBLICATION · AUG–DEC 2025</div>
-      <h3>Climate Lessons: Vol. 2</h3>
-      <p>In WPI's Great Problems Seminar, I co-wrote three chapters on atmospheric science, climate impacts in cities and public perception. I led our team's research into how people in the U.S. see climate policy, with expert interviews and a campus survey.</p>
-      <a class="btn" href="https://pressbooks.pub/climatelessonsvol2/">READ THE BOOK →</a>
-    </div>
-  </article>
+         <g class="pico"><polygon points="332.6,219.7 340.2,220.1 337.2,221.1 329.6,220.7" fill="#20252c"/><polygon points="329.6,225.6 337.2,226.0 337.2,221.1 329.6,220.7" fill="#171c22" stroke="#3a414a" stroke-width="0.8"/><polygon points="383.6,229.8 383.6,217.6 374.4,220.8 374.4,233.0" fill="url(#acS)" stroke="#cdd8dd" stroke-width="0.7" stroke-opacity=".5"/><polygon points="383.6,229.8 383.6,226.2 374.4,229.3 374.4,233.0" fill="url(#acS)" stroke="#eef5f8" stroke-width="0.7" stroke-opacity=".55"/><polygon points="383.6,226.2 383.6,225.3 374.4,228.5 374.4,229.3" fill="#0b0f13"/><polygon points="383.6,225.3 383.6,222.1 374.4,225.3 374.4,228.5" fill="#0f3f24" stroke="#1d6b3c" stroke-width="0.5"/><polygon points="383.6,222.1 383.6,221.3 374.4,224.5 374.4,225.3" fill="#0b0f13"/><polygon points="383.6,221.3 383.6,217.6 374.4,220.8 374.4,224.5" fill="url(#acS)" stroke="#eef5f8" stroke-width="0.7" stroke-opacity=".55"/><polygon points="333.3,230.7 374.4,233.0 374.4,229.3 333.3,227.0" fill="url(#acF)" stroke="#eef5f8" stroke-width="0.7" stroke-opacity=".55"/><polygon points="333.3,227.0 374.4,229.3 374.4,228.5 333.3,226.2" fill="#0b0f13"/><polygon points="333.3,226.2 374.4,228.5 374.4,225.3 333.3,223.0" fill="#0f3f24" stroke="#1d6b3c" stroke-width="0.5"/><polygon points="333.3,223.0 374.4,225.3 374.4,224.5 333.3,222.2" fill="#0b0f13"/><polygon points="333.3,222.2 374.4,224.5 374.4,220.8 333.3,218.5" fill="url(#acF)" stroke="#eef5f8" stroke-width="0.7" stroke-opacity=".55"/><polygon points="342.5,215.3 383.6,217.6 374.4,220.8 333.3,218.5" fill="url(#acT)" stroke="#f2f8fb" stroke-width="0.9" stroke-opacity=".8"/><circle cx="337.9" cy="224.9" r="1.2" fill="#e7b63a"/><circle cx="341.4" cy="225.1" r="1.2" fill="#e7b63a"/><circle cx="345.0" cy="225.3" r="1.2" fill="#e7b63a"/><circle cx="348.5" cy="225.5" r="1.2" fill="#e7b63a"/><circle cx="352.1" cy="225.7" r="1.2" fill="#e7b63a"/><circle cx="355.6" cy="225.9" r="1.2" fill="#e7b63a"/><circle cx="359.2" cy="226.1" r="1.2" fill="#e7b63a"/><circle cx="362.7" cy="226.3" r="1.2" fill="#e7b63a"/><circle cx="366.3" cy="226.5" r="1.2" fill="#e7b63a"/><circle cx="369.8" cy="226.7" r="1.2" fill="#e7b63a"/><line x1="345.1" y1="216.0" x2="345.1" y2="211.1" stroke="#9aa0a8" stroke-width="2.4" stroke-linecap="round"/><circle cx="345.1" cy="211.1" r="1.9" fill="#dce1e7" stroke="#6f767e" stroke-width="0.6"/><line x1="378.6" y1="217.9" x2="378.6" y2="213.0" stroke="#9aa0a8" stroke-width="2.4" stroke-linecap="round"/><circle cx="378.6" cy="213.0" r="1.9" fill="#dce1e7" stroke="#6f767e" stroke-width="0.6"/><line x1="338.4" y1="218.3" x2="338.4" y2="213.4" stroke="#9aa0a8" stroke-width="2.4" stroke-linecap="round"/><circle cx="338.4" cy="213.4" r="1.9" fill="#dce1e7" stroke="#6f767e" stroke-width="0.6"/><line x1="371.8" y1="220.2" x2="371.8" y2="215.3" stroke="#9aa0a8" stroke-width="2.4" stroke-linecap="round"/><circle cx="371.8" cy="215.3" r="1.9" fill="#dce1e7" stroke="#6f767e" stroke-width="0.6"/><circle class="led" cx="342.0" cy="218.3" r="2.8"/></g>
+        </svg></div>
+    <div class="prints">
+      <figure class="print" style="--r:-4deg"><span class="tape"></span><picture><source data-srcset="assets/badusb-photo-top.webp" type="image/webp"><img data-src="assets/badusb-photo-top.jpg" alt="The BadUSB I built: a Raspberry Pi Pico W in a clear case on a wooden table" width="960" height="720"></picture><figcaption class="hand">the real thing</figcaption></figure>
+      <figure class="print" style="--r:3deg"><span class="tape"></span><picture><source data-srcset="assets/badusb-photo-side.webp" type="image/webp"><img data-src="assets/badusb-photo-side.jpg" alt="My BadUSB from the side, cased up with its braided USB cable" width="960" height="540"></picture><figcaption class="hand">cased up</figcaption></figure>
+    </div></div><div class="cc-m" data-for="paddy"><div class="vis has-tape"><div class="ctape" aria-hidden="true"><div class="ctape-run"><span>CAUTION · WORK IN PROGRESS · DO NOT CROSS · </span><span>CAUTION · WORK IN PROGRESS · DO NOT CROSS · </span></div></div><div class="handheld" aria-hidden="true"><div class="lcd" id="lcd"></div><div class="hh-ctrl"><span class="dpad"></span><span class="ab"><i></i><i></i></span></div></div></div></div><div class="cc-m" data-for="controller"><div class="frame flip" tabindex="0" id="flip"><div class="in"><img data-src="assets/controller-front.jpg" alt="Custom PS5 controller, front"><img class="back" data-src="assets/controller-back.jpg" alt="Custom PS5 controller, back with paddles"></div></div><p class="hint">▲ HOVER OR TAP TO FLIP</p></div><div class="cc-m" data-for="homelab"><div class="frame"><img data-src="assets/homelab-setup.webp" alt="My homelab setup with system monitoring on a portrait display"></div></div><div class="cc-m" data-for="climate"><div class="frame"><a href="https://pressbooks.pub/climatelessonsvol2/"><img data-src="assets/climate-book.webp" alt="Cover of Climate Lessons: Volume 2"></a></div><p class="hint">COVER ART: UNKNOWN STREET ARTIST, BERGEN, NORWAY. PHOTO: MAUREEN BELOW.</p></div><div class="cc-m" data-for="sh"><figure class="glimwin"><div class="tb" aria-hidden="true"><i></i><i></i><i></i><span>glim — lab</span></div><div class="pane"><video id="glimvid" muted loop playsinline preload="none" data-poster="assets/glim-lab-poster.jpg" aria-label="Animation: Glim, my pixel mascot, at a lab console"><source data-src="assets/glim-lab-loop.webm" type="video/webm"><source data-src="assets/glim-lab-loop.mp4" type="video/mp4"></video></div><figcaption class="sb"><span>glim@lab:~</span><b>● on break</b></figcaption></figure></div></div>
 </div></section>
 
 <section class="xp" id="xp"><div class="wrap">
@@ -611,7 +547,6 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   <h2>Education &amp;<br>experience.</h2>
   <div class="tl">
     <article><div class="when">EXPECTED MAY 2029</div><h3>Worcester Polytechnic Institute</h3><p>B.S. Cybersecurity, minor in Law and Technology · GPA 3.7 · Dean's List, Fall 2025 · WPI Presidential Scholarship. Club Golf, Green Team, Women in Cyber Security.</p></article>
-    <article><div class="when">OCT 2026 → PRESENT</div><h3>Founder &amp; CEO, <svg class="shl ink" role="img" aria-label="sh."><use href="#shl"/></svg> industries</h3><p>Mission: give every business a second brain. I build Glim, the second brain for your business (set up on-site and run with the client), and run sh. Studio, done-for-you podcast clips. I built the systems behind both: the Glim Mac app, the clip engine and the company site.</p></article>
     <article><div class="when">JUN 2023 – AUG 2026 · CANTON, MA</div><h3>HVAC Field Assistant, Hurley Mechanical</h3><p>Worked alongside a senior technician on residential and commercial systems: installation, maintenance and repairs, including rooftop units and attic ductwork.</p></article>
     <article><div class="when">AUG 2024 – JUL 2026 · PLYMOUTH, MA</div><h3>Retail Sales Associate, Plimoth Patuxet Museums</h3><p>Helped visitors in the museum shops and handled checkout during busy shifts.</p></article>
   </div>
@@ -653,49 +588,19 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 (()=>{
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 // tickers
-const fill=(id,words)=>{const s=words.map(w=>`<span>→ ${w}</span>`).join('');document.getElementById(id).innerHTML=s+s+s+s;};
-fill('t1',['VIEW WORKS','CYBERSECURITY','WPI 2029','SH. INDUSTRIES','GLIM','HARDWARE','HOMELAB','INTERNSHIP READY']);
-fill('t2',['VIEW WORKS','GLIM','SH. STUDIO','BADUSB','PADDY','PS5 REBUILD','HOMELAB','PUBLISHED AUTHOR']);
+const fill=(id,words)=>{const el=document.getElementById(id);if(!el)return;const s=words.map(w=>`<span>→ ${w}</span>`).join('');el.innerHTML=s+s+s+s;};
+fill('t1',['VIEW WORKS','CYBERSECURITY','WPI 2029','HARDWARE','HOMELAB','INTERNSHIP READY']);
+
 // Glim speech
-const lines=["HI, I'M GLIM.","STEVEN BUILT ME.","I'M A SECOND BRAIN FOR BUSINESSES.","PICK A CARTRIDGE BELOW ↓","HE'S LOOKING FOR AN INTERNSHIP!"];
+const lines=["HI, I'M GLIM.","STEVEN BUILT ME.","PICK A CARTRIDGE BELOW ↓","HE'S LOOKING FOR AN INTERNSHIP!"];
 let li=0;const bub=document.getElementById('bubble');
 if(!reduce)setInterval(()=>{li=(li+1)%lines.length;bub.textContent=lines[li];},2600);
 // reveal + counters
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('vis');
   e.target.querySelectorAll&&e.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(e.target);}),{threshold:.15});
-document.querySelectorAll('.reveal,.stats').forEach(el=>io.observe(el));
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 function count(el){const n=+el.dataset.n,s=el.dataset.s||'';if(reduce){el.textContent=n+s;return;}let t0=null;
   const f=t=>{t0=t0||t;const p=Math.min(1,(t-t0)/1200);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f);};requestAnimationFrame(f);}
-// network diagram
-const N={me:[320,40,'STEVEN','CEO · DECIDES'],co:[320,130,'GLIM','ROUTES THE WORK'],
-  sales:[80,230,'SALES','LEADS · OUTREACH'],clips:[240,230,'SH. STUDIO','CUT · SCORE'],digital:[400,230,'GLIM APP','BAR · BROWSER'],hq:[560,230,'MEMORY','BRAIN · HEALTH'],
-  t1:[80,345,'GMAIL',''],t2:[240,345,'CLIP ENGINE',''],t3:[400,345,'macOS · SWIFT',''],t4:[560,345,'LOCAL MODELS','']};
-const E=[['me','co'],['co','sales'],['co','clips'],['co','digital'],['co','hq'],['sales','t1'],['clips','t2'],['digital','t3'],['hq','t4']];
-const ns='http://www.w3.org/2000/svg',W=document.getElementById('wires'),P=document.getElementById('pkts'),ND=document.getElementById('nodes');
-E.forEach(([a,b],i)=>{const[x1,y1]=N[a],[x2,y2]=N[b];const p=document.createElementNS(ns,'path');const my=(y1+y2)/2;
-  p.setAttribute('d',`M${x1},${y1+18} C${x1},${my} ${x2},${my} ${x2},${y2-18}`);p.setAttribute('class','wire');p.id='w'+i;W.appendChild(p);
-  if(!reduce){const c=document.createElementNS(ns,'circle');c.setAttribute('r',4);c.setAttribute('class','pk'+(i%2?' t':''));
-    const m=document.createElementNS(ns,'animateMotion');m.setAttribute('dur',(2.2+(i%3)*.6)+'s');m.setAttribute('repeatCount','indefinite');m.setAttribute('begin',(i*.35)+'s');
-    if(i===0)m.setAttribute('keyPoints','1;0'),m.setAttribute('keyTimes','0;1');
-    const mp=document.createElementNS(ns,'mpath');mp.setAttribute('href','#w'+i);m.appendChild(mp);c.appendChild(m);P.appendChild(c);}});
-Object.entries(N).forEach(([k,[x,y,l,s]])=>{const g=document.createElementNS(ns,'g');g.setAttribute('class','node '+(k==='me'?'me':k==='co'?'co':''));
-  const w=k.startsWith('t')?128:134,h=s?40:30;g.innerHTML=`<rect x="${x-w/2}" y="${y-h/2}" width="${w}" height="${h}" rx="8"/><text x="${x}" y="${y+(s?-2:4)}" text-anchor="middle">${l}</text>${s?`<text class="k" x="${x}" y="${y+13}" text-anchor="middle">${s}</text>`:''}`;ND.appendChild(g);});
-// activity log (illustrative sample of what Glim records)
-const L=[['09:05','ok','morning brief written · emailed + pushed to phone'],['09:06','','sales: 14 founder podcasts screened, 3 qualified'],['09:12','','clips: transcript ready · 2,141 words, word timings'],
-  ['09:13','','clips: 4 moments picked · hooks scored'],['09:15','ok','clips: render 1/4 done · −14.0 LUFS · 8.7 MB'],['09:16','ap','APPROVAL NEEDED · send sample pack to a podcast?'],['09:18','ok','approved by Steven · sent from Gmail · ledger #212'],
-  ['09:20','wa','duplicate check: thread already answered · send skipped'],['09:31','','glim: notes from the call filed to memory'],['09:40','ok','health: 11/12 services up · swap high, flagged'],['09:41','','router: private jobs local · builds to Claude and Codex']];
-const log=document.getElementById('log');let k=0;
-const add=()=>{const[t,c,m]=L[k%L.length];const d=document.createElement('div');d.innerHTML=`<span class="t">${t}</span> <span class="${c}">${m}</span>`;log.appendChild(d);if(log.children.length>12)log.removeChild(log.firstChild);k++;};
-for(let i=0;i<6;i++)add();if(!reduce)setInterval(add,1700);
-// pipeline
-const steps=[...document.querySelectorAll('#pipe .step')];let s=0;
-const lit=()=>{steps.forEach((e,i)=>e.classList.toggle('on',i<=s));s=(s+1)%(steps.length+1);};lit();if(!reduce)setInterval(lit,900);
-// phone notifications
-const LOGO='Glim';const notes=[[LOGO,'Approval needed: send 3 sample clips to a founder podcast?',1],[LOGO,'Morning brief: 3 follow-ups due, 1 reply waiting, 2 clips ready to review.',0],[LOGO,'Clip pack passed QA. Ready for your review.',1]];
-const box=document.getElementById('notes');let q=0;
-function showNote(){const[a,b,act]=notes[q%notes.length];q++;box.innerHTML='';const d=document.createElement('div');d.className='note';d.style.top='150px';
-  d.innerHTML=`<div class="h"><img src="assets/glim-16.png" alt="">${a}<small>now</small></div>${b}${act?'<div class="acts"><span>Approve</span><span>Deny</span></div>':''}`;box.appendChild(d);requestAnimationFrame(()=>requestAnimationFrame(()=>d.classList.add('show')));}
-showNote();if(!reduce)setInterval(showNote,4200);
 // BadUSB illustrated demo
 const demo=document.getElementById('usbdemo');
 const spot=document.getElementById('usb-spot'),cmd=document.getElementById('usb-cmd');
@@ -711,12 +616,92 @@ function uStatic(){uClear();demo.className='usb-demo done';spot.textContent='ter
 if(reduce){uStatic();}
 else{new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)uRun();else uClear();}),{threshold:.3}).observe(demo);}
 // Paddy LCD menu
-const apps=['GOLF SCORECARD','GPS','WI-FI LIST','BATTERY','CLOCK','<svg class="shl" role="img" aria-label="sh."><use href="#shl"/></svg> ALERTS'];let a=0;const lcd=document.getElementById('lcd');
+const apps=['GOLF SCORECARD','GPS','WI-FI LIST','BATTERY','CLOCK','ALERTS'];let a=0;const lcd=document.getElementById('lcd');
 const menu=()=>{lcd.innerHTML='PADDY OS 0.1<br>'+apps.map((x,i)=>i===a?`<span class="sel">▶ ${x}</span>`:`&nbsp; ${x}`).join('<br>');a=(a+1)%apps.length;};menu();if(!reduce)setInterval(menu,1100);
-// Glim window: poster only when motion is reduced
-const gv=document.getElementById('glimvid');if(gv){const rm=matchMedia('(prefers-reduced-motion: reduce)');const apply=()=>{if(rm.matches){gv.pause();gv.removeAttribute('autoplay');}else{gv.play&&gv.play().catch(()=>{});}};apply();rm.addEventListener&&rm.addEventListener('change',apply);}
 // flip on tap/keyboard
 const fl=document.getElementById('flip');fl.addEventListener('click',()=>fl.classList.toggle('on'));fl.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();fl.classList.toggle('on');}});
+// cartridge console (approved mockup, integrated)
+(function(){
+const $=s=>document.getElementById(s);
+const shelf=$('cc-shelf'),store=$('cc-media');if(!shelf||!store)return;
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const K='#1C1C18',W='#F6F5F0',G='#C6FF3D';
+function glim(){const px=[];const run=(r,a,b,c)=>{for(let x=a;x<=b;x++)px.push([r,x,c])};
+  px.push([0,5,G],[1,5,K]);run(2,3,8,K);run(3,2,9,K);for(let r=4;r<10;r++)run(r,1,10,K);
+  run(5,2,3,W);run(5,8,9,W);px.push([6,2,W],[6,8,W]);run(8,5,6,W);run(10,2,9,K);run(11,3,8,K);px.push([12,3,K],[12,8,K]);run(13,2,3,K);run(13,8,9,K);
+  return px.map(([r,c,f])=>`<rect x="${c}" y="${r}" width="1" height="1" fill="${f}"/>`).join('')}
+$('cc-glimg').innerHTML=glim();
+const ART={
+ badusb:`<svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="5" y="0" width="6" height="5" fill="#c8ccd3"/><rect x="6" y="1" width="1" height="2" fill="#0b0d17"/><rect x="9" y="1" width="1" height="2" fill="#0b0d17"/><rect x="3" y="5" width="10" height="11" fill="#1f7a43"/><rect x="5" y="8" width="6" height="5" fill="#e9edf4"/><rect x="11" y="6" width="1" height="1" fill="#3ddc84"/></svg>`,
+ paddy:`<svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="0" width="10" height="16" fill="#22d3ee"/><rect x="4" y="1" width="8" height="7" fill="#0f380f"/><rect x="5" y="3" width="6" height="1" fill="#9bbc0f"/><rect x="5" y="5" width="4" height="1" fill="#9bbc0f"/><rect x="5" y="10" width="3" height="1" fill="#0b0d17"/><rect x="6" y="9" width="1" height="3" fill="#0b0d17"/><rect x="10" y="10" width="2" height="2" fill="#ff3b30"/></svg>`,
+ controller:`<svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="1" y="5" width="14" height="7" fill="#ff9f43"/><rect x="0" y="8" width="3" height="6" fill="#ff9f43"/><rect x="13" y="8" width="3" height="6" fill="#ff9f43"/><rect x="3" y="7" width="3" height="1" fill="#0b0d17"/><rect x="4" y="6" width="1" height="3" fill="#0b0d17"/><rect x="11" y="6" width="1" height="1" fill="#0b0d17"/><rect x="12" y="7" width="1" height="1" fill="#0b0d17"/><rect x="10" y="7" width="1" height="1" fill="#0b0d17"/><rect x="11" y="8" width="1" height="1" fill="#0b0d17"/></svg>`,
+ homelab:`<svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="2" y="1" width="12" height="4" fill="#3ddc84"/><rect x="2" y="6" width="12" height="4" fill="#3ddc84"/><rect x="2" y="11" width="12" height="4" fill="#3ddc84"/><rect x="4" y="2" width="2" height="2" fill="#0b0d17"/><rect x="4" y="7" width="2" height="2" fill="#0b0d17"/><rect x="4" y="12" width="2" height="2" fill="#0b0d17"/><rect x="11" y="2" width="1" height="1" fill="#c6f432"/><rect x="11" y="7" width="1" height="1" fill="#c6f432"/><rect x="11" y="12" width="1" height="1" fill="#ff3b30"/></svg>`,
+ climate:`<svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="2" y="1" width="12" height="14" fill="#ffbd2e"/><rect x="2" y="1" width="2" height="14" fill="#c98d00"/><rect x="6" y="4" width="6" height="1" fill="#0b0d17"/><rect x="6" y="6" width="5" height="1" fill="#0b0d17"/><rect x="6" y="8" width="6" height="1" fill="#0b0d17"/><rect x="6" y="11" width="4" height="2" fill="#3ddc84"/></svg>`,
+ sh:`<svg viewBox="0 0 12 14" shape-rendering="crispEdges">${glim()}</svg>`
+};
+const GM='<div class="cc-gm"></div>';
+const P=[
+ {id:'sh',name:'sh. industries',sub:'MY FIRST COMPANY',c:'#c6f432',a:'#0e0e0d',theme:'cc-t-sh',lvl:'01',status:'ACTIVE',when:'OCT 2026',active:true,founder:true,
+  html:`<span class="cc-act">NOW PLAYING</span> <span class="cc-founder">FOUNDER</span><h3 style="margin-top:10px">sh. industries</h3><p>My first company. It's a side venture I run alongside school, and I take it seriously: real offers, real deadlines, and a product I use every day. I'm building Glim, a pixel assistant that keeps a small business's details straight, so the owner can focus on the actual work.</p><ul class="cc-quests"><li>Glim for Mac: a desk, a menu-bar assistant and a pet</li><li>Next level: a version for local trade businesses</li></ul><a class="cc-pbtn" href="https://shindustries.co" target="_blank" rel="noopener">SHINDUSTRIES.CO →</a>`+GM},
+ {id:'paddy',name:'Paddy',sub:'EMBEDDED · WIP',c:'#22d3ee',a:'#0f380f',theme:'cc-t-pad',lvl:'02',status:'IN PROGRESS',when:'OCT 2026',wip:true,
+  html:`<div class="cc-tape"><span>WORK IN PROGRESS</span></div><h3>Paddy: less phone, more golf</h3><p>A pocket device built on a Pico W to keep the focus on the round. It's turning into a small app platform: apps get only the permissions they declare, and I test them in a simulator before they touch the hardware.</p>`+GM+`<ul class="cc-quests"><li>First apps: golf scorecard, GPS, Wi-Fi list, battery, clock and alerts</li><li>Permission manifest per app; anything undeclared raises an error</li><li>Safe mode and a watchdog so a bad app can't brick the device</li></ul><p><b>STATUS:</b> software in simulator · hardware being wired</p>`},
+ {id:'badusb',name:'BadUSB',sub:'HARDWARE SECURITY',c:'#ff3b30',a:'#2a0b0a',theme:'cc-t-bad',lvl:'03',status:'COMPLETE',when:'OCT 2026',
+  html:`<div class="cc-prompt">$ cat README.md</div><h3>My BadUSB</h3><p>I programmed a Raspberry Pi Pico W to act like a keyboard. Plugged into a computer (with the owner's permission), it types the commands that open my LinkedIn profile or résumé.</p>`+GM+`<ul class="cc-quests"><li>Separate Windows and macOS payloads, written in CircuitPython + Adafruit HID</li><li>A file-based lock keeps the payload off so I can edit the code safely</li><li>Seeing a computer trust a "keyboard" made device trust and physical access click</li></ul><a class="cc-pbtn" href="https://github.com/stevenhainley/Steves-LinkedIn-BadUSB" target="_blank" rel="noopener">CODE ON GITHUB →</a>`},
+ {id:'controller',name:'PS5 Controller',sub:'HARDWARE MOD',c:'#ff9f43',a:'#2a1606',theme:'cc-t-ctl',lvl:'04',status:'COMPLETE',when:'AUG 2026',
+  html:`<h3>Custom PS5 controller</h3><p>I took my controller apart and installed an eXtremeRate SPARK kit: back paddles, an OLED display, clicky trigger stops and ergonomic grips, plus a custom-colored front plate and buttons.</p>`+GM+`<ul class="cc-quests"><li>Full disassembly, kit installation and reassembly</li><li>Rubberized New Hope Gray &amp; Classic Gray</li></ul>`},
+ {id:'homelab',name:'Homelab',sub:'INFRASTRUCTURE',c:'#3ddc84',a:'#08130d',theme:'cc-t-lab',lvl:'05',status:'ONLINE',when:'MAY 2026',
+  html:`<h3>My homelab</h3><p>It's my place to learn Linux, networking and self-hosting. I run services on Proxmox and Docker, set them up myself, and figure out what went wrong when something breaks.</p><div class="cc-rack"><div><i></i>Proxmox · Docker</div><div><i></i>Pi-hole · DNS filtering</div><div><i></i>Tailscale · remote access</div><div><i></i>Homarr · dashboard</div><div><i></i>Uptime Kuma · monitoring</div></div>`+GM},
+ {id:'climate',name:'Climate Lessons',sub:'RESEARCH · BOOK',c:'#ffbd2e',a:'#3a2a05',theme:'cc-t-cli',lvl:'06',status:'PUBLISHED',when:'AUG 2025',
+  html:`<h3>Climate Lessons: Vol. 2</h3><p>In WPI's Great Problems Seminar, I co-wrote three chapters on atmospheric science, climate impacts in cities and public perception.</p><ul class="cc-quests"><li>Led our team's research into how people in the U.S. see climate policy</li><li>Expert interviews and a campus survey</li></ul><a class="cc-pbtn" href="https://pressbooks.pub/climatelessonsvol2/" target="_blank" rel="noopener">READ THE BOOK →</a>`+GM}
+];
+shelf.innerHTML=P.map(p=>`<button class="cc-cart" type="button" data-id="${p.id}" style="--c:${p.c};--a:${p.a}" aria-label="Load ${p.name} (${p.sub.toLowerCase()}, ${p.when.toLowerCase()})">
+  ${p.active?'<span class="cc-flag">ACTIVE</span>':''}${p.founder?'<span class="cc-ftag">FOUNDER</span>':''}<span class="cc-body"></span><span class="cc-ridges"></span>
+  <span class="cc-label"><span class="cc-art">${ART[p.id]}</span><span><span class="cc-name">${p.name}</span><span class="cc-sub">${p.sub}</span><span class="cc-date">${p.when}</span></span></span>
+  ${p.wip?'<span class="cc-wip"></span>':''}<span class="cc-pins"></span></button>`).join('');
+let loaded=null,busy=false,media=null;
+function show(id){['cc-attract','cc-boot','cc-game'].forEach(l=>$(l).classList.toggle('cc-show',l===id))}
+function anim(el,frames,opts){return RM?Promise.resolve():el.animate(frames,Object.assign({fill:'forwards'},opts)).finished}
+function mount(id){const m=store.querySelector('[data-for="'+id+'"]'),slot=$('cc-game').querySelector('.cc-gm');if(!m||!slot)return;
+  m.querySelectorAll('[data-srcset]').forEach(e=>{e.setAttribute('srcset',e.dataset.srcset);e.removeAttribute('data-srcset')});
+  m.querySelectorAll('[data-src]').forEach(e=>{e.setAttribute('src',e.dataset.src);e.removeAttribute('data-src')});
+  m.querySelectorAll('[data-poster]').forEach(e=>{e.setAttribute('poster',e.dataset.poster);e.removeAttribute('data-poster')});
+  slot.appendChild(m);media=m;const v=m.querySelector('video');if(v){if(!v.dataset.ld){v.load();v.dataset.ld='1'}if(!RM){const pl=v.play();if(pl)pl.catch(()=>{})}}}
+function unmount(){if(!media)return;const v=media.querySelector('video');if(v)v.pause();store.appendChild(media);media=null}
+async function insert(btn){
+  if(busy)return;busy=true;
+  const p=P.find(x=>x.id===btn.dataset.id);
+  if(loaded)await eject(true);
+  $('cc-console').scrollIntoView({behavior:RM?'auto':'smooth',block:'nearest'});
+  const r=btn.getBoundingClientRect(),s=$('cc-slot').getBoundingClientRect();
+  const fly=btn.cloneNode(true);fly.classList.add('cc-flyer');fly.removeAttribute('data-id');fly.setAttribute('aria-hidden','true');fly.tabIndex=-1;
+  Object.assign(fly.style,{width:r.width+'px',height:r.height+'px',transform:`translate(${r.left}px,${r.top}px)`});
+  document.body.appendChild(fly);btn.classList.add('cc-loaded');
+  const sc=(s.width*0.92)/r.width,tx=s.left+s.width/2-r.width*sc/2,ty=s.top-r.height*sc;
+  await anim(fly,[{transform:`translate(${r.left}px,${r.top}px)`},{transform:`translate(${(r.left+tx)/2}px,${Math.min(r.top,ty)-60}px) rotate(-8deg) scale(${(1+sc)/2})`},{transform:`translate(${tx}px,${ty}px) scale(${sc})`}],{duration:520,easing:'cubic-bezier(.3,.7,.2,1)'});
+  await anim(fly,[{transform:`translate(${tx}px,${ty}px) scale(${sc})`,opacity:1},{transform:`translate(${tx}px,${ty+r.height*sc*0.62}px) scale(${sc})`,opacity:0}],{duration:200,easing:'cubic-bezier(.6,0,.9,.4)'});
+  fly.remove();if(!RM){$('cc-console').classList.add('cc-shake');setTimeout(()=>$('cc-console').classList.remove('cc-shake'),200)}
+  $('cc-console').classList.add('cc-on');loaded=btn;$('cc-status').textContent=p.name.toUpperCase()+' LOADED';$('cc-eject').disabled=false;
+  $('cc-bootTitle').textContent='LOADING '+p.name.toUpperCase()+'.ROM';$('cc-bootRom').textContent='LV '+p.lvl+' · '+p.when;$('cc-bootBar').style.transform='scaleX(0)';
+  show('cc-boot');if(!RM){await anim($('cc-bootBar'),[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:650,easing:'steps(10)'})}
+  const g=$('cc-game');g.className='cc-layer cc-game '+p.theme;
+  g.innerHTML=`<div class="cc-hud"><span class="cc-lvl">LV ${p.lvl}</span><span>${p.sub}</span><span>${p.when}</span><span>STATUS: ${p.status}</span></div>`+p.html;
+  mount(p.id);g.scrollTop=0;show('cc-game');g.focus({preventScroll:true});
+  try{history.replaceState(null,'','#'+p.id)}catch(e){}busy=false;
+}
+async function eject(silent){
+  if(!loaded)return;const btn=loaded;loaded=null;
+  unmount();show('cc-attract');$('cc-console').classList.remove('cc-on');$('cc-status').textContent='NO CARTRIDGE';$('cc-eject').disabled=true;
+  btn.classList.remove('cc-loaded');
+  if(!silent){try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
+  await anim(btn,[{transform:'translateY(-18px)'},{transform:'translateY(0)'}],{duration:260,easing:'cubic-bezier(.2,.8,.2,1)',fill:'none'});
+  if(!silent)btn.focus();
+}
+shelf.addEventListener('click',e=>{const b=e.target.closest('.cc-cart');if(b&&b!==loaded)insert(b)});
+$('cc-eject').addEventListener('click',()=>{if(!busy)eject()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!busy&&loaded)eject()});
+let h=(location.hash||'').slice(1);if(h==='glim')h='sh';
+const deep=h&&shelf.querySelector('.cc-cart[data-id="'+h+'"]');if(deep)setTimeout(()=>insert(deep),300);
+})();
 })();
 </script>
 </body>
