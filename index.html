@@ -7,7 +7,7 @@
 <meta name="description" content="Steven Hainley: Cybersecurity (BS) student at WPI, Class of 2029. Hardware projects, a homelab, a handheld in progress, and a published book chapter. Looking for cybersecurity internships.">
 <meta property="og:title" content="Steven Hainley · Cybersecurity student at WPI">
 <meta property="og:description" content="Cybersecurity student at WPI (Class of 2029). Hardware projects, a homelab, and a handheld in progress.">
-<meta property="og:image" content="https://stevenhainley.net/assets/glim-lab-poster.jpg">
+<meta property="og:image" content="https://stevenhainley.net/assets/steven-headshot.jpg">
 <link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -485,7 +485,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 <a class="skip" href="#main">Skip to content</a>
 
 <nav><div class="wrap">
-  <a class="logo" href="#top"><img src="assets/glim-app-icon-512.png" alt="">STEVEN HAINLEY</a>
+  <a class="logo" href="#top">STEVEN HAINLEY</a>
   <ul>
     <li><a href="#select">Projects</a></li>
     <li><a href="#xp">Experience</a></li>
@@ -507,7 +507,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
     </div>
   </div>
   <div class="cabinet" aria-hidden="true">
-    <div class="screen"><div class="bubble" id="bubble">HI, I'M GLIM.</div><img src="assets/operator-512.png" alt=""></div>
+    <div class="screen"><div class="bubble" id="bubble">HI, I'M STEVEN.</div><img src="assets/steven-headshot.jpg" alt="" style="object-fit:cover"></div>
     <div class="cab-foot"><span class="joy"></span><span class="pixel" style="font-size:9px">PLAYER 1</span><span class="btns"><i></i><i></i></span></div>
   </div>
 </div></header>
@@ -522,7 +522,6 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
       <div class="cc-crt">
         <div class="cc-screen" id="cc-screen" aria-live="polite">
           <div class="cc-layer cc-attract cc-show" id="cc-attract">
-            <svg class="cc-glimspr" viewBox="0 0 12 14" shape-rendering="crispEdges" aria-hidden="true"><g id="cc-glimg"></g></svg>
             <div>STEVEN'S CONSOLE</div>
             <div class="cc-blink">▶ PICK A CARTRIDGE</div>
             <small id="cc-count">GAMES · NEWEST FIRST</small>
@@ -646,7 +645,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   </div>
 </div></section>
 </main>
-<footer>© 2026 Steven Hainley · Built with a little help from Glim · GAME OVER? NEVER.</footer>
+<footer>© 2026 Steven Hainley · GAME OVER? NEVER.</footer>
 
 <script>
 (()=>{
@@ -656,7 +655,7 @@ const fill=(id,words)=>{const el=document.getElementById(id);if(!el)return;const
 fill('t1',['VIEW WORKS','CYBERSECURITY','WPI 2029','HARDWARE','HOMELAB','INTERNSHIP READY']);
 
 // Glim speech
-const lines=["HI, I'M GLIM.","STEVEN BUILT ME.","PICK A CARTRIDGE BELOW ↓","HE'S LOOKING FOR AN INTERNSHIP!"];
+const lines=["HI, I'M STEVEN.","CYBERSECURITY @ WPI","PICK A CARTRIDGE BELOW ↓","LOOKING FOR AN INTERNSHIP!"];
 let li=0;const bub=document.getElementById('bubble');
 if(!reduce)setInterval(()=>{li=(li+1)%lines.length;bub.textContent=lines[li];},2600);
 // reveal + counters
@@ -694,7 +693,6 @@ function glim(){const px=[];const run=(r,a,b,c)=>{for(let x=a;x<=b;x++)px.push([
   px.push([0,5,G],[1,5,K]);run(2,3,8,K);run(3,2,9,K);for(let r=4;r<10;r++)run(r,1,10,K);
   run(5,2,3,W);run(5,8,9,W);px.push([6,2,W],[6,8,W]);run(8,5,6,W);run(10,2,9,K);run(11,3,8,K);px.push([12,3,K],[12,8,K]);run(13,2,3,K);run(13,8,9,K);
   return px.map(([r,c,f])=>`<rect x="${c}" y="${r}" width="1" height="1" fill="${f}"/>`).join('')}
-$('cc-glimg').innerHTML=glim();
 const ART={
  badusb:`<svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="5" y="0" width="6" height="5" fill="#c8ccd3"/><rect x="6" y="1" width="1" height="2" fill="#0b0d17"/><rect x="9" y="1" width="1" height="2" fill="#0b0d17"/><rect x="3" y="5" width="10" height="11" fill="#1f7a43"/><rect x="5" y="8" width="6" height="5" fill="#e9edf4"/><rect x="11" y="6" width="1" height="1" fill="#3ddc84"/></svg>`,
  paddy:`<svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="0" width="10" height="16" fill="#22d3ee"/><rect x="4" y="1" width="8" height="7" fill="#0f380f"/><rect x="5" y="3" width="6" height="1" fill="#9bbc0f"/><rect x="5" y="5" width="4" height="1" fill="#9bbc0f"/><rect x="5" y="10" width="3" height="1" fill="#0b0d17"/><rect x="6" y="9" width="1" height="3" fill="#0b0d17"/><rect x="10" y="10" width="2" height="2" fill="#ff3b30"/></svg>`,
@@ -711,7 +709,7 @@ const P=[
  {id:'duckyguard',name:'DuckyGuard',sub:'MACOS SECURITY APP',c:'#ff8a1f',a:'#14100d',theme:'cc-t-duck',lvl:'01',status:'IN TESTING',stat:'IN TESTING',st:'test',m:'2026-10',
   html:`<h3>DuckyGuard</h3><p>A macOS menu-bar app that blocks keystroke-injection devices by how they type. A USB stick can say it's a keyboard and type a command in under a second, and your Mac believes it. DuckyGuard times every key. When a burst is faster and more even than any hand, it drops the rest before an app sees it and explains why.</p>`+GM+`<h4>WHY I BUILT IT</h4><p>It began as an afterthought to my BadUSB project. I'd shown a Pico W that types like a keyboard, and the obvious next question was the other side: how would a Mac notice?</p><h4>HOW IT WORKS</h4><ul class="cc-quests"><li>Speed: keys per second. No hand keeps up with an injector.</li><li>Evenness: people wobble, scripts don't.</li><li>Burst length: it needs several keys before it decides.</li><li>Context: does it look like a shell command, from a keyboard that just appeared?</li></ul><h4>SIMULATION NUMBERS</h4><ul class="cc-sim"><li><b>0 of 7,000</b> runs falsely flagged across 7 simulated human profiles <em>SIMULATION</em></li><li><b>100%</b> of injectors at 8 to 40 ms per key caught, blocked by the 6th to 8th key <em>SIMULATION</em></li><li><b>0%</b> of slow, randomised 80 to 120 ms payloads caught, by design <em>SIMULATION</em></li></ul><p class="cc-note">Simulation means I generated typing and injector timings from published human ranges and ran them through the detector. It has never been tested on real hardware yet. The first few keys of a burst get through, and it's an unsigned build running on one Mac.</p><h4>WHAT I LEARNED</h4><ul class="cc-quests"><li>Simulation is not hardware, so every number says which one it is</li><li>Attack your own detector: I wrote tests for the gaps I found, then fixed them</li></ul><a class="cc-pbtn" href="https://shindustries.co/" target="_blank" rel="noopener">SEE IT AT SHINDUSTRIES.CO →</a>`},
  {id:'glim',name:'Glim',sub:'PHONE & WEB APP',c:'#f6f5f0',a:'#0e0e0d',theme:'cc-t-glim',lvl:'02',status:'BETA',stat:'BETA',st:'beta',m:'2026-10',
-  html:`<h3>Glim</h3><p>A phone and web app that texts back a business's missed calls, so a customer who couldn't get through isn't left waiting. Named after my pixel mascot.</p>`+GM+`<ul class="cc-quests"><li>Status: beta, still being tested</li><li>Part of sh. industries</li></ul><a class="cc-pbtn" href="https://shindustries.co/" target="_blank" rel="noopener">SEE IT AT SHINDUSTRIES.CO →</a>`},
+  html:`<h3>Glim</h3><p>A phone and web app that texts back a business's missed calls, so a customer who couldn't get through isn't left waiting.</p>`+GM+`<ul class="cc-quests"><li>Status: beta, still being tested</li><li>Part of sh. industries</li></ul><a class="cc-pbtn" href="https://shindustries.co/" target="_blank" rel="noopener">SEE IT AT SHINDUSTRIES.CO →</a>`},
  {id:'sh',name:'sh. industries',sub:'MY SIDE COMPANY',c:'#c6f432',a:'#0e0e0d',theme:'cc-t-sh',lvl:'03',status:'LIVE',stat:'LIVE',st:'live',m:'2026-10',founder:true,
   html:`<span class="cc-founder">FOUNDER</span><h3 style="margin-top:10px">sh. industries</h3><p>A small company I run alongside school. It's where my software projects live. I'm building them while I study cybersecurity, and it's taught me a lot about shipping something people can actually use.</p><a class="cc-pbtn" href="https://shindustries.co/" target="_blank" rel="noopener">SEE IT AT SHINDUSTRIES.CO →</a>`+GM},
  {id:'paddy',name:'Paddy',sub:'EMBEDDED · WIP',c:'#22d3ee',a:'#0f380f',theme:'cc-t-pad',lvl:'04',stat:'IN PROGRESS',st:'test',status:'IN PROGRESS',m:'2026-10',wip:true,
