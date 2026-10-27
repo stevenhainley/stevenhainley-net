@@ -427,6 +427,10 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);lin
 .skills div{border:3px solid var(--ink);padding:14px;background:#fff;box-shadow:5px 5px 0 var(--ink)}
 .skills b{font-family:var(--pixel);font-size:9px;display:block;margin-bottom:8px;color:var(--blue)}
 .skills p{font-size:14px}
+.skills .chips{display:flex;flex-wrap:wrap;gap:6px;font-size:13px}
+.skills .chips span{border:2px solid var(--ink);padding:3px 8px;background:#f4efe4;font-weight:600;line-height:1.3}
+.skills .chips span.ai{background:var(--blue);color:#fff}
+
 .roll{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
 @media(max-width:760px){.roll{grid-template-columns:1fr 1fr}}
 .roll figure{background:#fff;padding:10px 10px 30px;color:var(--ink);box-shadow:8px 8px 0 rgba(0,0,0,.3);transform:rotate(var(--r,-2deg));transition:transform .2s}
@@ -611,10 +615,10 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
     <article><div class="when">AUG 2024 – JUL 2026 · PLYMOUTH, MA</div><h3>Retail Sales Associate, Plimoth Patuxet Museums</h3><p>Helped visitors in the museum shops and handled checkout during busy shifts.</p></article>
   </div>
   <div class="skills">
-    <div><b>PROGRAMMING</b><p>Python / CircuitPython, C, Java, JavaScript, HTML/CSS, SQL</p></div>
-    <div><b>AI &amp; AUTOMATION</b><p>Multi-agent orchestration, Claude Code, MCP servers, local LLMs (Ollama), whisper.cpp, Remotion, Blender, ffmpeg, Twilio and Stripe APIs, Playwright, token-cost tracking</p></div>
-    <div><b>SYSTEMS</b><p>Linux CLI, macOS, Windows, Proxmox, Docker, Pi-hole, Tailscale</p></div>
-    <div><b>SECURITY</b><p>HID injection, Flipper Zero, hardware teardown · CompTIA Security+ in progress (Dec 2026)</p></div>
+    <div><b>PROGRAMMING</b><p class="chips"><span>Python</span><span>CircuitPython</span><span>C</span><span>Java</span><span>JavaScript</span><span>HTML/CSS</span><span>SQL</span></p></div>
+    <div><b>AI &amp; AUTOMATION</b><p class="chips"><span class="ai">Claude Code agents</span><span>MCP servers</span><span>Local LLMs (Ollama)</span><span>Speech-to-text</span><span>Playwright</span><span>Twilio + Stripe APIs</span><span>Video from code (Remotion)</span><span class="ai">3D scenes via Claude in Blender</span></p></div>
+    <div><b>SYSTEMS</b><p class="chips"><span>Linux CLI</span><span>macOS</span><span>Windows</span><span>Proxmox</span><span>Docker</span><span>Pi-hole</span><span>Tailscale</span></p></div>
+    <div><b>SECURITY</b><p class="chips"><span>HID injection</span><span>Flipper Zero</span><span>Hardware teardown</span><span>Security+ (Dec 2026)</span></p></div>
   </div>
 </div></section>
 
