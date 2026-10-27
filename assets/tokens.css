@@ -1,0 +1,99 @@
+/* Hallmark · macrostructure: Ledger (custom) · tone: personal, plain, curious · anchor hue: lime 125 (sh. Glim dot)
+ * theme: custom · vibe: "founder's notebook, eggshell paper, one lime dot"
+ * paper oklch(97.2% 0.006 95) · ink oklch(17% 0.004 100) · accent oklch(93% 0.2 125)
+ * display: Funnel Display 800/500 · body: Funnel Sans 400/600 · pixel: Silkscreen (eyebrows only)
+ * axes: light (dark-mode pair) / geometric-sans / chromatic-other (lime)
+ */
+
+@font-face { font-family: "SH Display"; src: url("fonts/display-800.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "SH Display"; src: url("fonts/display-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "SH Sans"; src: url("fonts/sans-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "SH Sans"; src: url("fonts/sans-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "SH Pixel"; src: url("fonts/pixel-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+
+:root {
+  color-scheme: light dark;
+
+  --font-display: "SH Display", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "SH Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-pixel: "SH Pixel", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* light */
+  --color-paper: oklch(97.2% 0.006 95);
+  --color-paper-2: oklch(94.4% 0.008 95);
+  --color-ink: oklch(17% 0.004 100);
+  --color-ink-2: oklch(40% 0.008 95);
+  --color-rule: oklch(86% 0.01 95);
+  --color-accent: oklch(93% 0.2 125);
+  --color-accent-ink: oklch(17% 0.004 100);
+  --color-room: oklch(14.5% 0.003 100);      /* always-dark "room" for Glim */
+  --color-room-ink: oklch(95% 0.008 95);
+  --color-room-ink-2: oklch(74% 0.01 95);
+  --color-room-rule: oklch(30% 0.006 95);
+  --color-glim-body: oklch(20% 0.004 100);
+  --color-glim-line: oklch(95% 0.008 95);
+  --color-material: oklch(97.2% 0.006 95 / 0.72);
+  --color-focus: oklch(55% 0.2 260);
+  --color-status-live: oklch(62% 0.17 145);
+  --color-status-beta: oklch(70% 0.19 125);
+  --color-status-dev: oklch(72% 0.15 70);
+  --color-status-archived: oklch(62% 0.01 95);
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --text-2xl: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --text-3xl: clamp(2.5rem, 1.4rem + 5vw, 5.5rem);
+  --text-display: clamp(3.75rem, 0.6rem + 15vw, 13rem);
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 5rem;
+  --space-4xl: clamp(5rem, 3rem + 8vw, 10rem);
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
+  --rule-1: 1px solid var(--color-rule);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.64, 0, 0.78, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-med: 420ms;
+  --dur-slow: 820ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-paper: oklch(14.5% 0.003 100);
+    --color-paper-2: oklch(19% 0.004 100);
+    --color-ink: oklch(95% 0.008 95);
+    --color-ink-2: oklch(74% 0.01 95);
+    --color-rule: oklch(30% 0.006 95);
+    --color-room: oklch(19% 0.004 100);
+    --color-room-rule: oklch(34% 0.006 95);
+    --color-material: oklch(14.5% 0.003 100 / 0.7);
+    --color-focus: oklch(78% 0.15 250);
+  }
+}
+:root[data-theme="dark"] {
+  --color-paper: oklch(14.5% 0.003 100);
+  --color-paper-2: oklch(19% 0.004 100);
+  --color-ink: oklch(95% 0.008 95);
+  --color-ink-2: oklch(74% 0.01 95);
+  --color-rule: oklch(30% 0.006 95);
+  --color-room: oklch(19% 0.004 100);
+  --color-room-rule: oklch(34% 0.006 95);
+  --color-material: oklch(14.5% 0.003 100 / 0.7);
+  --color-focus: oklch(78% 0.15 250);
+}
