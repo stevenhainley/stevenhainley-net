@@ -63,6 +63,12 @@ nav ul a:hover{opacity:1;color:var(--lime)}
 @keyframes blink{50%{opacity:0}}
 h1{font-family:var(--display);font-weight:400;font-size:clamp(68px,13vw,168px);line-height:.86;text-transform:uppercase;letter-spacing:1px;text-shadow:6px 6px 0 var(--ink)}
 h1 .o{color:var(--lime)}
+/* hero name: magnetic pixel letters. Tweak intensity with --mag-radius (px), --mag-push (px), --mag-stretch (0-0.4); set --mag-push:0 to turn off */
+h1{--mag-radius:170;--mag-push:26;--mag-stretch:.22;--glim:#C6FF3D}
+h1 .ch{display:inline-block;will-change:transform;transform-origin:50% 100%}
+h1 .dot{color:var(--glim);text-shadow:6px 6px 0 var(--ink),0 0 0 var(--ink);animation:dotblink 2.4s steps(2,end) infinite}
+@keyframes dotblink{0%,70%{opacity:1}71%,100%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){h1 .dot{animation:none}h1 .ch{transform:none!important}}
 .hero p.lead{font-size:20px;max-width:560px;margin:26px 0 30px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:16px}
 .cabinet{position:relative;justify-self:center;width:min(360px,90%);background:var(--ink);border:4px solid #000;padding:18px;box-shadow:12px 12px 0 rgba(0,0,0,.35)}
@@ -176,6 +182,32 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,92px);lin
 .cc-flyer{position:fixed;left:0;top:0;z-index:50;pointer-events:none;margin:0}
 .cc-hint{font-family:var(--mono);font-size:12px;opacity:.85;margin-top:12px}
 @media (max-width:900px){.cc-shelf .cc-cart{flex:0 0 138px;width:138px;height:166px;aspect-ratio:auto;scroll-snap-align:start}}
+
+/* ---------- save-slot month selector (shelf grouped by month) ---------- */
+.cc-slots{margin-bottom:10px;background:#1b1e29;border:3px solid #000;box-shadow:4px 4px 0 rgba(0,0,0,.45);padding:8px}
+.cc-dial{display:flex;align-items:center;gap:8px}
+.cc-dial button{font:inherit;font-family:var(--pixel);font-size:10px;color:#fff;background:#2b3042;border:2px solid #000;padding:8px 10px;cursor:pointer;box-shadow:2px 2px 0 #000;line-height:1}
+.cc-dial button:active:not(:disabled){transform:translate(2px,2px);box-shadow:none}
+.cc-dial button:disabled{opacity:.3;cursor:default}
+.cc-dial button:focus-visible,.cc-mtab:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.cc-lcd{flex:1;min-width:0;background:#0f380f;border:2px solid #000;color:#9bbc0f;font-family:var(--pixel);font-size:9px;padding:8px 10px;display:flex;justify-content:space-between;gap:8px;white-space:nowrap;overflow:hidden;text-shadow:0 0 6px rgba(155,188,15,.35)}
+.cc-lcd b{font-weight:400;color:#c6f432}
+.cc-lcd span:last-child{opacity:.85}
+.cc-mstrip{display:flex;align-items:stretch;gap:5px;overflow-x:auto;margin-top:8px;padding:6px 2px 4px;scrollbar-width:thin;scrollbar-color:#3a4058 transparent}
+.cc-yr{flex:0 0 auto;display:flex;align-items:center;gap:5px}
+.cc-yrlabel{font-family:var(--pixel);font-size:7px;color:#9aa0b4;writing-mode:vertical-rl;transform:rotate(180deg);padding:2px 0;border-right:2px dashed #3a4058;padding-right:4px;margin-right:2px;align-self:stretch;text-align:center}
+.cc-mtab{all:unset;box-sizing:border-box;cursor:pointer;flex:0 0 auto;position:relative;min-width:50px;padding:7px 7px 6px;background:#2b3042;border:2px solid #000;box-shadow:2px 2px 0 #000;font-family:var(--pixel);font-size:8px;color:#cfd3e2;text-align:center;line-height:1.3;transition:transform .12s}
+.cc-mtab:hover{transform:translateY(-2px)}
+.cc-mtab small{display:flex;justify-content:center;gap:2px;margin-top:5px;min-height:5px}
+.cc-mtab i{width:5px;height:5px;background:#6b7390}
+.cc-mtab i.more{background:none;width:auto;height:auto;font:normal 7px var(--pixel);color:#9aa0b4;line-height:5px}
+.cc-mtab[aria-selected="true"]{background:var(--lime);color:var(--ink);transform:translateY(2px);box-shadow:none}
+.cc-mtab[aria-selected="true"] i{background:var(--ink)}
+.cc-mtab.cc-yrchip{min-width:58px;background:#232738;color:#9aa0b4}
+.cc-mtab.cc-yrchip em{font-style:normal;color:#c6f432}
+.cc-shelf[hidden]{display:none}
+.cc-cart[hidden]{display:none}
+@media (max-width:520px){.cc-lcd{font-size:8px;padding:8px}.cc-dial button{padding:8px}}
 @media (prefers-reduced-motion:reduce){#select *,#select *::before,#select *::after{animation:none!important;transition:none!important}}
 
 /* rich media inside the game screens (lazy, mounted on boot) */
@@ -463,7 +495,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
 <header class="hero" id="top"><div class="wrap">
   <div>
     <div class="tag pixel"><span class="dot"></span>LOOKING FOR CYBERSECURITY INTERNSHIPS</div>
-    <h1>Steven<br>Hain<span class="o">l</span>ey.</h1>
+    <h1 id="name" aria-label="Steven Hainley.">Steven<br>Hain<span class="o">l</span>ey<span class="dot">.</span></h1>
     <p class="lead">Cybersecurity (BS) student at WPI, Class of 2029, with a Law &amp; Technology minor. I build hardware security tools and run a homelab.</p>
     <div class="ctas">
       <a class="btn" href="#select">▶ PRESS START</a>
@@ -489,7 +521,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
             <svg class="cc-glimspr" viewBox="0 0 12 14" shape-rendering="crispEdges" aria-hidden="true"><g id="cc-glimg"></g></svg>
             <div>STEVEN'S CONSOLE</div>
             <div class="cc-blink">▶ PICK A CARTRIDGE</div>
-            <small>8 GAMES · NEWEST FIRST</small>
+            <small id="cc-count">GAMES · NEWEST FIRST</small>
           </div>
           <div class="cc-layer cc-boot" id="cc-boot"><div id="cc-bootTitle">LOADING…</div><div class="cc-bar"><i id="cc-bootBar"></i></div><div class="cc-rom" id="cc-bootRom"></div></div>
           <div class="cc-layer cc-game" id="cc-game" tabindex="-1"></div>
@@ -499,9 +531,16 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
       <div class="cc-deck"><div class="cc-slot" id="cc-slot"></div><span class="cc-badge">SH-64</span><span class="cc-pwr"></span></div>
     </div>
     <div class="cc-shelfwrap">
-      <div class="cc-shelf-label">THE SHELF · NEWEST → OLDEST</div>
+      <div class="cc-shelf-label">THE SHELF · PICK A SAVE SLOT (MONTH)</div>
+      <!-- HOW TO ADD A CARTRIDGE: add one object to the P array in the script below (search "const P=[")
+           with m:'YYYY-MM' (its month). Also add its pixel art to ART{}. The shelf, month tabs, per-month
+           counts, year groups and the dial all build themselves from m. Newest month opens by default. -->
+      <div class="cc-slots" id="cc-slots">
+        <div class="cc-dial"><button type="button" id="cc-prev" aria-label="Older month">◀</button><div class="cc-lcd" aria-live="polite"><b id="cc-mlabel">--</b><span id="cc-mcount"></span></div><button type="button" id="cc-next" aria-label="Newer month">▶</button></div>
+        <div class="cc-mstrip" id="cc-mstrip" role="tablist" aria-label="Months (older to newer)"></div>
+      </div>
       <div class="cc-shelf" id="cc-shelf" role="group" aria-label="Project cartridges"></div>
-      <p class="cc-hint">Click a cartridge to load it. Esc or Eject takes it out.</p>
+      <p class="cc-hint">Click a cartridge to load it. ◀ ▶ or arrow keys change month. Esc or Eject takes it out.</p>
     </div>
   </div>
   <div id="cc-media" hidden><div class="cc-m" data-for="duckyguard"><figure class="shot"><img data-src="assets/duckyguard-blocking.webp" width="1100" height="824" alt="DuckyGuard's Overview tab showing Blocking a burst, a keystroke rhythm chart and a test pad that typed one word before the rest was dropped."><figcaption>The built-in safe test: a harmless sentence typed at 12 ms per key. Simulated, not hardware.</figcaption></figure><figure class="shot"><img data-src="assets/duckyguard-incident.webp" width="1100" height="824" alt="DuckyGuard's Timeline tab with one incident expanded: rate, median gap, gap variation and key hold, plus how many keys reached the app and how many were dropped."><figcaption>Every block explains itself and lists which characters reached the app.</figcaption></figure></div><div class="cc-m" data-for="badusb"><div class="usb-demo" id="usbdemo" role="img" aria-label="Animation: a cased Raspberry Pi Pico plugs into a laptop's side port, Terminal opens and downloads Steven's resume from GitHub, and the resume renders on screen."><svg class="mac" viewBox="0 0 488 280" role="img" aria-label="Animation: a Raspberry Pi Pico in a clear case plugs into a laptop's side port, Terminal opens and downloads Steven's resume from GitHub, and the resume renders on screen." xmlns="http://www.w3.org/2000/svg">
@@ -573,7 +612,7 @@ footer{background:#000;padding:22px 0;font-family:var(--mono);font-size:12px;opa
   </div>
   <div class="skills">
     <div><b>PROGRAMMING</b><p>Python / CircuitPython, C, Java, JavaScript, HTML/CSS, SQL</p></div>
-    <div><b>AI &amp; AUTOMATION</b><p>Agent systems, local LLMs (Ollama), Claude Code, MCP, whisper.cpp, Remotion, ffmpeg</p></div>
+    <div><b>AI &amp; AUTOMATION</b><p>Multi-agent orchestration, Claude Code, MCP servers, local LLMs (Ollama), whisper.cpp, Remotion, Blender, ffmpeg, Twilio and Stripe APIs, Playwright, token-cost tracking</p></div>
     <div><b>SYSTEMS</b><p>Linux CLI, macOS, Windows, Proxmox, Docker, Pi-hole, Tailscale</p></div>
     <div><b>SECURITY</b><p>HID injection, Flipper Zero, hardware teardown · CompTIA Security+ in progress (Dec 2026)</p></div>
   </div>
@@ -663,28 +702,71 @@ const ART={
  duckyguard:`<svg viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="9" y="2" width="4" height="4" fill="#ffd23f"/><rect x="13" y="4" width="2" height="1" fill="#ff8a1f"/><rect x="10" y="3" width="1" height="1" fill="#0b0d17"/><rect x="4" y="6" width="9" height="6" fill="#ffd23f"/><rect x="2" y="7" width="3" height="3" fill="#ffd23f"/><rect x="6" y="8" width="4" height="2" fill="#e0a800"/><rect x="5" y="12" width="2" height="2" fill="#ff8a1f"/><rect x="9" y="12" width="2" height="2" fill="#ff8a1f"/><rect x="1" y="14" width="14" height="1" fill="#3ddc84"/></svg>`
 };
 const GM='<div class="cc-gm"></div>';
+// ONE ENTRY PER CARTRIDGE. m:'YYYY-MM' puts it in its month's save slot; everything else groups itself.
 const P=[
- {id:'duckyguard',name:'DuckyGuard',sub:'MACOS SECURITY APP',c:'#ff8a1f',a:'#14100d',theme:'cc-t-duck',lvl:'01',status:'IN TESTING',stat:'IN TESTING',st:'test',when:'OCT 2026',
+ {id:'duckyguard',name:'DuckyGuard',sub:'MACOS SECURITY APP',c:'#ff8a1f',a:'#14100d',theme:'cc-t-duck',lvl:'01',status:'IN TESTING',stat:'IN TESTING',st:'test',m:'2026-10',
   html:`<h3>DuckyGuard</h3><p>A macOS menu-bar app that blocks keystroke-injection devices by how they type. A USB stick can say it's a keyboard and type a command in under a second, and your Mac believes it. DuckyGuard times every key. When a burst is faster and more even than any hand, it drops the rest before an app sees it and explains why.</p>`+GM+`<h4>WHY I BUILT IT</h4><p>It began as an afterthought to my BadUSB project. I'd shown a Pico W that types like a keyboard, and the obvious next question was the other side: how would a Mac notice?</p><h4>HOW IT WORKS</h4><ul class="cc-quests"><li>Speed: keys per second. No hand keeps up with an injector.</li><li>Evenness: people wobble, scripts don't.</li><li>Burst length: it needs several keys before it decides.</li><li>Context: does it look like a shell command, from a keyboard that just appeared?</li></ul><h4>SIMULATION NUMBERS</h4><ul class="cc-sim"><li><b>0 of 7,000</b> runs falsely flagged across 7 simulated human profiles <em>SIMULATION</em></li><li><b>100%</b> of injectors at 8 to 40 ms per key caught, blocked by the 6th to 8th key <em>SIMULATION</em></li><li><b>0%</b> of slow, randomised 80 to 120 ms payloads caught, by design <em>SIMULATION</em></li></ul><p class="cc-note">Simulation means I generated typing and injector timings from published human ranges and ran them through the detector. It has never been tested on real hardware yet. The first few keys of a burst get through, and it's an unsigned build running on one Mac.</p><h4>WHAT I LEARNED</h4><ul class="cc-quests"><li>Simulation is not hardware, so every number says which one it is</li><li>Attack your own detector: I wrote tests for the gaps I found, then fixed them</li></ul><a class="cc-pbtn" href="https://shindustries.co/" target="_blank" rel="noopener">SEE IT AT SHINDUSTRIES.CO →</a>`},
- {id:'glim',name:'Glim',sub:'PHONE & WEB APP',c:'#f6f5f0',a:'#0e0e0d',theme:'cc-t-glim',lvl:'02',status:'BETA',stat:'BETA',st:'beta',when:'OCT 2026',
+ {id:'glim',name:'Glim',sub:'PHONE & WEB APP',c:'#f6f5f0',a:'#0e0e0d',theme:'cc-t-glim',lvl:'02',status:'BETA',stat:'BETA',st:'beta',m:'2026-10',
   html:`<h3>Glim</h3><p>A phone and web app that texts back a business's missed calls, so a customer who couldn't get through isn't left waiting. Named after my pixel mascot.</p>`+GM+`<ul class="cc-quests"><li>Status: beta, still being tested</li><li>Part of sh. industries</li></ul><a class="cc-pbtn" href="https://shindustries.co/" target="_blank" rel="noopener">SEE IT AT SHINDUSTRIES.CO →</a>`},
- {id:'sh',name:'sh. industries',sub:'MY SIDE COMPANY',c:'#c6f432',a:'#0e0e0d',theme:'cc-t-sh',lvl:'03',status:'LIVE',stat:'LIVE',st:'live',when:'OCT 2026',founder:true,
+ {id:'sh',name:'sh. industries',sub:'MY SIDE COMPANY',c:'#c6f432',a:'#0e0e0d',theme:'cc-t-sh',lvl:'03',status:'LIVE',stat:'LIVE',st:'live',m:'2026-10',founder:true,
   html:`<span class="cc-founder">FOUNDER</span><h3 style="margin-top:10px">sh. industries</h3><p>A small company I run alongside school. It's where my software projects live. I'm building them while I study cybersecurity, and it's taught me a lot about shipping something people can actually use.</p><a class="cc-pbtn" href="https://shindustries.co/" target="_blank" rel="noopener">SEE IT AT SHINDUSTRIES.CO →</a>`+GM},
- {id:'paddy',name:'Paddy',sub:'EMBEDDED · WIP',c:'#22d3ee',a:'#0f380f',theme:'cc-t-pad',lvl:'04',stat:'IN PROGRESS',st:'test',status:'IN PROGRESS',when:'OCT 2026',wip:true,
+ {id:'paddy',name:'Paddy',sub:'EMBEDDED · WIP',c:'#22d3ee',a:'#0f380f',theme:'cc-t-pad',lvl:'04',stat:'IN PROGRESS',st:'test',status:'IN PROGRESS',m:'2026-10',wip:true,
   html:`<div class="cc-tape"><span>WORK IN PROGRESS</span></div><h3>Paddy: less phone, more golf</h3><p>A pocket device built on a Pico W to keep the focus on the round. It's turning into a small app platform: apps get only the permissions they declare, and I test them in a simulator before they touch the hardware.</p>`+GM+`<ul class="cc-quests"><li>First apps: golf scorecard, GPS, Wi-Fi list, battery, clock and alerts</li><li>Permission manifest per app; anything undeclared raises an error</li><li>Safe mode and a watchdog so a bad app can't brick the device</li></ul><p><b>STATUS:</b> software in simulator · hardware being wired</p>`},
- {id:'badusb',name:'BadUSB',sub:'HARDWARE SECURITY',c:'#ff3b30',a:'#2a0b0a',theme:'cc-t-bad',lvl:'05',stat:'COMPLETE',st:'live',status:'COMPLETE',when:'OCT 2026',
+ {id:'badusb',name:'BadUSB',sub:'HARDWARE SECURITY',c:'#ff3b30',a:'#2a0b0a',theme:'cc-t-bad',lvl:'05',stat:'COMPLETE',st:'live',status:'COMPLETE',m:'2026-10',
   html:`<div class="cc-prompt">$ cat README.md</div><h3>My BadUSB</h3><p>I programmed a Raspberry Pi Pico W to act like a keyboard. Plugged into a computer (with the owner's permission), it types the commands that open my LinkedIn profile or résumé.</p>`+GM+`<ul class="cc-quests"><li>Separate Windows and macOS payloads, written in CircuitPython + Adafruit HID</li><li>A file-based lock keeps the payload off so I can edit the code safely</li><li>Seeing a computer trust a "keyboard" made device trust and physical access click</li></ul><a class="cc-pbtn" href="https://github.com/stevenhainley/Steves-LinkedIn-BadUSB" target="_blank" rel="noopener">CODE ON GITHUB →</a>`},
- {id:'controller',name:'PS5 Controller',sub:'HARDWARE MOD',c:'#ff9f43',a:'#2a1606',theme:'cc-t-ctl',lvl:'06',stat:'COMPLETE',st:'live',status:'COMPLETE',when:'AUG 2026',
+ {id:'controller',name:'PS5 Controller',sub:'HARDWARE MOD',c:'#ff9f43',a:'#2a1606',theme:'cc-t-ctl',lvl:'06',stat:'COMPLETE',st:'live',status:'COMPLETE',m:'2026-08',
   html:`<h3>Custom PS5 controller</h3><p>I took my controller apart and installed an eXtremeRate SPARK kit: back paddles, an OLED display, clicky trigger stops and ergonomic grips, plus a custom-colored front plate and buttons.</p>`+GM+`<ul class="cc-quests"><li>Full disassembly, kit installation and reassembly</li><li>Rubberized New Hope Gray &amp; Classic Gray</li></ul>`},
- {id:'homelab',name:'Homelab',sub:'INFRASTRUCTURE',c:'#3ddc84',a:'#08130d',theme:'cc-t-lab',lvl:'07',stat:'LIVE',st:'live',status:'ONLINE',when:'MAY 2026',
+ {id:'homelab',name:'Homelab',sub:'INFRASTRUCTURE',c:'#3ddc84',a:'#08130d',theme:'cc-t-lab',lvl:'07',stat:'LIVE',st:'live',status:'ONLINE',m:'2026-05',
   html:`<h3>My homelab</h3><p>It's my place to learn Linux, networking and self-hosting. I run services on Proxmox and Docker, set them up myself, and figure out what went wrong when something breaks.</p><div class="cc-rack"><div><i></i>Proxmox · Docker</div><div><i></i>Pi-hole · DNS filtering</div><div><i></i>Tailscale · remote access</div><div><i></i>Homarr · dashboard</div><div><i></i>Uptime Kuma · monitoring</div></div>`+GM},
- {id:'climate',name:'Climate Lessons',sub:'RESEARCH · BOOK',c:'#ffbd2e',a:'#3a2a05',theme:'cc-t-cli',lvl:'08',stat:'PUBLISHED',st:'live',status:'PUBLISHED',when:'AUG 2025',
+ {id:'climate',name:'Climate Lessons',sub:'RESEARCH · BOOK',c:'#ffbd2e',a:'#3a2a05',theme:'cc-t-cli',lvl:'08',stat:'PUBLISHED',st:'live',status:'PUBLISHED',m:'2025-08',
   html:`<h3>Climate Lessons: Vol. 2</h3><p>In WPI's Great Problems Seminar, I co-wrote three chapters on atmospheric science, climate impacts in cities and public perception.</p><ul class="cc-quests"><li>Led our team's research into how people in the U.S. see climate policy</li><li>Expert interviews and a campus survey</li></ul><a class="cc-pbtn" href="https://pressbooks.pub/climatelessonsvol2/" target="_blank" rel="noopener">READ THE BOOK →</a>`+GM}
 ];
-shelf.innerHTML=P.map(p=>`<button class="cc-cart" type="button" data-id="${p.id}" style="--c:${p.c};--a:${p.a}" aria-label="Load ${p.name} (${p.sub.toLowerCase()}, ${p.stat.toLowerCase()}, ${p.when.toLowerCase()})">
+const MN=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+const mlab=m=>MN[+m.slice(5)-1]+' '+m.slice(0,4);
+P.forEach(p=>{p.when=mlab(p.m)});
+P.sort((a,b)=>a.m<b.m?1:a.m>b.m?-1:0); // newest month first; ties keep array order
+const MS=[...new Set(P.map(p=>p.m))].sort(); // months that have carts, oldest -> newest
+const cnt=m=>P.filter(p=>p.m===m).length;
+shelf.innerHTML=P.map(p=>`<button class="cc-cart" type="button" data-id="${p.id}" data-month="${p.m}" style="--c:${p.c};--a:${p.a}" aria-label="Load ${p.name} (${p.sub.toLowerCase()}, ${p.stat.toLowerCase()}, ${p.when.toLowerCase()})">
   <span class="cc-stat" data-s="${p.st}">${p.stat}</span>${p.founder?'<span class="cc-ftag">FOUNDER</span>':''}<span class="cc-body"></span><span class="cc-ridges"></span>
   <span class="cc-label"><span class="cc-art">${ART[p.id]}</span><span><span class="cc-name">${p.name}</span><span class="cc-sub">${p.sub}</span><span class="cc-date">${p.when}</span></span></span>
   ${p.wip?'<span class="cc-wip"></span>':''}<span class="cc-pins"></span></button>`).join('');
+const att=$('cc-count');if(att)att.textContent=P.length+' GAME'+(P.length===1?'':'S')+' · '+MS.length+' SAVE SLOT'+(MS.length===1?'':'S');
+// save-slot month selector
+const strip=$('cc-mstrip');let curM=MS[MS.length-1];
+const pips=n=>'<small aria-hidden="true">'+'<i></i>'.repeat(Math.min(n,5))+(n>5?'<i class="more">+</i>':'')+'</small>';
+function renderStrip(){
+  const yrs=[...new Set(MS.map(m=>m.slice(0,4)))],cy=curM.slice(0,4);let h='';
+  yrs.forEach(y=>{const ms=MS.filter(m=>m.startsWith(y));
+    if(y===cy){h+=`<div class="cc-yr"><span class="cc-yrlabel" aria-hidden="true">${y}</span>`+ms.map(m=>`<button class="cc-mtab" type="button" role="tab" data-m="${m}" aria-selected="${m===curM}" tabindex="${m===curM?0:-1}" aria-label="${mlab(m)}, ${cnt(m)} cartridge${cnt(m)===1?'':'s'}">${MN[+m.slice(5)-1]}${pips(cnt(m))}</button>`).join('')+'</div>'}
+    else{const n=ms.reduce((a,m)=>a+cnt(m),0);h+=`<div class="cc-yr"><button class="cc-mtab cc-yrchip" type="button" role="tab" data-m="${ms[ms.length-1]}" aria-selected="false" tabindex="-1" aria-label="${y}, ${n} cartridge${n===1?'':'s'} in ${ms.length} month${ms.length===1?'':'s'}">${y}<small><em>${n}</em></small></button></div>`}});
+  strip.innerHTML=h;
+  const sel=strip.querySelector('[aria-selected="true"]');if(sel){const l=sel.offsetLeft-strip.clientWidth/2+sel.offsetWidth/2;strip.scrollTo({left:Math.max(0,l),behavior:RM?'auto':'smooth'})}
+}
+function setMonth(m,focusTab){
+  curM=m;renderStrip();
+  shelf.querySelectorAll('.cc-cart').forEach(b=>{b.hidden=b.dataset.month!==m});
+  const n=cnt(m),i=MS.indexOf(m);
+  $('cc-mlabel').textContent=mlab(m);$('cc-mcount').textContent=n+' CART'+(n===1?'':'S')+' · '+(i+1)+'/'+MS.length;
+  $('cc-prev').disabled=i===0;$('cc-next').disabled=i===MS.length-1;
+  if(focusTab){const t=strip.querySelector('[aria-selected="true"]');if(t)t.focus({preventScroll:true})}
+}
+const step=d=>{const i=MS.indexOf(curM)+d;if(i>=0&&i<MS.length)setMonth(MS[i],false)};
+$('cc-prev').addEventListener('click',()=>step(-1));$('cc-next').addEventListener('click',()=>step(1));
+strip.addEventListener('click',e=>{const t=e.target.closest('.cc-mtab');if(t)setMonth(t.dataset.m,true)});
+strip.addEventListener('keydown',e=>{
+  const i=MS.indexOf(curM);let n=null;
+  if(e.key==='ArrowLeft')n=i-1;else if(e.key==='ArrowRight')n=i+1;else if(e.key==='Home')n=0;else if(e.key==='End')n=MS.length-1;
+  else if(e.key==='ArrowDown'){const c=shelf.querySelector('.cc-cart:not([hidden])');if(c){e.preventDefault();c.focus()}return}
+  if(n===null)return;e.preventDefault();if(n>=0&&n<MS.length)setMonth(MS[n],true)});
+shelf.addEventListener('keydown',e=>{
+  const vis=[...shelf.querySelectorAll('.cc-cart:not([hidden])')],i=vis.indexOf(document.activeElement);if(i<0)return;
+  const cols=matchMedia('(max-width:900px)').matches?1:3;let n=null;
+  if(e.key==='ArrowRight')n=i+1;else if(e.key==='ArrowLeft')n=i-1;else if(e.key==='ArrowDown')n=i+cols;else if(e.key==='ArrowUp')n=i-cols;
+  else if(e.key==='PageUp'){e.preventDefault();step(-1);return}else if(e.key==='PageDown'){e.preventDefault();step(1);return}
+  if(n===null)return;e.preventDefault();
+  if(n<0){if(e.key==='ArrowUp'||e.key==='ArrowLeft'){const t=strip.querySelector('[aria-selected="true"]');if(t)t.focus()}return}
+  if(vis[n])vis[n].focus()});
 let loaded=null,busy=false,media=null;
 function show(id){['cc-attract','cc-boot','cc-game'].forEach(l=>$(l).classList.toggle('cc-show',l===id))}
 function anim(el,frames,opts){return RM?Promise.resolve():el.animate(frames,Object.assign({fill:'forwards'},opts)).finished}
@@ -718,7 +800,7 @@ async function insert(btn){
 async function eject(silent){
   if(!loaded)return;const btn=loaded;loaded=null;
   unmount();show('cc-attract');$('cc-console').classList.remove('cc-on');$('cc-status').textContent='NO CARTRIDGE';$('cc-eject').disabled=true;
-  btn.classList.remove('cc-loaded');
+  btn.classList.remove('cc-loaded');if(btn.hidden||btn.dataset.month!==curM)setMonth(btn.dataset.month,false);
   if(!silent){try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
   await anim(btn,[{transform:'translateY(-18px)'},{transform:'translateY(0)'}],{duration:260,easing:'cubic-bezier(.2,.8,.2,1)',fill:'none'});
   if(!silent)btn.focus();
@@ -726,8 +808,44 @@ async function eject(silent){
 shelf.addEventListener('click',e=>{const b=e.target.closest('.cc-cart');if(b&&b!==loaded)insert(b)});
 $('cc-eject').addEventListener('click',()=>{if(!busy)eject()});
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!busy&&loaded)eject()});
-let h=(location.hash||'').slice(1);const deep=h&&shelf.querySelector('.cc-cart[data-id="'+h+'"]');if(deep)setTimeout(()=>insert(deep),300);
+let h=(location.hash||'').slice(1);const deep=h&&shelf.querySelector('.cc-cart[data-id="'+h+'"]');if(deep)curM=deep.dataset.month;setMonth(curM,false);if(deep)setTimeout(()=>insert(deep),300);
 })();
+})();
+
+// hero name: letters lean away from the cursor / finger in stepped 3px "pixel" jumps
+(function(){
+const h=document.getElementById('name');if(!h)return;
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;if(RM)return;
+const chs=[];
+(function split(node,cls){[...node.childNodes].forEach(n=>{
+  if(n.nodeType===3){const f=document.createDocumentFragment();[...n.textContent].forEach(c=>{const sp=document.createElement('span');sp.className='ch'+(cls?' '+cls:'');sp.setAttribute('aria-hidden','true');sp.textContent=c;f.appendChild(sp);chs.push({el:sp,x:0,y:0,sy:1,tx:0,ty:0,tsy:1,cx:0,cy:0})});n.replaceWith(f)}
+  else if(n.nodeType===1&&n.tagName!=='BR'){const c=(n.className||'')+'';[...n.childNodes].forEach(()=>{});split(n,'')}})})(h);
+const cs=getComputedStyle(h),num=(v,d)=>{const x=parseFloat(cs.getPropertyValue(v));return isNaN(x)?d:x};
+let R=num('--mag-radius',170),PUSH=num('--mag-push',26),STR=num('--mag-stretch',.22);
+let px=null,py=null,raf=0;
+function measure(){R=num('--mag-radius',170);PUSH=num('--mag-push',26);STR=num('--mag-stretch',.22);if(innerWidth<600){R*=.6;PUSH*=.6}
+  chs.forEach(c=>{const r=c.el.getBoundingClientRect();c.cx=r.left+r.width/2+scrollX-c.x;c.cy=r.top+r.height/2+scrollY-c.y})}
+function tick(){
+  let moving=false;
+  chs.forEach(c=>{
+    if(px!==null){const dx=c.cx-(px+scrollX),dy=c.cy-(py+scrollY),d=Math.hypot(dx,dy),f=Math.max(0,1-d/R);
+      if(f>0){const k=f*f*PUSH/(d||1);c.tx=dx*k;c.ty=dy*k;c.tsy=1+STR*f}else{c.tx=c.ty=0;c.tsy=1}}
+    else{c.tx=c.ty=0;c.tsy=1}
+    c.x+=(c.tx-c.x)*.22;c.y+=(c.ty-c.y)*.22;c.sy+=(c.tsy-c.sy)*.22;
+    if(Math.abs(c.tx-c.x)>.2||Math.abs(c.ty-c.y)>.2||Math.abs(c.tsy-c.sy)>.004)moving=true;
+    const qx=Math.round(c.x/3)*3,qy=Math.round(c.y/3)*3,qs=Math.round(c.sy/.04)*.04; // stepped = pixel feel
+    c.el.style.transform=(qx||qy||qs!==1)?`translate(${qx}px,${qy}px) scaleY(${qs.toFixed(2)})`:'';
+  });
+  raf=moving||px!==null?requestAnimationFrame(tick):0;
+}
+const kick=()=>{if(!raf)raf=requestAnimationFrame(tick)};
+addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY;kick()},{passive:true});
+addEventListener('pointerdown',e=>{px=e.clientX;py=e.clientY;kick()},{passive:true});
+['pointerup','pointercancel'].forEach(t=>addEventListener(t,e=>{if(e.pointerType!=='mouse'){px=py=null;kick()}},{passive:true}));
+document.addEventListener('mouseleave',()=>{px=py=null;kick()});
+addEventListener('scroll',()=>{if(px!==null)kick()},{passive:true});
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(measure,150)});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measure);measure();
 })();
 </script>
 </body>
