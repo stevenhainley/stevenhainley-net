@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Marilee &amp; Joyce Hair Design | Hair Salon | Preview</title>
+<meta name="description" content="Preview website concept for Marilee &amp; Joyce Hair Design, Lakeville, MA. Not live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #4b3b63;
+    --deep: #31254a;
+    --acc: #d6a9c4;
+    --acc-soft: #f2dcea;
+    --acc-ink: #31254a;
+    --paper: #f8f5fa;
+    --ink: #2a2433;
+    --muted: #6c6578;
+    --line: #e7e0ee;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 Inter, system-ui, sans-serif; padding-bottom: 54px; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3, .brand { font-family: "Playfair Display", Georgia, serif; letter-spacing: 0; }
+  .preview { background: var(--acc); color: var(--acc-ink); font-size: 13px; text-align: center; padding: 7px 16px; font-weight: 600; }
+  header { background: var(--dark); color: #fff; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .mark { width: 40px; height: 40px; border: 2px solid var(--acc); border-radius: 50%; display: grid; place-items: center; color: var(--acc); font-weight: 700; font-size: 20px; flex: none; min-width: 40px; padding: 0 5px; }
+  .brand b { display: block; font-size: 21px; line-height: 1.05; color: #fff;  }
+  .brand small { display: block; font: 500 12px Inter, system-ui, sans-serif; color: var(--acc-soft); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
+  .call { background: var(--acc); color: var(--acc-ink); text-decoration: none; font-weight: 600; padding: 10px 14px; border-radius: 8px; white-space: nowrap; }
+  .hero { background: linear-gradient(180deg, var(--dark) 0%, var(--deep) 100%); color: #fff; padding: 56px 0 64px; }
+  .hero h1 { font-size: clamp(38px, 7vw, 66px); line-height: 1; margin: 0 0 16px;  max-width: 17ch; font-weight: 500; }
+  .hero h1 span { color: var(--acc); }
+  .hero p { color: #e6e6e6; opacity: .88; font-size: 18px; max-width: 54ch; margin: 0 0 28px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 600; padding: 14px 20px; border-radius: 8px; }
+  .btn-acc { background: var(--acc); color: var(--acc-ink); }
+  .btn-line { border: 1.5px solid rgba(255,255,255,.5); color: #fff; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 32px; color: var(--acc-soft); font-size: 14px; }
+  .facts > span::before { content: "\2713  "; color: var(--acc); }
+  section { padding: 56px 0; }
+  .eyebrow { color: var(--acc); font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 6px; filter: brightness(.85); }
+  h2 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.08; margin: 0 0 24px; color: var(--dark);  font-weight: 500; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .card svg { width: 32px; height: 32px; stroke: var(--dark); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { font-size: 21px; margin: 12px 0 6px; color: var(--dark); }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .why-band { background: var(--dark); color: #fff; }
+  .why-band h2 { color: #fff; }
+  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .why div { border-left: 3px solid var(--acc); padding: 2px 0 2px 14px; }
+  .why div h3 { font-size: 21px; color: #fff; margin: 0 0 6px; }
+  .why div p { margin: 0; color: #d4d4d4; }
+  .photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 8px; }
+  .photo { aspect-ratio: 4/3; border: 2px dashed var(--line); border-radius: 12px; display: grid; place-items: center; color: var(--muted); font-size: 14px; text-align: center; padding: 12px; background: #fff; }
+  .contact { background: #fff; border-top: 1px solid var(--line); }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px; }
+  .hours { list-style: none; padding: 0; margin: 0 0 16px; max-width: 360px; }
+  .hours li { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  label { font-size: 14px; font-weight: 600; color: var(--dark); display: grid; gap: 6px; }
+  input, select, textarea { font: inherit; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+  textarea { min-height: 96px; }
+  .full { grid-column: 1 / -1; }
+  form button { grid-column: 1 / -1; justify-self: start; border: 0; cursor: pointer; font: 600 16px Inter, system-ui, sans-serif; }
+  .note { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+  .addr { font-size: 17px; line-height: 1.6; }
+  .addr a { font-weight: 600; }
+  footer { background: var(--deep); color: #bdbdbd; padding: 28px 0; font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer b { color: #fff; }
+  .ph { background: #fff3a8; color: #3a3200; padding: 0 4px; border-radius: 4px; font-weight: 600; }
+  .dark .ph, .hero .ph, header .ph, footer .ph { background: #fff3a8; color: #3a3200; }
+  .offer { position: fixed; left: 0; right: 0; bottom: 0; background: #111; color: #fff; font-size: 13.5px; text-align: center; padding: 10px 14px; z-index: 9; line-height: 1.35; }
+  .offer a { color: #ffe45e; font-weight: 600; }
+  @media (max-width: 560px) {
+    .brand small { display: none; }
+    .hero { padding: 40px 0 48px; }
+    section { padding: 44px 0; }
+    .brand b { font-size: 18px; }
+    .photos { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .photo { aspect-ratio: 1/1; font-size: 12px; padding: 6px; }
+  }
+</style>
+</head>
+<body>
+  <div class="preview">Preview by Steven Hainley for Marilee &amp; Joyce Hair Design. Not affiliated, not live.</div>
+
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="#">
+        <span class="mark" title="Replace with your logo">MJ</span>
+        <span><b>Marilee &amp; Joyce Hair Design</b><small>Hair salon &middot; Lakeville, MA</small></span>
+      </a>
+      <a class="call" href="tel:+17742135189">Call (774) 213-5189</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <h1>Hair that <span>feels like you.</span></h1>
+      <p>Cuts, color and styling in Lakeville. Come in for something new, or just to feel put-together again.</p>
+      <div class="ctas">
+        <a class="btn btn-acc" href="#contact">Book an appointment</a>
+        <a class="btn btn-line" href="tel:+17742135189">Call (774) 213-5189</a>
+      </div>
+      <div class="facts"><span>12 Harding Street, Lakeville</span></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Services</p>
+      <h2>What we offer</h2>
+      <div class="grid"><div class="card"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 7.5 20 18M8.5 16.5 20 6"/></svg><h3>Cuts and styling</h3><p>Shapes that suit your hair and the way you actually wear it.</p></div><div class="card"><svg viewBox="0 0 24 24"><path d="M4 20c2 0 3-1 3-3a3 3 0 0 1 3-3l8-8a2 2 0 0 0-3-3l-8 8a3 3 0 0 0-3 3c0 2-1 3-3 3z"/></svg><h3>Color and highlights</h3><p>From a soft refresh to a bigger change.</p></div><div class="card"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3zM18 16l.8 2.2L21 19l-2.2.8L18 22l-.8-2.2L15 19l2.2-.8L18 16z"/></svg><h3>Blowouts and special occasions</h3><p>Hair ready for the wedding, the event or just Friday night.</p></div><div class="card"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg><h3>Your specialty</h3><p><span class="ph">[ADD A SERVICE YOU ARE KNOWN FOR]</span></p></div></div>
+      <p class="note">Services shown are a draft. <span class="ph">[CONFIRM your real list and prices]</span> before launch.</p>
+    </div>
+  </section>
+
+  <section class="why-band">
+    <div class="wrap">
+      <p class="eyebrow">Why clients stay</p>
+      <h2>A salon that knows your name</h2>
+      <div class="why"><div><h3>Listened to</h3><p>A real consultation before the first cut.</p></div><div><h3>Easy to book</h3><p>Call or request an appointment from your phone.</p></div><div><h3>Close to home</h3><p>Local, friendly and easy to get to.</p></div></div>
+      <p class="note" style="color:#cfcfcf">Draft wording. Edit anything that isn't true for you. <span class="ph">[CONFIRM]</span></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Gallery</p>
+      <h2>The salon and the work</h2>
+      <div class="photos">
+        <div class="photo">Photo 1<br>(the salon)</div>
+        <div class="photo">Photo 2<br>(a color result)</div>
+        <div class="photo">Photo 3<br>(the stylist at work)</div>
+      </div>
+      <p class="note">Your own photos go here. <span class="ph">[SEND 3-6 PHOTOS]</span></p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap cols">
+      <div>
+        <p class="eyebrow">Find us</p>
+        <h2>Visit the salon</h2>
+        <p class="addr"><b>Marilee &amp; Joyce Hair Design</b><br>12 Harding St, Lakeville, MA 02347<br><a href="tel:+17742135189">(774) 213-5189</a><br><span class="ph">[EMAIL]</span></p>
+        <p class="note">Hours: <span class="ph">[HOURS]</span></p>
+        <p class="note"></p>
+      </div>
+      <div>
+        <p class="eyebrow">Appointments</p>
+        <h2>Request an appointment</h2>
+        <form onsubmit="event.preventDefault(); this.querySelector('.note').textContent = 'Preview only: on the live site this goes straight to Marilee &amp; Joyce Hair Design.';">
+          <label>Name<input name="name" autocomplete="name"></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          <label class="full">Email<input name="email" type="email" autocomplete="email"></label>
+          <label class="full">What would you like?<select name="need"><option>Cut and style</option><option>Color or highlights</option><option>Blowout or updo</option><option>Not sure yet</option></select></label>
+          <label class="full">Message<textarea name="msg"></textarea></label>
+          <button class="btn btn-acc" type="submit">Request appointment</button>
+          <p class="note full"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div><b>Marilee &amp; Joyce Hair Design</b> &middot; Lakeville, MA</div>
+      <div>(774) 213-5189 &middot; <span class="ph">[EMAIL]</span></div>
+    </div>
+  </footer>
+  <div class="offer">Concept preview, free to look at. Want it live? $300, ready this week. Email Steven: <a href="mailto:stevenhainley@gmail.com?subject=Website%20preview%20for%20Marilee%20&amp;%20Joyce%20Hair%20Design">stevenhainley@gmail.com</a></div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Nelson Excavating Corp | Excavation | Preview</title>
+<meta name="description" content="Preview website concept for Nelson Excavating Corp, Lakeville, MA. Not live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #2a3216;
+    --deep: #1a200d;
+    --acc: #c9a227;
+    --acc-soft: #efe0a6;
+    --acc-ink: #1a200d;
+    --paper: #f5f3ea;
+    --ink: #1d2112;
+    --muted: #5d6149;
+    --line: #e0dcc6;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 Inter, system-ui, sans-serif; padding-bottom: 54px; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3, .brand { font-family: "Barlow Condensed", Inter, sans-serif; letter-spacing: .01em; }
+  .preview { background: var(--acc); color: var(--acc-ink); font-size: 13px; text-align: center; padding: 7px 16px; font-weight: 600; }
+  header { background: var(--dark); color: #fff; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .mark { width: 40px; height: 40px; border: 2px solid var(--acc); border-radius: 8px; display: grid; place-items: center; color: var(--acc); font-weight: 700; font-size: 20px; flex: none; min-width: 40px; padding: 0 5px; }
+  .brand b { display: block; font-size: 21px; line-height: 1.05; color: #fff; text-transform:uppercase; }
+  .brand small { display: block; font: 500 12px Inter, system-ui, sans-serif; color: var(--acc-soft); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
+  .call { background: var(--acc); color: var(--acc-ink); text-decoration: none; font-weight: 600; padding: 10px 14px; border-radius: 8px; white-space: nowrap; }
+  .hero { background: linear-gradient(180deg, var(--dark) 0%, var(--deep) 100%); color: #fff; padding: 56px 0 64px; }
+  .hero h1 { font-size: clamp(38px, 7vw, 66px); line-height: 1; margin: 0 0 16px; text-transform:uppercase; max-width: 17ch; font-weight: 700; }
+  .hero h1 span { color: var(--acc); }
+  .hero p { color: #e6e6e6; opacity: .88; font-size: 18px; max-width: 54ch; margin: 0 0 28px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 600; padding: 14px 20px; border-radius: 8px; }
+  .btn-acc { background: var(--acc); color: var(--acc-ink); }
+  .btn-line { border: 1.5px solid rgba(255,255,255,.5); color: #fff; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 32px; color: var(--acc-soft); font-size: 14px; }
+  .facts > span::before { content: "\2713  "; color: var(--acc); }
+  section { padding: 56px 0; }
+  .eyebrow { color: var(--acc); font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 6px; filter: brightness(.85); }
+  h2 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.08; margin: 0 0 24px; color: var(--dark); text-transform:uppercase; font-weight: 700; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .card svg { width: 32px; height: 32px; stroke: var(--dark); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { font-size: 21px; margin: 12px 0 6px; color: var(--dark); }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .why-band { background: var(--dark); color: #fff; }
+  .why-band h2 { color: #fff; }
+  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .why div { border-left: 3px solid var(--acc); padding: 2px 0 2px 14px; }
+  .why div h3 { font-size: 21px; color: #fff; margin: 0 0 6px; }
+  .why div p { margin: 0; color: #d4d4d4; }
+  .photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 8px; }
+  .photo { aspect-ratio: 4/3; border: 2px dashed var(--line); border-radius: 12px; display: grid; place-items: center; color: var(--muted); font-size: 14px; text-align: center; padding: 12px; background: #fff; }
+  .contact { background: #fff; border-top: 1px solid var(--line); }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px; }
+  .hours { list-style: none; padding: 0; margin: 0 0 16px; max-width: 360px; }
+  .hours li { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  label { font-size: 14px; font-weight: 600; color: var(--dark); display: grid; gap: 6px; }
+  input, select, textarea { font: inherit; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+  textarea { min-height: 96px; }
+  .full { grid-column: 1 / -1; }
+  form button { grid-column: 1 / -1; justify-self: start; border: 0; cursor: pointer; font: 600 16px Inter, system-ui, sans-serif; }
+  .note { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+  .addr { font-size: 17px; line-height: 1.6; }
+  .addr a { font-weight: 600; }
+  footer { background: var(--deep); color: #bdbdbd; padding: 28px 0; font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer b { color: #fff; }
+  .ph { background: #fff3a8; color: #3a3200; padding: 0 4px; border-radius: 4px; font-weight: 600; }
+  .dark .ph, .hero .ph, header .ph, footer .ph { background: #fff3a8; color: #3a3200; }
+  .offer { position: fixed; left: 0; right: 0; bottom: 0; background: #111; color: #fff; font-size: 13.5px; text-align: center; padding: 10px 14px; z-index: 9; line-height: 1.35; }
+  .offer a { color: #ffe45e; font-weight: 600; }
+  @media (max-width: 560px) {
+    .brand small { display: none; }
+    .hero { padding: 40px 0 48px; }
+    section { padding: 44px 0; }
+    .brand b { font-size: 18px; }
+    .photos { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .photo { aspect-ratio: 1/1; font-size: 12px; padding: 6px; }
+  }
+</style>
+</head>
+<body>
+  <div class="preview">Preview by Steven Hainley for Nelson Excavating Corp. Not affiliated, not live.</div>
+
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="#">
+        <span class="mark" title="Replace with your logo">NE</span>
+        <span><b>Nelson Excavating Corp</b><small>Excavation and landscape supply &middot; Lakeville, MA</small></span>
+      </a>
+      <a class="call" href="tel:+17819636100">Call (781) 963-6100</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <h1>Site work and supply, <span>done right.</span></h1>
+      <p>Excavation, septic, utilities and a landscape supply yard serving the South Shore, Cape and Islands.</p>
+      <div class="ctas">
+        <a class="btn btn-acc" href="#contact">Get a free estimate</a>
+        <a class="btn btn-line" href="tel:+17819636100">Call (781) 963-6100</a>
+      </div>
+      <div class="facts"><span>4.8 stars &middot; 18 public reviews</span><span>Serving the South Shore, Cape and Islands since 2001</span><span>Free estimates</span><span>Landscape supply yard</span></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Services</p>
+      <h2>What we handle</h2>
+      <div class="grid"><div class="card"><svg viewBox="0 0 24 24"><path d="M3 19h12M5 19v-5h6l2-5h4l3 4M17 19a2 2 0 1 0 4 0"/></svg><h3>Excavation and site work</h3><p>Land clearing, grading and leveling, house lot preparation, lot and roadway construction.</p></div><div class="card"><svg viewBox="0 0 24 24"><path d="M3 8h9a3 3 0 0 1 3 3v10M3 12h5M15 21h6"/></svg><h3>Septic, water and sewer</h3><p>Title V septic installation, water and sewer connections, underground utility trenches.</p></div><div class="card"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14"/><path d="M3 10h18M3 15h18M9 5v5M15 10v5M9 15v4"/></svg><h3>Drainage and erosion control</h3><p>Drainage, culverts and erosion control for residential and commercial sites.</p></div><div class="card"><svg viewBox="0 0 24 24"><path d="M2 16V7h11v9M13 10h4l3 3v3h-2M2 16h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><h3>Trucking, hauling and containers</h3><p>Trucking and hauling, crushing and screening, roll-off containers.</p></div><div class="card"><svg viewBox="0 0 24 24"><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9"/></svg><h3>Snow plowing and removal</h3><p>Snow plowing, snow removal and sidewalk repairs.</p></div><div class="card"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19l8-8"/></svg><h3>Landscape supply yard</h3><p>Landscape supply, wood pellets and disposal at 203 Bedford Street.</p></div></div>
+      <p class="note">Services are taken from your current site. Photos and the list of landscape supply products are placeholders until you send them. <span class="ph">[SEND PHOTOS + PRODUCT LIST]</span></p>
+    </div>
+  </section>
+
+  <section class="why-band">
+    <div class="wrap">
+      <p class="eyebrow">Why Nelson</p>
+      <h2>In business since 2001</h2>
+      <div class="why"><div><h3>Since 2001</h3><p>Serving the South Shore, Cape and Islands for over two decades.</p></div><div><h3>Residential and commercial</h3><p>From house lots and septic to roadways and demolition.</p></div><div><h3>Free estimates</h3><p>Tell us about the project and we'll schedule a time to review it.</p></div></div>
+      <p class="note" style="color:#cfcfcf">Draft wording. Edit anything that isn't true for you. <span class="ph">[CONFIRM]</span></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Gallery</p>
+      <h2>Work and yard</h2>
+      <div class="photos">
+        <div class="photo">Photo 1<br>(excavation job)</div>
+        <div class="photo">Photo 2<br>(supply yard)</div>
+        <div class="photo">Photo 3<br>(equipment)</div>
+      </div>
+      <p class="note">Your own photos go here. <span class="ph">[SEND 3-6 PHOTOS]</span></p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap cols">
+      <div>
+        <p class="eyebrow">Find us</p>
+        <h2>Yard hours and contact</h2>
+        <p class="addr"><b>Nelson Excavating Corp</b><br>203 Bedford Street, Lakeville, MA 02347<br><a href="tel:+17819636100">(781) 963-6100</a><br>NelsonExcavating@hotmail.com</p>
+        <ul class="hours"><li><b>Monday</b><span>7:30am - 3:30pm</span></li><li><b>Tuesday</b><span>7:30am - 12:00pm</span></li><li><b>Wednesday</b><span>7:30am - 3:30pm</span></li><li><b>Thursday</b><span>7:30am - 3:30pm</span></li><li><b>Friday</b><span>7:30am - 3:30pm</span></li><li><b>Saturday</b><span>Please call</span></li><li><b>Sunday</b><span>Closed</span></li></ul>
+        <p class="note"></p>
+      </div>
+      <div>
+        <p class="eyebrow">Free estimate</p>
+        <h2>Tell us about the project</h2>
+        <form onsubmit="event.preventDefault(); this.querySelector('.note').textContent = 'Preview only: on the live site this goes straight to Nelson Excavating Corp.';">
+          <label>Name<input name="name" autocomplete="name"></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          <label class="full">Email<input name="email" type="email" autocomplete="email"></label>
+          <label class="full">What do you need?<select name="need"><option>Excavation or site work</option><option>Septic or utilities</option><option>Landscape supply</option><option>Snow plowing</option><option>Roll-off container</option><option>Other</option></select></label>
+          <label class="full">Message<textarea name="msg"></textarea></label>
+          <button class="btn btn-acc" type="submit">Request estimate</button>
+          <p class="note full"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div><b>Nelson Excavating Corp</b> &middot; Lakeville, MA</div>
+      <div>(781) 963-6100 &middot; NelsonExcavating@hotmail.com</div>
+    </div>
+  </footer>
+  <div class="offer">Concept preview, free to look at. Want it live? $300, ready this week. Email Steven: <a href="mailto:stevenhainley@gmail.com?subject=Website%20preview%20for%20Nelson%20Excavating%20Corp">stevenhainley@gmail.com</a></div>
+</body>
+</html>

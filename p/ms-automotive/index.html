@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>M &amp; S Automotive Repair | Auto Repair | Preview</title>
+<meta name="description" content="Preview website concept for M &amp; S Automotive Repair, Lakeville, MA. Not live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #0b0b0c;
+    --deep: #000000;
+    --acc: #116dff;
+    --acc-soft: #b9d4ff;
+    --acc-ink: #ffffff;
+    --paper: #f3f5f8;
+    --ink: #12161d;
+    --muted: #576170;
+    --line: #dde2ea;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.55 Inter, system-ui, sans-serif; padding-bottom: 54px; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3, .brand { font-family: "Barlow Condensed", Inter, sans-serif; letter-spacing: .01em; }
+  .preview { background: var(--acc); color: var(--acc-ink); font-size: 13px; text-align: center; padding: 7px 16px; font-weight: 600; }
+  header { background: var(--dark); color: #fff; }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .mark { width: 40px; height: 40px; border: 2px solid var(--acc); border-radius: 8px; display: grid; place-items: center; color: var(--acc); font-weight: 700; font-size: 20px; flex: none; min-width: 40px; padding: 0 5px; }
+  .brand b { display: block; font-size: 21px; line-height: 1.05; color: #fff; text-transform:uppercase; }
+  .brand small { display: block; font: 500 12px Inter, system-ui, sans-serif; color: var(--acc-soft); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
+  .call { background: var(--acc); color: var(--acc-ink); text-decoration: none; font-weight: 600; padding: 10px 14px; border-radius: 8px; white-space: nowrap; }
+  .hero { background: linear-gradient(180deg, var(--dark) 0%, var(--deep) 100%); color: #fff; padding: 56px 0 64px; }
+  .hero h1 { font-size: clamp(38px, 7vw, 66px); line-height: 1; margin: 0 0 16px; text-transform:uppercase; max-width: 17ch; font-weight: 700; }
+  .hero h1 span { color: var(--acc); }
+  .hero p { color: #e6e6e6; opacity: .88; font-size: 18px; max-width: 54ch; margin: 0 0 28px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 600; padding: 14px 20px; border-radius: 8px; }
+  .btn-acc { background: var(--acc); color: var(--acc-ink); }
+  .btn-line { border: 1.5px solid rgba(255,255,255,.5); color: #fff; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 32px; color: var(--acc-soft); font-size: 14px; }
+  .facts > span::before { content: "\2713  "; color: var(--acc); }
+  section { padding: 56px 0; }
+  .eyebrow { color: var(--acc); font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 6px; filter: brightness(.85); }
+  h2 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.08; margin: 0 0 24px; color: var(--dark); text-transform:uppercase; font-weight: 700; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .card svg { width: 32px; height: 32px; stroke: var(--dark); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { font-size: 21px; margin: 12px 0 6px; color: var(--dark); }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .why-band { background: var(--dark); color: #fff; }
+  .why-band h2 { color: #fff; }
+  .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .why div { border-left: 3px solid var(--acc); padding: 2px 0 2px 14px; }
+  .why div h3 { font-size: 21px; color: #fff; margin: 0 0 6px; }
+  .why div p { margin: 0; color: #d4d4d4; }
+  .photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 8px; }
+  .photo { aspect-ratio: 4/3; border: 2px dashed var(--line); border-radius: 12px; display: grid; place-items: center; color: var(--muted); font-size: 14px; text-align: center; padding: 12px; background: #fff; }
+  .contact { background: #fff; border-top: 1px solid var(--line); }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px; }
+  .hours { list-style: none; padding: 0; margin: 0 0 16px; max-width: 360px; }
+  .hours li { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  label { font-size: 14px; font-weight: 600; color: var(--dark); display: grid; gap: 6px; }
+  input, select, textarea { font: inherit; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
+  textarea { min-height: 96px; }
+  .full { grid-column: 1 / -1; }
+  form button { grid-column: 1 / -1; justify-self: start; border: 0; cursor: pointer; font: 600 16px Inter, system-ui, sans-serif; }
+  .note { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+  .addr { font-size: 17px; line-height: 1.6; }
+  .addr a { font-weight: 600; }
+  footer { background: var(--deep); color: #bdbdbd; padding: 28px 0; font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer b { color: #fff; }
+  .ph { background: #fff3a8; color: #3a3200; padding: 0 4px; border-radius: 4px; font-weight: 600; }
+  .dark .ph, .hero .ph, header .ph, footer .ph { background: #fff3a8; color: #3a3200; }
+  .offer { position: fixed; left: 0; right: 0; bottom: 0; background: #111; color: #fff; font-size: 13.5px; text-align: center; padding: 10px 14px; z-index: 9; line-height: 1.35; }
+  .offer a { color: #ffe45e; font-weight: 600; }
+  @media (max-width: 560px) {
+    .brand small { display: none; }
+    .hero { padding: 40px 0 48px; }
+    section { padding: 44px 0; }
+    .brand b { font-size: 18px; }
+    .photos { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .photo { aspect-ratio: 1/1; font-size: 12px; padding: 6px; }
+  }
+</style>
+</head>
+<body>
+  <div class="preview">Preview by Steven Hainley for M &amp; S Automotive Repair. Not affiliated, not live.</div>
+
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="#">
+        <span class="mark" title="Replace with your logo">M&amp;S</span>
+        <span><b>M &amp; S Automotive Repair</b><small>Auto repair &middot; Lakeville, MA</small></span>
+      </a>
+      <a class="call" href="tel:+15089461779">Call (508) 946-1779</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <h1>A mechanic <span>you can trust.</span></h1>
+      <p>Experienced mechanics, quality service and affordable prices at 214 Rhode Island Road in Lakeville. Call the shop or send a request.</p>
+      <div class="ctas">
+        <a class="btn btn-acc" href="#contact">Request service</a>
+        <a class="btn btn-line" href="tel:+15089461779">Call (508) 946-1779</a>
+      </div>
+      <div class="facts"><span>4.7 stars &middot; 54 public reviews</span><span>Mon&ndash;Fri, 8am&ndash;5pm</span></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Services</p>
+      <h2>What we fix</h2>
+      <div class="grid"><div class="card"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6.5 5 9.5A5 5 0 0 1 7 12.5C7 9.5 9 7 12 3Z"/></svg><h3>Oil changes and maintenance</h3><p>Keep your car on schedule and out of the shop for big repairs.</p></div><div class="card"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21"/></svg><h3>Brakes</h3><p>Inspection, pads, rotors and repairs, done properly.</p></div><div class="card"><svg viewBox="0 0 24 24"><path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4-5"/><circle cx="12" cy="16" r="1"/></svg><h3>Diagnostics</h3><p>Check-engine light on? We find the cause before we quote.</p></div><div class="card"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5Z"/></svg><h3>Repairs</h3><p>Suspension, steering, exhaust and more.</p></div></div>
+      <p class="note">Services shown are a draft. <span class="ph">[CONFIRM your real list and prices]</span> before launch.</p>
+    </div>
+  </section>
+
+  <section class="why-band">
+    <div class="wrap">
+      <p class="eyebrow">Why this shop</p>
+      <h2>A mechanic you can trust</h2>
+      <div class="why"><div><h3>Experienced mechanics</h3><p>People who've done this a long time.</p></div><div><h3>Quality service</h3><p>Repairs done properly, explained plainly.</p></div><div><h3>Affordable prices</h3><p>Fair, clear pricing before the work starts.</p></div></div>
+      <p class="note" style="color:#cfcfcf">Draft wording. Edit anything that isn't true for you. <span class="ph">[CONFIRM]</span></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Gallery</p>
+      <h2>The shop</h2>
+      <div class="photos">
+        <div class="photo">Photo 1<br>(the shop front)</div>
+        <div class="photo">Photo 2<br>(a bay at work)</div>
+        <div class="photo">Photo 3<br>(the team)</div>
+      </div>
+      <p class="note">Your own photos go here. <span class="ph">[SEND 3-6 PHOTOS]</span></p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap cols">
+      <div>
+        <p class="eyebrow">Find us</p>
+        <h2>Stop by or call</h2>
+        <p class="addr"><b>M &amp; S Automotive Repair</b><br>214 Rhode Island Rd, Lakeville, MA 02347<br><a href="tel:+15089461779">(508) 946-1779</a><br>mandsautorepairs@aol.com</p>
+        <ul class="hours"><li><b>Monday - Friday</b><span>8am - 5pm</span></li></ul>
+        <p class="note"></p>
+      </div>
+      <div>
+        <p class="eyebrow">Request service</p>
+        <h2>Tell us what&#x27;s wrong</h2>
+        <form onsubmit="event.preventDefault(); this.querySelector('.note').textContent = 'Preview only: on the live site this goes straight to M &amp; S Automotive Repair.';">
+          <label>Name<input name="name" autocomplete="name"></label>
+          <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+          <label class="full">Email<input name="email" type="email" autocomplete="email"></label>
+          <label class="full">What do you need?<select name="need"><option>Oil change / maintenance</option><option>Brakes</option><option>Check-engine light</option><option>Something is making a noise</option><option>Other</option></select></label>
+          <label class="full">Message<textarea name="msg"></textarea></label>
+          <button class="btn btn-acc" type="submit">Send request</button>
+          <p class="note full"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div><b>M &amp; S Automotive Repair</b> &middot; Lakeville, MA</div>
+      <div>(508) 946-1779 &middot; mandsautorepairs@aol.com</div>
+    </div>
+  </footer>
+  <div class="offer">Concept preview, free to look at. Want it live? $300, ready this week. Email Steven: <a href="mailto:stevenhainley@gmail.com?subject=Website%20preview%20for%20M%20&amp;%20S%20Automotive%20Repair">stevenhainley@gmail.com</a></div>
+</body>
+</html>
