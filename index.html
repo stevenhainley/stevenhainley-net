@@ -1553,7 +1553,7 @@ function setMonth(m,focusTab){
   $('cc-prev').disabled=i===0;$('cc-next').disabled=i===MS.length-1;
   if(focusTab){const t=strip.querySelector('[aria-selected="true"]');if(t)t.focus({preventScroll:true});}
 }
-const step=d=>{const i=MS.indexOf(curM)+d;if(i>=0&&i<MS.length)setMonth(MS[i],false);};
+const step=(d,focusTab)=>{const i=MS.indexOf(curM)+d;if(i>=0&&i<MS.length){setMonth(MS[i],!!focusTab);return true;}return false;};
 $('cc-prev').addEventListener('click',()=>step(-1));
 $('cc-next').addEventListener('click',()=>step(1));
 strip.addEventListener('click',e=>{const t=e.target.closest('.cc-mtab');if(t)setMonth(t.dataset.m,true);});
@@ -1567,7 +1567,7 @@ shelf.addEventListener('keydown',e=>{
   const vis=[...shelf.querySelectorAll('.cc-cart:not([hidden])')],i=vis.indexOf(document.activeElement);if(i<0)return;
   const cols=matchMedia('(max-width:940px)').matches?1:3;let n=null;
   if(e.key==='ArrowRight')n=i+1;else if(e.key==='ArrowLeft')n=i-1;else if(e.key==='ArrowDown')n=i+cols;else if(e.key==='ArrowUp')n=i-cols;
-  else if(e.key==='PageUp'){e.preventDefault();step(-1);return;}else if(e.key==='PageDown'){e.preventDefault();step(1);return;}
+  else if(e.key==='PageUp'){e.preventDefault();if(step(-1,false)){const c=shelf.querySelector('.cc-cart:not([hidden])');if(c)c.focus();}return;}else if(e.key==='PageDown'){e.preventDefault();if(step(1,false)){const c=shelf.querySelector('.cc-cart:not([hidden])');if(c)c.focus();}return;}
   if(n===null)return;e.preventDefault();
   if(n<0){if(e.key==='ArrowUp'||e.key==='ArrowLeft'){const t=strip.querySelector('[aria-selected="true"]');if(t)t.focus();}return;}
   if(vis[n])vis[n].focus();
@@ -1597,7 +1597,7 @@ async function insert(btn,opts){
   if(busy){pending={btn,opts};return;}
   busy=true;
   const p=P.find(x=>x.id===btn.dataset.id);
-  if(loaded)await eject(true);
+  if(loaded)await eject({silent:true,keepFocus:true});
   if(btn.hidden||btn.dataset.month!==curM)setMonth(btn.dataset.month,false);
   $('cc-console').scrollIntoView({behavior:RM?'auto':'smooth',block:'nearest'});
   const r=btn.getBoundingClientRect(),s=$('cc-slot').getBoundingClientRect();
@@ -1626,14 +1626,16 @@ async function insert(btn,opts){
   if(pending){const nxt=pending;pending=null;if(nxt.btn!==loaded)insert(nxt.btn,nxt.opts);}
 }
 
-async function eject(silent){
+async function eject(opts){
+  const o=typeof opts==='object'&&opts?opts:{silent:!!opts};
+  const silent=!!o.silent,keepFocus=!!o.keepFocus;
   if(!loaded)return;const btn=loaded;loaded=null;
   unmount();show('cc-attract');$('cc-console').classList.remove('cc-on');$('cc-console').style.removeProperty('--crt-accent');
   $('cc-status').textContent='NO CARTRIDGE';$('cc-eject').disabled=true;
   btn.classList.remove('cc-loaded');if(btn.hidden||btn.dataset.month!==curM)setMonth(btn.dataset.month,false);
   if(!silent){try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}}
   await anim(btn,[{transform:'translateY(-18px)'},{transform:'translateY(0)'}],{duration:210,easing:'cubic-bezier(.2,.8,.2,1)',fill:'none'});
-  if(!silent)btn.focus();
+  if(!silent&&!keepFocus)btn.focus();
 }
 
 shelf.addEventListener('click',e=>{const b=e.target.closest('.cc-cart');if(b&&b!==loaded)insert(b);});
@@ -1694,9 +1696,10 @@ async function runCommand(raw){
     logLine(`[OK] Mounting ${proj.name.toUpperCase()}.ROM from ${proj.when} slot...`,'ok');
     await insert(btn,{fromCli:true});
   }else if(op==='eject'){
+    if(busy){logLine('Console busy loading cartridge. Wait a moment and retry.','err');return;}
     if(!loaded){logLine('No cartridge currently loaded.','dim');return;}
     const nm=loaded.dataset.id;
-    await eject(true);
+    await eject({keepFocus:true});
     logLine(`[OK] Ejected ${nm}.`,'ok');
   }else if(op==='whoami'){
     logLine('Steven Hainley // WPI B.S. Cybersecurity (2029), Law & Tech minor (GPA 3.7)','ok');
@@ -1727,7 +1730,7 @@ if(cliForm&&cliIn){
   cliIn.addEventListener('keydown',e=>{
     if(e.key==='ArrowUp'&&hist.length){e.preventDefault();hi=Math.max(0,hi-1);cliIn.value=hist[hi];}
     else if(e.key==='ArrowDown'&&hist.length){e.preventDefault();hi=Math.min(hist.length,hi+1);cliIn.value=hi<hist.length?hist[hi]:'';}
-    else if(e.key==='Escape'&&cliIn.value){e.preventDefault();cliIn.value='';}
+    else if(e.key==='Escape'&&cliIn.value){e.preventDefault();e.stopPropagation();cliIn.value='';}
     else if(e.key==='Tab'){
       const v=cliIn.value.toLowerCase();
       if(v.startsWith('load ')){

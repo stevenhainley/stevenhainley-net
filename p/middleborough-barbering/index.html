@@ -27,14 +27,14 @@
   h1, h2, h3, .brand { font-family: Oswald, "Barlow Condensed", sans-serif; letter-spacing: .02em; }
   .preview { background: var(--acc); color: var(--acc-ink); font-size: 13px; text-align: center; padding: 7px 16px; font-weight: 600; }
   header { background: var(--dark); color: #fff; }
-  .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 0; }
   .mark { width: 40px; height: 40px; border: 2px solid var(--acc); border-radius: 4px; display: grid; place-items: center; color: var(--acc); font-weight: 700; font-size: 20px; flex: none; min-width: 40px; padding: 0 5px; }
   .brand b { display: block; font-size: 21px; line-height: 1.05; color: #fff; text-transform:uppercase; }
   .brand small { display: block; font: 500 12px Inter, system-ui, sans-serif; color: var(--acc-soft); letter-spacing: .08em; text-transform: uppercase; margin-top: 2px; }
   .call { background: var(--acc); color: var(--acc-ink); text-decoration: none; font-weight: 600; padding: 10px 14px; border-radius: 8px; white-space: nowrap; }
   .hero { background: linear-gradient(180deg, var(--dark) 0%, var(--deep) 100%); color: #fff; padding: 56px 0 64px; }
-  .hero h1 { font-size: clamp(38px, 7vw, 66px); line-height: 1; margin: 0 0 16px; text-transform:uppercase; max-width: 17ch; font-weight: 600; }
+  .hero h1 { overflow-wrap: break-word; font-size: clamp(28px, 7vw, 66px); line-height: 1; margin: 0 0 16px; text-transform:uppercase; max-width: 17ch; font-weight: 600; }
   .hero h1 span { color: var(--acc); }
   .hero p { color: #e6e6e6; opacity: .88; font-size: 18px; max-width: 54ch; margin: 0 0 28px; }
   .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -60,7 +60,7 @@
   .photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 8px; }
   .photo { aspect-ratio: 4/3; border: 2px dashed var(--line); border-radius: 12px; display: grid; place-items: center; color: var(--muted); font-size: 14px; text-align: center; padding: 12px; background: #fff; }
   .contact { background: #fff; border-top: 1px solid var(--line); }
-  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 36px; }
   .hours { list-style: none; padding: 0; margin: 0 0 16px; max-width: 360px; }
   .hours li { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
   form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
@@ -157,14 +157,14 @@
       <div>
         <p class="eyebrow">Message us</p>
         <h2>Ask a question</h2>
-        <form onsubmit="event.preventDefault(); this.querySelector('.note').textContent = 'Preview only: on the live site this goes straight to Middleborough Barbering Company.';">
+        <form data-business="Middleborough Barbering Company" onsubmit="event.preventDefault(); this.querySelector('.note').textContent = 'Preview only: on the live site this goes straight to ' + this.dataset.business + '.';">
           <label>Name<input name="name" autocomplete="name"></label>
           <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
           <label class="full">Email<input name="email" type="email" autocomplete="email"></label>
           <label class="full">What do you need?<select name="need"><option>Haircut</option><option>Fade or taper</option><option>Beard trim</option><option>Kid&#x27;s cut</option><option>Something else</option></select></label>
           <label class="full">Message<textarea name="msg"></textarea></label>
           <button class="btn btn-acc" type="submit">Send message</button>
-          <p class="note full"></p>
+          <p class="note full" role="status"></p>
         </form>
       </div>
     </div>
