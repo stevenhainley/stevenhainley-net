@@ -865,7 +865,7 @@ footer span{color:var(--fg-dim)}
       <div class="hero-micro">
         <span><b>FOUNDER</b> // <a href="https://shindustries.co/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:3px">sh. industries</a></span>
         <span><b>DEFENSE</b> // DuckyGuard 2.2 (0/124 leaked)</span>
-        <span><b>CERT</b> // Security+ Dec 2026</span>
+        <span><b>CERT</b> // Security+ (In Progress)</span>
       </div>
     </div>
 
@@ -1022,9 +1022,9 @@ footer span{color:var(--fg-dim)}
                   <div class="ds">EDUCATION</div>
                   <p><b>Worcester Polytechnic Institute</b> - B.S. Cybersecurity, Law &amp; Tech minor. GPA 3.7 (Dean's List), May 2029.</p>
                   <div class="ds">SKILLS</div>
-                  <p>Python (PyObjC, pytest), C, Java, CGEvent/IOKit, MITRE ATT&amp;CK/YARA, tcpdump, Valgrind, Proxmox, Docker, Security+ (Dec 2026)</p>
+                  <p>Python (PyObjC, pytest), C/C++17, Verilog, CGEvent/IOKit, libpcap, Wireshark, ASan/Valgrind, Proxmox, Security+ (In Progress)</p>
                   <div class="ds">PROJECTS</div>
-                  <p><b>DuckyGuard 2.2</b> - macOS BadUSB defense (0/124 leaked). <b>CS 3516 C Server</b> - POSIX TCP sockets (28/28 tests). <b>BadUSB</b> (10 stars).</p>
+                  <p><b>DuckyGuard 2.2</b> - macOS BadUSB defense (0/124 leaked, 148 tests). <b>WireView</b> - C++17 libpcap audit. <b>CS 3516 C Server</b> (28/28 tests).</p>
                   <a class="dlink" href="assets/Steven-Hainley-Resume.pdf" target="_blank" rel="noopener noreferrer">Open full resume PDF</a>
                 </div></div>
                 <div class="glass"></div>
@@ -1090,7 +1090,7 @@ footer span{color:var(--fg-dim)}
         <article class="edu reveal">
           <div class="when"><span>EXPECTED MAY 2029 // WORCESTER, MA</span><span class="badge">WPI // BS CYBER</span></div>
           <h3>Worcester Polytechnic Institute</h3>
-          <p>B.S. Cybersecurity, minor in Law &amp; Technology. GPA 3.7, Dean's List (Fall 2025), and WPI Presidential Scholarship. Coursework includes Computer Networks (C TCP/IP sockets, Valgrind, tcpdump), Digital Circuit Design, and Legal Environment of Business Decisions (Spring 2027: Intro to Security, Reverse Engineering, and FPGAs). Club Golf, Green Team, Women in Cyber Security (WiCyS).</p>
+          <p>B.S. Cybersecurity, minor in Law &amp; Technology. GPA 3.7, Dean's List (Fall 2025), and WPI Presidential Scholarship. Coursework includes Computer Networks (C/C++, POSIX sockets, libpcap, CloudLab routing &amp; TCP congestion control), Digital Circuit Design (Verilog RTL, Xilinx Vivado), and Legal Environment of Business Decisions (Spring 2027: Intro to Security, Software Reverse Engineering, and Advanced FPGA Design). Club Golf, Green Team, Women in Cyber Security (WiCyS).</p>
         </article>
         <article class="past reveal">
           <div class="when"><span>JUN 2023 - AUG 2026 // CANTON, MA</span></div>
@@ -1112,7 +1112,9 @@ footer span{color:var(--fg-dim)}
             <span class="sig">PyObjC</span>
             <span>CircuitPython</span>
             <span>pytest / Hypothesis</span>
-            <span>C (POSIX/pthreads)</span>
+            <span class="sig">C (POSIX/pthreads)</span>
+            <span class="sig">C++ (C++17)</span>
+            <span>Verilog HDL</span>
             <span>Java</span>
             <span>JavaScript</span>
             <span>HTML/CSS</span>
@@ -1126,15 +1128,18 @@ footer span{color:var(--fg-dim)}
             <span>HID Injection</span>
             <span>Flipper Zero</span>
             <span>Raspberry Pi Pico W</span>
+            <span>Xilinx Vivado (FPGA)</span>
+            <span>ASan / UBSan</span>
             <span>Hardware teardown</span>
-            <span class="sec">Security+ Dec 2026</span>
+            <span class="sec">Security+ (In Progress)</span>
           </div>
         </div>
         <div class="skill-card reveal">
           <div class="skill-head"><b>03 // NETWORKS &amp; INFRASTRUCTURE</b><i></i></div>
           <div class="chips">
             <span class="sig">TCP/IP sockets</span>
-            <span>tcpdump</span>
+            <span class="sig">libpcap / Wireshark</span>
+            <span>tcpdump / tshark</span>
             <span>Valgrind</span>
             <span>Proxmox</span>
             <span>Docker</span>
@@ -1710,7 +1715,7 @@ async function runCommand(raw){
     logLine(`[OK] Ejected ${nm}.`,'ok');
   }else if(op==='whoami'){
     logLine('Steven Hainley // WPI B.S. Cybersecurity (2029), Law & Tech minor (GPA 3.7)','ok');
-    logLine('Founder, sh. industries | East Taunton, MA | U.S. Citizen | Security+ Dec 2026','dim');
+    logLine('Founder, sh. industries | East Taunton, MA | U.S. Citizen | Security+ (In Progress)','dim');
   }else if(op==='limits'){
     logLine('[DUCKYGUARD 2.2 HONEST LIMITS]','ok');
     logLine('- Tested on 1 Flipper Zero vs 1 Apple-silicon Mac (1 run per timing case).','dim');
